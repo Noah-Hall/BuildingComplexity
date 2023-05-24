@@ -2743,3 +2743,89 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+[usbmuxd] Attached: 1 00008020-000C494C11E2002E
+[usbmuxd] Detached: 1 00008020-000C494C11E2002E
+[usbmuxd] Attached: 2 00008020-000C494C11E2002E
+[usbmuxd] Detached: 2 00008020-000C494C11E2002E
+[usbmuxd] Attached: 3 00008020-000C494C11E2002E
+[usbmuxd] Detached: 3 00008020-000C494C11E2002E
+[usbmuxd] Attached: 4 00008020-000C494C11E2002E
+[usbmuxd] Detached: 4 00008020-000C494C11E2002E
+[usbmuxd] Attached: 5 00008020-000C494C11E2002E
+[usbmuxd] Detached: 5 00008020-000C494C11E2002E
+========================================================================
+Received Import Request.
+  Time since last request: 45698.825707 seconds.
+  path: Assets/Legos/3D/Modules/3x3/Corner Bottom Left Door Bottom.prefab
+  artifactKey: Guid(396f0c5af67ac4adc8e415a48ce16e63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Modules/3x3/Corner Bottom Left Door Bottom.prefab using Guid(396f0c5af67ac4adc8e415a48ce16e63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e815ee1cc9d11b46194066fa01a862b') in 0.385620 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 76
+========================================================================
+Received Import Request.
+  Time since last request: 0.000127 seconds.
+  path: Assets/Legos/3D/Modules/3x3/Hallway Vert.prefab
+  artifactKey: Guid(708131dae5ac340dca3fa864c25768ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Modules/3x3/Hallway Vert.prefab using Guid(708131dae5ac340dca3fa864c25768ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '754199e39dbd7436f4314b907bba53e2') in 0.013313 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 66
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Legos/3D/Modules/3x3/Corner Top Left.prefab
+  artifactKey: Guid(5fd83222563dd4102bc5c076e70c592d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Modules/3x3/Corner Top Left.prefab using Guid(5fd83222563dd4102bc5c076e70c592d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0b8c2977cde85668cd794b54fa276d4') in 0.012460 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 102
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Legos/3D/Modules/3x3/Side Bottom.prefab
+  artifactKey: Guid(2f3882ce9fb634001a2d4d70899775d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Modules/3x3/Side Bottom.prefab using Guid(2f3882ce9fb634001a2d4d70899775d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '615436866d6f23069863325341c3a396') in 0.011510 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 81
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Legos/3D/Modules/3x3/Deadend Top.prefab
+  artifactKey: Guid(7b504ae370c8a4ea0a62ea1fb1fa37ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Modules/3x3/Deadend Top.prefab using Guid(7b504ae370c8a4ea0a62ea1fb1fa37ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d0e35b2530bce9e537281067574445e') in 0.011774 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 91
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Legos/3D/Modules/3x3/Side Right Door.prefab
+  artifactKey: Guid(9469fcc81d17444b9a241bdd5976886d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Modules/3x3/Side Right Door.prefab using Guid(9469fcc81d17444b9a241bdd5976886d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b009e68e7f7ddc956f224f19204d8d92') in 0.013465 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 104
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Legos/3D/Modules/3x3/Side Bottom Door.prefab
+  artifactKey: Guid(a81cb97926676466f85393d1caa183c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Modules/3x3/Side Bottom Door.prefab using Guid(a81cb97926676466f85393d1caa183c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a71c156fa9a456213fecfbabc1b9753') in 0.011137 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 128
+========================================================================
+Received Import Request.
+  Time since last request: 0.000119 seconds.
+  path: Assets/Legos/3D/Modules/3x3/Hallway Horiz Door Both.prefab
+  artifactKey: Guid(574c98e72450e43739ae6c626f4fd553) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Modules/3x3/Hallway Horiz Door Both.prefab using Guid(574c98e72450e43739ae6c626f4fd553) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cc6e44c9d045ae953f7010d9f6d239e') in 0.010330 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 89
+========================================================================
+Received Import Request.
+  Time since last request: 29.915891 seconds.
+  path: Assets/Legos/3D/Rooms/9x9 Room Door Bottom Right.prefab
+  artifactKey: Guid(1496d87b6d6c648bcade00db51dfbaab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Legos/3D/Rooms/9x9 Room Door Bottom Right.prefab using Guid(1496d87b6d6c648bcade00db51dfbaab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd453f2b16f6b3759189edaee96e0969') in 0.023856 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 424
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 89, details: Operation aborted.
+AssetImportWorker is now disconnected from the server
+Process exiting

@@ -8,6 +8,8 @@ TagManager:
   - Exit
   - Floor
   - Wall
+  - RoomNode
+  - ModuleNode
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Walls
   - Agents
   - Floors
-  - 
+  - Nodes
   - 
   - 
   - 

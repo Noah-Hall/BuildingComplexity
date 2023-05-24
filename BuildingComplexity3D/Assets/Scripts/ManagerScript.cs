@@ -11,6 +11,8 @@ public class ManagerScript : MonoBehaviour
     void Awake()
     {
         Camera.main.orthographicSize = 16;
+        GameObject[] moduleNodes = GameObject.FindGameObjectsWithTag("ModuleNode");
+        GameObject[] roomNodes = GameObject.FindGameObjectsWithTag("RoomNode");
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
         GameObject[] exits = GameObject.FindGameObjectsWithTag("Exit");
         
@@ -20,6 +22,14 @@ public class ManagerScript : MonoBehaviour
 
         for(int i = 1; i < exits.Length + 1; i++) {
             exits[i - 1].name = "exit " + i;
+        }
+
+        for(int i = 1; i < moduleNodes.Length + 1; i++) {
+            moduleNodes[i - 1].name = "module node " + i;
+        }
+
+        for(int i = 1; i < roomNodes.Length + 1; i++) {
+            roomNodes[i - 1].name = "room node " + i;
         }
     }
 }

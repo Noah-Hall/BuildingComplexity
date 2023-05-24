@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 371190337778529189, guid: a49644542c14b440d954f1cba8913917, type: 3}
       propertyPath: m_Name
-      value: Deadend Bottom Variant
+      value: Deadend Bottom
       objectReference: {fileID: 0}
     - target: {fileID: 5148991738780231503, guid: a49644542c14b440d954f1cba8913917, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5148991738780231503, guid: a49644542c14b440d954f1cba8913917, type: 3}
       propertyPath: m_LocalPosition.x

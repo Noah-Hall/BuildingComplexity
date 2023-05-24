@@ -10,6 +10,7 @@ public class FileManager: MonoBehaviour
     public string ID;
     public System.DateTime dateTime = System.DateTime.UtcNow.ToLocalTime();
     private string FolderName;
+    private string NodeRecordFile;
     private string DoorRecordFile;
     private string ExitRecordFile;
     private Scene scene;
@@ -25,9 +26,15 @@ public class FileManager: MonoBehaviour
         FolderName = ID + "_" + dateTimeStr;
         AssetDatabase.CreateFolder("Assets/LogFiles", FolderName);
 
+        NodeRecordFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Nodes.csv");
+
+        TextWriter wt = new StreamWriter(NodeRecordFile, false);
+        wt.WriteLine("Agent Name, Node Name, Position-X, Position-Z, Time (Seconds)");
+        wt.Close();
+
         DoorRecordFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Doors.csv");
 
-        TextWriter wt = new StreamWriter(DoorRecordFile, false);
+        wt = new StreamWriter(DoorRecordFile, false);
         wt.WriteLine("Agent Name, Door Name, Position-X, Position-Z, Time (Seconds)");
         wt.Close();
 
@@ -36,6 +43,20 @@ public class FileManager: MonoBehaviour
         wt = new StreamWriter(ExitRecordFile, false);
         wt.WriteLine("Agent Name, Exit Name, Position-X, Position-Z, Exit Time (Seconds)");
         wt.Close();
+    }
+    
+    public void WriteStringNode(GameObject agent, GameObject node)
+    {
+        string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString();
+        string tempWrite = string.Format("{0}, {1}, {2}, {3}, {4}", agent.name, node.name, Mathf.Round(node.transform.position.x * 100f) / 100f, Mathf.Round(node.transform.position.z * 100f) / 100f, tempTime);
+        //Write some text to the test.txt file
+        StreamWriter writer = new StreamWriter(NodeRecordFile, true);
+        writer.WriteLine(tempWrite);
+        writer.Close();
+        StreamReader reader = new StreamReader(NodeRecordFile);
+        //Print the text from the file
+        Debug.Log(reader.ReadToEnd());
+        reader.Close();
     }
 
     public void WriteStringDoor(GameObject agent, GameObject door)

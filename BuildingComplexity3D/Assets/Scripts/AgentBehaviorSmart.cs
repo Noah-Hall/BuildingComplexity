@@ -10,14 +10,14 @@ public class AgentBehaviorSmart : MonoBehaviour
     [SerializeField] private float radius = 50;
     [SerializeField] private LayerMask targetMask;
     [SerializeField] private LayerMask obstructionMask;
-    private List<GameObject> visitedDoors = new List<GameObject>();
-    public bool doorBound;
+    private List<GameObject> visitedTargets = new List<GameObject>();
+    public bool targetBound;
     public bool isWandering;
 
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        targetMask = LayerMask.GetMask("Doors");
+        targetMask = LayerMask.GetMask("Exits", "Doors", "Nodes");
         obstructionMask = LayerMask.GetMask("Walls");
         StartCoroutine(FOVRoutine());
     }
@@ -37,107 +37,121 @@ public class AgentBehaviorSmart : MonoBehaviour
         }
     }
 
-    private IEnumerator DoorReachedRoutine(GameObject door)
-    {
-        yield return new WaitForSeconds(0.1f);
-        visitedDoors.Add(door);
-        Vector3 move = transform.forward;
-        navMeshAgent.Move(move);
-    }
-
-    private IEnumerator SearchForDoor()
-    {
-        isWandering = true;
-        yield return new WaitForSeconds(0.2f);
-        Vector3 dest = RandomNavSphere(transform.position, 50f, LayerMask.NameToLayer("Floors"));
-        navMeshAgent.destination = dest;
-    }
-
     private void FieldOfViewCheck()
     {
         Debug.Log("FOV Check");
-        doorBound = false;
+        targetBound = false;
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
         if (rangeChecks.Length > 0) {
             Debug.Log("FOV Check Length > 0");
-            Transform closest = null;
+            GameObject closest = null;
             float closestDistance = float.MaxValue;
-            bool exitFound = false, closestVisited = false;
+
             foreach (Collider check in rangeChecks) {
-                Transform door = check.transform;
-                Vector3 direction = (door.position - transform.position).normalized;
-                float distance = Vector3.Distance(door.position, transform.position);
+                Vector3 target = check.transform.position;
+                Vector3 direction = (target - transform.position).normalized;
+                float distance = Vector3.Distance(target, transform.position);
+                // Debug.Log(check.gameObject.name);
+
                 if (!Physics.Raycast(transform.position, direction, distance, obstructionMask)) {
-                    if (exitFound) {
-                        if (check.gameObject.tag == "Exit" && distance < closestDistance) {
-                            doorBound = true;
-                            closest = door;
-                            closestDistance = distance;
-                        }
-                    } else {
-                        if (check.gameObject.tag == "Exit") {
-                            Debug.Log("FOV Check Exit Found");
-                            doorBound = true;
-                            closest = door;
-                            closestDistance = distance;
-                            exitFound = true;
-                        } else if (closest == null) {
-                            doorBound = true;
-                            closest = door;
-                            closestDistance = distance;
-                            if (visitedDoors.Contains(check.gameObject)) {
-                                closestVisited = true;
-                            }
-                        } else if (distance < closestDistance) {
-                            if (!visitedDoors.Contains(check.gameObject)) {
-                                doorBound = true;
-                                closest = door;
-                                closestDistance = distance;
-                                closestVisited = false;
-                            } else if (closestVisited) {
-                                doorBound = true;
-                                closest = door;
+                    if (closest == null) { 
+                        closest = check.gameObject;
+                        targetBound = true;
+                        closestDistance = distance;
+                        // Debug.Log("Layer: " + closest.layer);
+                    }
+                    switch(check.gameObject.layer) {
+                        case var value when value == LayerMask.NameToLayer("Exits"):
+                            // Debug.Log("FOV Check Exit Found");
+                            if (closest.layer != LayerMask.NameToLayer("Exits") || distance < closestDistance) {
+                                targetBound = true;
+                                closest = check.gameObject;
                                 closestDistance = distance;
                             }
-                        } else if (!visitedDoors.Contains(check.gameObject) && closestVisited) {
-                            doorBound = true;
-                            closest = door;
-                            closestDistance = distance;
-                            closestVisited = false;
-                        }
+                            break;
+                        case var value when value == LayerMask.NameToLayer("Doors"):
+                            // Debug.Log("FOV Check Door Found");
+                            switch (closest.layer) {
+                                case var val when val == LayerMask.NameToLayer("Exits"):
+                                    break;
+                                case var val when val == LayerMask.NameToLayer("Doors"):
+                                    if (distance < closestDistance) {
+                                        if (!visitedTargets.Contains(check.gameObject)) {
+                                            targetBound = true;
+                                            closest = check.gameObject;
+                                            closestDistance = distance;
+                                        } else if (visitedTargets.Contains(closest)) {
+                                            targetBound = true;
+                                            closest = check.gameObject;
+                                            closestDistance = distance;
+                                        }
+                                    } else if (!visitedTargets.Contains(check.gameObject) && visitedTargets.Contains(closest)) {
+                                        targetBound = true;
+                                        closest = check.gameObject;
+                                        closestDistance = distance;
+                                    }
+                                    break;
+                                case var val when val == LayerMask.NameToLayer("Nodes"):
+                                    targetBound = true;
+                                    closest = check.gameObject;
+                                    closestDistance = distance;
+                                    break;
+                                default:
+                                    Debug.Log("Default Reached");
+                                    break;
+                            }
+                            break;
+                        case var value when value == LayerMask.NameToLayer("Nodes"):
+                            switch (closest.layer) {
+                                case var val when val == LayerMask.NameToLayer("Exits"):
+                                    break;
+                                case var val when val == LayerMask.NameToLayer("Doors"):
+                                    break;
+                                case var val when val == LayerMask.NameToLayer("Nodes"):
+                                    if (distance < closestDistance) {
+                                        if (!visitedTargets.Contains(check.gameObject)) {
+                                            targetBound = true;
+                                            closest = check.gameObject;
+                                            closestDistance = distance;
+                                        } else if (visitedTargets.Contains(closest)) {
+                                            targetBound = true;
+                                            closest = check.gameObject;
+                                            closestDistance = distance;
+                                        }
+                                    } else if (!visitedTargets.Contains(check.gameObject) && visitedTargets.Contains(closest)) {
+                                        targetBound = true;
+                                        closest = check.gameObject;
+                                        closestDistance = distance;
+                                    }
+                                    break;
+                                default:
+                                    Debug.Log("Default Reached");
+                                    break;
+                            }
+                            break;
+                        default:
+                            Debug.Log("Default Reached");
+                            break;
                     }
                 }
             }
-            if (doorBound) {
-                Debug.Log("FOV Check doorBound");
-                navMeshAgent.destination = closest.position;
+
+            if (targetBound) {
+                Debug.Log("FOV Check targetBound");
+                navMeshAgent.destination = closest.transform.position;
             } else {
-                Debug.Log("FOV Check else");
-                //look for door
-                if(!isWandering) {
-                    StartCoroutine(SearchForDoor());
-                }
+                Debug.Log("FOV Check targetBound else");
             }
         } else {
             Debug.Log("FOV Check else");
-            //look for door
-            if(!isWandering) {
-                StartCoroutine(SearchForDoor());
-            }
         }
     }
 
-    public static Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask) 
+    public void TargetReached(GameObject door)
     {
-        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
-        randomDirection += origin;
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
-        return navHit.position;
-    }
-
-    public void DoorReached(GameObject door)
-    {
-        StartCoroutine(DoorReachedRoutine(door));
+        Debug.Log("TargetReached");
+        visitedTargets.Add(door);
+        Vector3 move = transform.forward;
+        navMeshAgent.Move(move);
     }
 }
