@@ -5,27 +5,55 @@ using UnityEngine.AI;
 
 public class AgentBehaviorSmart : MonoBehaviour
 {
-    // [SerializeField] private Transform movePositionTransform;
     private NavMeshAgent navMeshAgent;
     [SerializeField] private float radius = 50;
-    [SerializeField] private LayerMask targetMask;
-    [SerializeField] private LayerMask obstructionMask;
-    private List<GameObject> visitedTargets = new List<GameObject>();
-    public bool targetBound;
-    public bool isWandering;
+    [SerializeField] private LayerMask targetMask, obstructionMask;
+    IDictionary<GameObject, int> visitedTargets = new Dictionary<GameObject, int>();
+    public bool targetBound, reachedCooldown;
+
+    //debugging stuff
+    [SerializeField] private GameObject dest;
+    public bool debuggingOn = false;
 
     private void Awake()
     {
+        if (debuggingOn) {
+            dest = GameObject.Find("Destination");
+        }
+
+        List<GameObject> targets = new List<GameObject>();
+        targets.AddRange(GameObject.FindGameObjectsWithTag("ModuleNode"));
+        targets.AddRange(GameObject.FindGameObjectsWithTag("RoomNode"));
+        targets.AddRange(GameObject.FindGameObjectsWithTag("Door"));
+        targets.AddRange(GameObject.FindGameObjectsWithTag("Exit"));
+
+        foreach(GameObject target in targets) {
+            visitedTargets.Add(target, 0);
+        }
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         targetMask = LayerMask.GetMask("Exits", "Doors", "Nodes");
         obstructionMask = LayerMask.GetMask("Walls");
         StartCoroutine(FOVRoutine());
+        // StartCoroutine(Logging());
     }
 
     private void Update()
     {
         if (transform.position == navMeshAgent.destination) {
-            isWandering = false;
+            targetBound = false;
+        }
+    }
+
+    private IEnumerator Logging() {
+        while(true) {
+            Debug.Log("Destination: " + navMeshAgent.destination);
+            foreach(KeyValuePair<GameObject, int> visited in visitedTargets) {
+                if (visited.Value > 0) {
+                    Debug.Log(visited.Key.name + " : " + visited.Value + " : " + visited.Key.transform.position);
+                }
+            }
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -37,13 +65,20 @@ public class AgentBehaviorSmart : MonoBehaviour
         }
     }
 
+    private IEnumerator Cooldown()
+    {
+        reachedCooldown = true;
+        yield return new WaitForSeconds(1f);
+        reachedCooldown = false;
+    }
+
     private void FieldOfViewCheck()
     {
-        Debug.Log("FOV Check");
+        // Debug.Log("FOV Check");
         targetBound = false;
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
         if (rangeChecks.Length > 0) {
-            Debug.Log("FOV Check Length > 0");
+            // Debug.Log("FOV Check Length > 0");
             GameObject closest = null;
             float closestDistance = float.MaxValue;
 
@@ -51,18 +86,16 @@ public class AgentBehaviorSmart : MonoBehaviour
                 Vector3 target = check.transform.position;
                 Vector3 direction = (target - transform.position).normalized;
                 float distance = Vector3.Distance(target, transform.position);
-                // Debug.Log(check.gameObject.name);
+                // // Debug.Log(check.gameObject.name);
 
                 if (!Physics.Raycast(transform.position, direction, distance, obstructionMask)) {
                     if (closest == null) { 
                         closest = check.gameObject;
                         targetBound = true;
                         closestDistance = distance;
-                        // Debug.Log("Layer: " + closest.layer);
                     }
                     switch(check.gameObject.layer) {
                         case var value when value == LayerMask.NameToLayer("Exits"):
-                            // Debug.Log("FOV Check Exit Found");
                             if (closest.layer != LayerMask.NameToLayer("Exits") || distance < closestDistance) {
                                 targetBound = true;
                                 closest = check.gameObject;
@@ -70,22 +103,17 @@ public class AgentBehaviorSmart : MonoBehaviour
                             }
                             break;
                         case var value when value == LayerMask.NameToLayer("Doors"):
-                            // Debug.Log("FOV Check Door Found");
                             switch (closest.layer) {
                                 case var val when val == LayerMask.NameToLayer("Exits"):
                                     break;
                                 case var val when val == LayerMask.NameToLayer("Doors"):
                                     if (distance < closestDistance) {
-                                        if (!visitedTargets.Contains(check.gameObject)) {
-                                            targetBound = true;
-                                            closest = check.gameObject;
-                                            closestDistance = distance;
-                                        } else if (visitedTargets.Contains(closest)) {
+                                        if (visitedTargets[check.gameObject] <= visitedTargets[closest]) {
                                             targetBound = true;
                                             closest = check.gameObject;
                                             closestDistance = distance;
                                         }
-                                    } else if (!visitedTargets.Contains(check.gameObject) && visitedTargets.Contains(closest)) {
+                                    } else if (visitedTargets[check.gameObject] < visitedTargets[closest]) {
                                         targetBound = true;
                                         closest = check.gameObject;
                                         closestDistance = distance;
@@ -97,7 +125,7 @@ public class AgentBehaviorSmart : MonoBehaviour
                                     closestDistance = distance;
                                     break;
                                 default:
-                                    Debug.Log("Default Reached");
+                                    // Debug.Log("Default Reached");
                                     break;
                             }
                             break;
@@ -109,49 +137,51 @@ public class AgentBehaviorSmart : MonoBehaviour
                                     break;
                                 case var val when val == LayerMask.NameToLayer("Nodes"):
                                     if (distance < closestDistance) {
-                                        if (!visitedTargets.Contains(check.gameObject)) {
-                                            targetBound = true;
-                                            closest = check.gameObject;
-                                            closestDistance = distance;
-                                        } else if (visitedTargets.Contains(closest)) {
+                                        if (visitedTargets[check.gameObject] <= visitedTargets[closest]) {
                                             targetBound = true;
                                             closest = check.gameObject;
                                             closestDistance = distance;
                                         }
-                                    } else if (!visitedTargets.Contains(check.gameObject) && visitedTargets.Contains(closest)) {
+                                    } else if (visitedTargets[check.gameObject] < visitedTargets[closest]) {
                                         targetBound = true;
                                         closest = check.gameObject;
                                         closestDistance = distance;
                                     }
                                     break;
                                 default:
-                                    Debug.Log("Default Reached");
+                                    // Debug.Log("Default Reached");
                                     break;
                             }
                             break;
                         default:
-                            Debug.Log("Default Reached");
+                            // Debug.Log("Default Reached");
                             break;
                     }
                 }
             }
 
             if (targetBound) {
-                Debug.Log("FOV Check targetBound");
+                // Debug.Log("FOV Check targetBound");
                 navMeshAgent.destination = closest.transform.position;
+                if (debuggingOn) {
+                    dest.transform.position = closest.transform.position;
+                }
             } else {
-                Debug.Log("FOV Check targetBound else");
+                // Debug.Log("FOV Check targetBound else");
             }
         } else {
-            Debug.Log("FOV Check else");
+            // Debug.Log("FOV Check else");
         }
     }
 
-    public void TargetReached(GameObject door)
+    public void TargetReached(GameObject target)
     {
-        Debug.Log("TargetReached");
-        visitedTargets.Add(door);
-        Vector3 move = transform.forward;
-        navMeshAgent.Move(move);
+        StartCoroutine(Cooldown());
+        // Debug.Log("TargetReached");
+        visitedTargets[target] = visitedTargets[target] + 1;
+        if (target.layer == LayerMask.NameToLayer("Doors")) {
+            Vector3 move = transform.forward;
+            navMeshAgent.Move(move);
+        }
     }
 }

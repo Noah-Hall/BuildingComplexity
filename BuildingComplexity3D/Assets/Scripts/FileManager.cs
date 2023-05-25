@@ -17,11 +17,11 @@ public class FileManager: MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Awake:" + SceneManager.GetActiveScene().name);
+        // Debug.Log("Awake:" + SceneManager.GetActiveScene().name);
         scene = SceneManager.GetActiveScene();
         ID = scene.name;
         string dateTimeStr = "Date_" + dateTime.ToString("MM") + "-" + dateTime.ToString("dd") + "-" + dateTime.ToString("yyyy") + "_Time_" + dateTime.ToString("HH") + "-" + dateTime.ToString("mm") + "-" + dateTime.ToString("ss");
-        Debug.Log(dateTime);
+        // Debug.Log(dateTime);
         // theDate = System.DateTime.Now.ToString("MM-dd");
         FolderName = ID + "_" + dateTimeStr;
         AssetDatabase.CreateFolder("Assets/LogFiles", FolderName);
@@ -55,7 +55,7 @@ public class FileManager: MonoBehaviour
         writer.Close();
         StreamReader reader = new StreamReader(NodeRecordFile);
         //Print the text from the file
-        Debug.Log(reader.ReadToEnd());
+        // Debug.Log(reader.ReadToEnd());
         reader.Close();
     }
 
@@ -69,7 +69,7 @@ public class FileManager: MonoBehaviour
         writer.Close();
         StreamReader reader = new StreamReader(DoorRecordFile);
         //Print the text from the file
-        Debug.Log(reader.ReadToEnd());
+        // Debug.Log(reader.ReadToEnd());
         reader.Close();
     }
 
@@ -83,7 +83,7 @@ public class FileManager: MonoBehaviour
         writer.Close();
         StreamReader reader = new StreamReader(ExitRecordFile);
         //Print the text from the file
-        Debug.Log(reader.ReadToEnd());
+        // Debug.Log(reader.ReadToEnd());
         reader.Close();
     }
 }
