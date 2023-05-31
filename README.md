@@ -16,5 +16,4 @@ This exploration is done with the goal of determining the ***EASE*** (Evacuation
 - Ignore a close more-visited **Node** to reach a further less-visited **Node**
 
 ## Current Concerns:
-- **Smart Agents** get stuck when trying to traverse some modules
 - Edge case where there is a deadend with **Doors** and an elbow hallway leading to the **Exit** such that the **Smart Agents** will never reach the **Exit** (maybe if a door has been visited a certain number of times, have the agent pick less visited nodes... what should the equation for that be?)
