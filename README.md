@@ -4,11 +4,12 @@ This project uses a modular "Lego" system to build floorplans.
 **Smart Agents** can be used to explore and record information about given floorplans.
 This exploration is done with the goal of determining the ***EASE*** (Evacuation with Acceptable Simplicity in Emergencies).
 
-## **Smart Agents** Priority List: 
+## **Smart Agents** Info:
+### Priority List
 - Search for closest **Exit** in LOS within 50 meters
 - Search for closest **Door** in LOS within 50 meters (priority to least visited)
 - Search for closest **Node** in LOS within 50 meters (priority to least visited)
-### This means that a **Smart Agent** will 
+### Specific Behavior 
 - Ignore a close **Door** in order to reach a further **Exit**
 - Ignore a close more-visited **Door** to reach a futher less-visited **Door**
 - Ignore a close **Node** in order to reach a further **Door**
