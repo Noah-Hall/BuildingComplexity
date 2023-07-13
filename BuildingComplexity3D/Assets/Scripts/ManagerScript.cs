@@ -17,7 +17,7 @@ public class ManagerScript : MonoBehaviour
     // names all important objects in scene for coherant LogFiles
     void Awake()
     {
-        spawnAgents = true;
+        // spawnAgents = true;
         if (spawnAgents) {
             spawner = GameObject.Find("Smart Agent Spawner").GetComponent<AgentSpawner>();
         }
@@ -28,14 +28,13 @@ public class ManagerScript : MonoBehaviour
         GameObject[] exits = GameObject.FindGameObjectsWithTag("Exit");
         GameObject[] smartAgents = GameObject.FindGameObjectsWithTag("Smart Agent");
         
-        for(int i = 1; i < doors.Length + 1; i++) {
-            if (doors[i - 1].activeInHierarchy) {
-                doors[i - 1].name = "door " + i;
+        for(int i = 1; i < roomNodes.Length + 1; i++) {
+            if (roomNodes[i - 1].activeInHierarchy) {
+                if (spawnAgents) {
+                    spawner.Spawn(roomNodes[i - 1].transform.position);
+                }
+                roomNodes[i - 1].name = "room node " + i;
             }
-        }
-
-        for(int i = 1; i < exits.Length + 1; i++) {
-            exits[i - 1].name = "exit " + i;
         }
 
         for(int i = 1; i < moduleNodes.Length + 1; i++) {
@@ -44,13 +43,14 @@ public class ManagerScript : MonoBehaviour
             }
         }
 
-        for(int i = 1; i < roomNodes.Length + 1; i++) {
-            if (roomNodes[i - 1].activeInHierarchy) {
-                if (spawnAgents) {
-                    spawner.Spawn(roomNodes[i - 1].transform.position);
-                }
-                roomNodes[i - 1].name = "room node " + i;
+        for(int i = 1; i < doors.Length + 1; i++) {
+            if (doors[i - 1].activeInHierarchy) {
+                doors[i - 1].name = "door " + i;
             }
+        }
+
+        for(int i = 1; i < exits.Length + 1; i++) {
+            exits[i - 1].name = "exit " + i;
         }
 
         for(int i = 1; i < smartAgents.Length + 1; i++) {

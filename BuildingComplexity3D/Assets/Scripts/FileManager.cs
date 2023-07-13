@@ -73,8 +73,10 @@ public class FileManager: MonoBehaviour
     // writes a formatted line to Node.csv
     public void WriteStringNode(GameObject agent, GameObject node)
     {
-        string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString();
-        string tempWrite = string.Format("{0}, {1}, {2}, {3}, {4} ", agent.name, node.name, Mathf.Round(node.transform.position.x * 100f) / 100f, Mathf.Round(node.transform.position.z * 100f) / 100f, tempTime);
+        string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString("0.00");
+        string tempX = (Mathf.Round(node.transform.position.x * 100f) / 100f).ToString("0.00");
+        string tempZ = (Mathf.Round(node.transform.position.z * 100f) / 100f).ToString("0.00");
+        string tempWrite = string.Format("{0}, {1}, {2:F2}, {3:F2}, {4}", agent.name, node.name, tempX, tempZ, tempTime);
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(NodeRecordFile, true);
         writer.WriteLine(tempWrite);
@@ -88,8 +90,10 @@ public class FileManager: MonoBehaviour
     // writes a formatted line to Door.csv
     public void WriteStringDoor(GameObject agent, GameObject door)
     {
-        string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString();
-        string tempWrite = string.Format("{0}, {1}, {2}, {3}, {4} ", agent.name, door.name, Mathf.Round(door.transform.position.x * 100f) / 100f, Mathf.Round(door.transform.position.z * 100f) / 100f, tempTime);
+        string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString("0.00");
+        string tempX = (Mathf.Round(door.transform.position.x * 100f) / 100f).ToString("0.00");
+        string tempZ = (Mathf.Round(door.transform.position.z * 100f) / 100f).ToString("0.00");
+        string tempWrite = string.Format("{0}, {1}, {2:F2}, {3:F2}, {4}", agent.name, door.name, tempX, tempZ, tempTime);
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(DoorRecordFile, true);
         writer.WriteLine(tempWrite);
@@ -103,8 +107,10 @@ public class FileManager: MonoBehaviour
     // writes a formatted line to Exit.csv
     public void WriteStringExit(GameObject agent, GameObject exit)
     {
-        string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString();
-        string tempWrite = string.Format("{0}, {1}, {2}, {3}, {4} ", agent.name, exit.name, Mathf.Round(exit.transform.position.x * 100f) / 100f, Mathf.Round(exit.transform.position.z * 100f) / 100f, tempTime);
+        string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString("0.00");
+        string tempX = (Mathf.Round(exit.transform.position.x * 100f) / 100f).ToString("0.00");
+        string tempZ = (Mathf.Round(exit.transform.position.z * 100f) / 100f).ToString("0.00");
+        string tempWrite = string.Format("{0}, {1}, {2:F2}, {3:F2}, {4}", agent.name, exit.name, tempX, tempZ, tempTime);
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(ExitRecordFile, true);
         writer.WriteLine(tempWrite);
@@ -201,8 +207,8 @@ public class FileManager: MonoBehaviour
             agentVals.max = mostAgent.Key + " : " + mostAgent.Value;
             agentVals.ave = agentVals.ave / agentDict.Count;
 
-            nodeResults.Add(string.Format("Node Records, {0} agents, {1} agents, {2} agents", nodeVals.min, nodeVals.max, nodeVals.ave.ToString("0.00")));
-            nodeResults.Add(string.Format("Node Visits, {0} nodes, {1} nodes, {2} nodes", agentVals.min, agentVals.max, agentVals.ave.ToString("0.00")));
+            nodeResults.Add(string.Format("Node Records, {0:F2} agents, {1:F2} agents, {2:F2} agents", nodeVals.min, nodeVals.max, nodeVals.ave.ToString("0.00")));
+            nodeResults.Add(string.Format("Node Visits, {0:F2} nodes, {1:F2} nodes, {2:F2} nodes", agentVals.min, agentVals.max, agentVals.ave.ToString("0.00")));
         } catch (Exception e) {
                 // Let the user know what went wrong.
                 Debug.Log("The Node file could not be read:");
