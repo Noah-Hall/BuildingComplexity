@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2020249750397368218, guid: c42cf61255d3e49669501f3ca52adb6c, type: 3}
       propertyPath: m_Name
-      value: Hallway Vert Variant
+      value: Hallway Vert
       objectReference: {fileID: 0}
     - target: {fileID: 4962521416896269854, guid: c42cf61255d3e49669501f3ca52adb6c, type: 3}
       propertyPath: m_RootOrder

@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7304045271671674072, guid: bf7920cbdf54140a98b47ac3443d5056, type: 3}
       propertyPath: m_Name
-      value: Bottom Right Corner Door Bottom Variant
+      value: Corner Bottom Right Door Bottom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

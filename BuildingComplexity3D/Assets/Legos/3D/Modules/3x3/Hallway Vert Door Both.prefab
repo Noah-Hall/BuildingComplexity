@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8373739400418799227, guid: 574c98e72450e43739ae6c626f4fd553, type: 3}
       propertyPath: m_Name
-      value: Hallway Vert Door Both Variant
+      value: Hallway Vert Door Both
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

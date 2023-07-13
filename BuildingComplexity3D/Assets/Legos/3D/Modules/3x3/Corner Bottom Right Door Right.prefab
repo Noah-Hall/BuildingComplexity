@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1288301141508459967, guid: be0ed3dd5c4b84a65a2c3228edef721b, type: 3}
       propertyPath: m_Name
-      value: Bottom Right Corner Door Right Variant
+      value: Corner Bottom Right Door Right
       objectReference: {fileID: 0}
     - target: {fileID: 6227753159374440884, guid: be0ed3dd5c4b84a65a2c3228edef721b, type: 3}
       propertyPath: m_RootOrder

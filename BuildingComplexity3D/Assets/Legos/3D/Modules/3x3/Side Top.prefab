@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5112715736911565171, guid: 48e6a6e2471224e0c903cbd4c9858792, type: 3}
       propertyPath: m_Name
-      value: Top Variant
+      value: Side Top
       objectReference: {fileID: 0}
     - target: {fileID: 8576993050669892162, guid: 48e6a6e2471224e0c903cbd4c9858792, type: 3}
       propertyPath: m_RootOrder

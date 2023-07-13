@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3380561306692846336, guid: b16ab0fd04cca44568dd3f7466bd2891, type: 3}
       propertyPath: m_Name
-      value: Side Top Door Variant
+      value: Side Top Door
       objectReference: {fileID: 0}
     - target: {fileID: 3769473718525332554, guid: b16ab0fd04cca44568dd3f7466bd2891, type: 3}
       propertyPath: m_RootOrder

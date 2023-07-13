@@ -9,12 +9,18 @@ using UnityEngine;
 public class ManagerScript : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    float targetZoom;
-    
+    private float targetZoom;
+    public AgentSpawner spawner;
+    public bool spawnAgents;
+
     // Sets camera
     // names all important objects in scene for coherant LogFiles
     void Awake()
     {
+        spawnAgents = true;
+        if (spawnAgents) {
+            spawner = GameObject.Find("Smart Agent Spawner").GetComponent<AgentSpawner>();
+        }
         Camera.main.orthographicSize = 16;
         GameObject[] moduleNodes = GameObject.FindGameObjectsWithTag("ModuleNode");
         GameObject[] roomNodes = GameObject.FindGameObjectsWithTag("RoomNode");
@@ -23,7 +29,9 @@ public class ManagerScript : MonoBehaviour
         GameObject[] smartAgents = GameObject.FindGameObjectsWithTag("Smart Agent");
         
         for(int i = 1; i < doors.Length + 1; i++) {
-            doors[i - 1].name = "door " + i;
+            if (doors[i - 1].activeInHierarchy) {
+                doors[i - 1].name = "door " + i;
+            }
         }
 
         for(int i = 1; i < exits.Length + 1; i++) {
@@ -31,11 +39,18 @@ public class ManagerScript : MonoBehaviour
         }
 
         for(int i = 1; i < moduleNodes.Length + 1; i++) {
-            moduleNodes[i - 1].name = "module node " + i;
+            if (moduleNodes[i - 1].activeInHierarchy) {
+                moduleNodes[i - 1].name = "module node " + i;
+            }
         }
 
         for(int i = 1; i < roomNodes.Length + 1; i++) {
-            roomNodes[i - 1].name = "room node " + i;
+            if (roomNodes[i - 1].activeInHierarchy) {
+                if (spawnAgents) {
+                    spawner.Spawn(roomNodes[i - 1].transform.position);
+                }
+                roomNodes[i - 1].name = "room node " + i;
+            }
         }
 
         for(int i = 1; i < smartAgents.Length + 1; i++) {

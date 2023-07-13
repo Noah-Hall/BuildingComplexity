@@ -62,13 +62,19 @@ public class FileManager: MonoBehaviour
         wt = new StreamWriter(ResultRecordFile, false);
         wt.WriteLine("Category, Minimun, Maximum, Average");
         wt.Close();
+
+        SaveFloorplan();
+    }
+
+    public void SaveFloorplan() {
+        ScreenCapture.CaptureScreenshot(Application.dataPath + ("/LogFiles/" + FolderName + "/_Floorplan.png"));
     }
     
     // writes a formatted line to Node.csv
     public void WriteStringNode(GameObject agent, GameObject node)
     {
         string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString();
-        string tempWrite = string.Format("{0}, {1}, {2}-X, {3}-Z, {4} seconds", agent.name, node.name, Mathf.Round(node.transform.position.x * 100f) / 100f, Mathf.Round(node.transform.position.z * 100f) / 100f, tempTime);
+        string tempWrite = string.Format("{0}, {1}, {2}, {3}, {4} ", agent.name, node.name, Mathf.Round(node.transform.position.x * 100f) / 100f, Mathf.Round(node.transform.position.z * 100f) / 100f, tempTime);
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(NodeRecordFile, true);
         writer.WriteLine(tempWrite);
@@ -83,7 +89,7 @@ public class FileManager: MonoBehaviour
     public void WriteStringDoor(GameObject agent, GameObject door)
     {
         string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString();
-        string tempWrite = string.Format("{0}, {1}, {2}-X, {3}-Z, {4} seconds", agent.name, door.name, Mathf.Round(door.transform.position.x * 100f) / 100f, Mathf.Round(door.transform.position.z * 100f) / 100f, tempTime);
+        string tempWrite = string.Format("{0}, {1}, {2}, {3}, {4} ", agent.name, door.name, Mathf.Round(door.transform.position.x * 100f) / 100f, Mathf.Round(door.transform.position.z * 100f) / 100f, tempTime);
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(DoorRecordFile, true);
         writer.WriteLine(tempWrite);
@@ -98,7 +104,7 @@ public class FileManager: MonoBehaviour
     public void WriteStringExit(GameObject agent, GameObject exit)
     {
         string tempTime = (Mathf.Round(Time.time * 100f) / 100f).ToString();
-        string tempWrite = string.Format("{0}, {1}, {2}-X, {3}-Z, {4} seconds", agent.name, exit.name, Mathf.Round(exit.transform.position.x * 100f) / 100f, Mathf.Round(exit.transform.position.z * 100f) / 100f, tempTime);
+        string tempWrite = string.Format("{0}, {1}, {2}, {3}, {4} ", agent.name, exit.name, Mathf.Round(exit.transform.position.x * 100f) / 100f, Mathf.Round(exit.transform.position.z * 100f) / 100f, tempTime);
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(ExitRecordFile, true);
         writer.WriteLine(tempWrite);
@@ -147,10 +153,14 @@ public class FileManager: MonoBehaviour
             GameObject[] moduleNodes = GameObject.FindGameObjectsWithTag("ModuleNode");
             GameObject[] roomNodes = GameObject.FindGameObjectsWithTag("RoomNode");
             foreach(GameObject node in moduleNodes) {
-                nodeDict.Add(node.name, 0);
+                if (node.activeInHierarchy) {
+                    nodeDict.Add(node.name, 0);
+                }
             }
             foreach(GameObject node in roomNodes) {
-                nodeDict.Add(node.name, 0);
+                if (node.activeInHierarchy) {
+                    nodeDict.Add(node.name, 0);
+                }
             }
             GameObject[] agentList = GameObject.FindGameObjectsWithTag("Smart Agent");
             foreach(GameObject agent in agentList) {
@@ -218,7 +228,9 @@ public class FileManager: MonoBehaviour
 
             GameObject[] doorList = GameObject.FindGameObjectsWithTag("Door");
             foreach(GameObject door in doorList) {
-                doorDict.Add(door.name, 0);
+                if (door.activeInHierarchy) {
+                    doorDict.Add(door.name, 0);
+                }
             }
             GameObject[] agentList = GameObject.FindGameObjectsWithTag("Smart Agent");
             foreach(GameObject agent in agentList) {
