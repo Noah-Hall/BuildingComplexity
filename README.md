@@ -7,10 +7,13 @@ This exploration is done with the goal of determining the ***EASE*** (Evacuation
 ## **Smart Agents** Info:
 ### Priority List
 - Search for closest **Exit** in LOS within 50 meters
+- Search for closest **Stair** in LOS within 50 meters
 - Search for closest **Door** in LOS within 50 meters (priority to least visited)
 - Search for closest **Node** in LOS within 50 meters (priority to least visited)
 ### Specific Behavior 
-- Ignore a close **Door** in order to reach a further **Exit**
+- Ignore a close **Stair**, **Door**, or **Node** in order to reach a further **Exit**
+- Ignore a close more-visited **Stair** to reach a further less-visited **Stair**
+- Ignore a close **Door** to reach a further **Stair**
 - Ignore a close more-visited **Door** to reach a futher less-visited **Door**
 - Ignore a close **Node** in order to reach a further **Door**
 - Ignore a close more-visited **Node** to reach a further less-visited **Node**

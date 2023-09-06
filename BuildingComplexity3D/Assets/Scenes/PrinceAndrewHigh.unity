@@ -2152,6 +2152,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 566231425173773511, guid: 62ab750c10a5d4cbea0509c5aa3fb238, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 501389157}
+    - target: {fileID: 566231425173773511, guid: 62ab750c10a5d4cbea0509c5aa3fb238, type: 3}
+      propertyPath: spawnAgents
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1976465509013641156, guid: 62ab750c10a5d4cbea0509c5aa3fb238, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7410,6 +7418,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28ab688eab4354292b5d41d96b49476e, type: 3}
+--- !u!114 &501389157 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5746497219307232657, guid: 061f70ba9e27e4053b113055493d391e, type: 3}
+  m_PrefabInstance: {fileID: 8723180577775059350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ef24830c0ea4b2fba7666bf10eefb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &505505565
 GameObject:
   m_ObjectHideFlags: 0

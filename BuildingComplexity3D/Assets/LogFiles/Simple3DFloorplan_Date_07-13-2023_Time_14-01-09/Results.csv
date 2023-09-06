@@ -1,7 +1,0 @@
-Category, Minimun, Maximum, Average
-Node Records, module node 13 : 0 agents, module node 10 : 3 agents, 1.08 agents
-Node Visits, SmartAgent3D(Clone) : 27 nodes, SmartAgent3D(Clone) : 27 nodes, 27.00 nodes
-Door Records, door 10 : 0 agents, door 13 : 2 agents, 0.67 agents
-Door Visits, SmartAgent3D(Clone) : 16 doors, SmartAgent3D(Clone) : 16 doors, 16.00 doors
-Exit Records, exit 4 : 2 agents, exit 3 : 5 agents, 3.00 agents
-Exit Time, 4.58 seconds, 9.88 seconds, 6.40 seconds
