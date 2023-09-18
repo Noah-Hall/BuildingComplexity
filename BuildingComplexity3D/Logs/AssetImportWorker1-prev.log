@@ -9,13 +9,13 @@ C:\Program Files\Unity\Hub\Editor\2022.2.14f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker0
+AssetImportWorker1
 -projectPath
 C:/Users/ktnelson/Desktop/BuildingComplexity/BuildingComplexity3D
 -logFile
-Logs/AssetImportWorker0.log
+Logs/AssetImportWorker1.log
 -srvPort
-62910
+58587
 Successfully changed project path to: C:/Users/ktnelson/Desktop/BuildingComplexity/BuildingComplexity3D
 C:/Users/ktnelson/Desktop/BuildingComplexity/BuildingComplexity3D
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/ktnelson/Desktop/BuildingComplexity/BuildingComplexity3D
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [19972] Host "[IP] 10.24.221.83 [Port] 0 [Flags] 2 [Guid] 2753023687 [EditorId] 2753023687 [Version] 1048832 [Id] WindowsEditor(7,Gossamer) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [16800] Host "[IP] 10.24.221.83 [Port] 0 [Flags] 2 [Guid] 1431564650 [EditorId] 1431564650 [Version] 1048832 [Id] WindowsEditor(7,Gossamer) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [19972] Host "[IP] 10.24.221.83 [Port] 0 [Flags] 2 [Guid] 2753023687 [EditorId] 2753023687 [Version] 1048832 [Id] WindowsEditor(7,Gossamer) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [16800] Host "[IP] 10.24.221.83 [Port] 0 [Flags] 2 [Guid] 1431564650 [EditorId] 1431564650 [Version] 1048832 [Id] WindowsEditor(7,Gossamer) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 1213.97 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 4.65 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.14f1 (b2c9b1ac6cc0)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Resources/UnitySubsystems
@@ -67,41 +67,41 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56976
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56596
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003686 seconds.
-- Loaded All Assemblies, in  4.699 seconds
+Registered in 0.003048 seconds.
+- Loaded All Assemblies, in  0.228 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.175 seconds
+- Finished resetting the current domain, in  0.166 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4128ms)
-		BeginReloadAssembly (3758ms)
+	ReloadAssembly (146ms)
+		BeginReloadAssembly (85ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-			LoadAssemblies (3757ms)
+			LoadAssemblies (83ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (567ms)
-				TypeCache.Initialize (566ms)
-					TypeCache.ScanAssembly (565ms)
+			SetupTypeCache (78ms)
+				TypeCache.Initialize (77ms)
+					TypeCache.ScanAssembly (76ms)
 				ResolveRequiredComponents (0ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (136ms)
+			SetupLoadedEditorAssemblies (129ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (5ms)
 				RefreshPlugins (0ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (90ms)
-				ProcessInitializeOnLoadMethodAttributes (35ms)
+				ProcessInitializeOnLoadAttributes (87ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -111,48 +111,48 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\ktnelson\Desktop\BuildingComplexity\BuildingComplexity3D\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\ktnelson\Desktop\BuildingComplexity\BuildingComplexity3D\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  4.904 seconds
-Refreshing native plugins compatible for Editor in 1.82 ms, found 6 plugins.
+- Loaded All Assemblies, in  0.457 seconds
+Refreshing native plugins compatible for Editor in 1.80 ms, found 6 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.321 seconds
+- Finished resetting the current domain, in  0.313 seconds
 Domain Reload Profiling:
-	ReloadAssembly (140ms)
-		BeginReloadAssembly (86ms)
+	ReloadAssembly (132ms)
+		BeginReloadAssembly (82ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (14ms)
-		LoadAllAssembliesAndSetupDomain (4763ms)
-			LoadAssemblies (4422ms)
+			CreateAndSetChildDomain (15ms)
+		LoadAllAssembliesAndSetupDomain (323ms)
+			LoadAssemblies (170ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (384ms)
-				TypeCache.Initialize (372ms)
-					TypeCache.ScanAssembly (369ms)
+			SetupTypeCache (190ms)
+				TypeCache.Initialize (177ms)
+					TypeCache.ScanAssembly (174ms)
 				ResolveRequiredComponents (2ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (226ms)
+			SetupLoadedEditorAssemblies (218ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (3ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (37ms)
-				ProcessInitializeOnLoadAttributes (166ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
+				BeforeProcessingInitializeOnLoad (35ms)
+				ProcessInitializeOnLoadAttributes (162ms)
+				ProcessInitializeOnLoadMethodAttributes (12ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 2.08 ms, found 6 plugins.
+			AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.84 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3277 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 37 unused Assets / (69.3 KB). Loaded Objects now: 3736.
-Memory consumption went from 114.8 MB to 114.8 MB.
-Total: 3.036400 ms (FindLiveObjects: 0.223000 ms CreateObjectMapping: 0.097400 ms MarkObjects: 2.622700 ms  DeleteObjects: 0.092000 ms)
+Memory consumption went from 114.8 MB to 114.7 MB.
+Total: 2.287800 ms (FindLiveObjects: 0.160000 ms CreateObjectMapping: 0.068900 ms MarkObjects: 1.975700 ms  DeleteObjects: 0.082200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -168,84 +168,76 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 215998.791612 seconds.
-  path: Assets/Objects/Agents/SmartAgent3D.prefab
-  artifactKey: Guid(d302beabe46ba4bf6903eea289309809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Agents/SmartAgent3D.prefab using Guid(d302beabe46ba4bf6903eea289309809) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc0401a6dec255c40ba94ec591330e1b') in 0.137754 seconds
+  Time since last request: 211803.787837 seconds.
+  path: Assets/Objects/Legos
+  artifactKey: Guid(3359aa54951aa4a54be53f5d2b929f5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos using Guid(3359aa54951aa4a54be53f5d2b929f5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27663235a2f56b56cdd43c1a652de524') in 0.001247 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 8.635488 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Corner Bottom Left Door Bottom.prefab
-  artifactKey: Guid(396f0c5af67ac4adc8e415a48ce16e63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Corner Bottom Left Door Bottom.prefab using Guid(396f0c5af67ac4adc8e415a48ce16e63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d73d48e0ac5d5b33e549f4216b504a8') in 0.012250 seconds
+  Time since last request: 0.000016 seconds.
+  path: Assets/Objects
+  artifactKey: Guid(7724972c611b741cfb47bf730269e7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects using Guid(7724972c611b741cfb47bf730269e7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a3b36f2ffa464b1a2c980f85c4fac31') in 0.000425 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 92
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.001158 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Corner Bottom Right Door Right.prefab
-  artifactKey: Guid(7f33e39c453c84aa6803e2fed20dbbee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Corner Bottom Right Door Right.prefab using Guid(7f33e39c453c84aa6803e2fed20dbbee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f0d5bec8d2540a249f0e86c2b35ded0') in 0.026057 seconds
+  Time since last request: 5.241083 seconds.
+  path: Assets/Objects/Legos/3D/Rooms/7x9 Room Door Middle Bottom.prefab
+  artifactKey: Guid(98eaa9365c9b24585961a287ceeb563e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos/3D/Rooms/7x9 Room Door Middle Bottom.prefab using Guid(98eaa9365c9b24585961a287ceeb563e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b872d0c5651edd6947f4e5f5bda0a5c') in 0.352456 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 201
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Corner Top Right.prefab
-  artifactKey: Guid(0bb20045d1e9a409ea2792815ac17b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Corner Top Right.prefab using Guid(0bb20045d1e9a409ea2792815ac17b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1f36d6d7982363ddc8c52cc838705fe') in 0.011687 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 127
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Deadend Right Door.prefab
-  artifactKey: Guid(e12ec69aefcc24d54b747ac8e23e1cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Deadend Right Door.prefab using Guid(e12ec69aefcc24d54b747ac8e23e1cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '326fdaf65faecc0bdd0ce47412b827b7') in 0.012626 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 184
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Deadend Left Door.prefab
-  artifactKey: Guid(1528130e765244c33a00f9d9ca642e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Deadend Left Door.prefab using Guid(1528130e765244c33a00f9d9ca642e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace6d01522d1980e37ac9f3227db745c') in 0.012412 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 99
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Hallway Vert Door Right.prefab
-  artifactKey: Guid(bb4525bf8271a4ed8852dcbb1f6d2262) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Hallway Vert Door Right.prefab using Guid(bb4525bf8271a4ed8852dcbb1f6d2262) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '204d79e6d879662fc06c80554b1cca60') in 0.010051 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 92
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Side Bottom.prefab
-  artifactKey: Guid(2f3882ce9fb634001a2d4d70899775d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Side Bottom.prefab using Guid(2f3882ce9fb634001a2d4d70899775d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b6b31a0ad45abd8f8c2360e926b8a9a') in 0.023157 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 110
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Side Top.prefab
-  artifactKey: Guid(54f774ab487b44e21b3bc5f0382a5b4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Side Top.prefab using Guid(54f774ab487b44e21b3bc5f0382a5b4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11c562716b8d0c68de404687319d0128') in 0.025394 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 74
+Number of asset objects unloaded after import = 666
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/Objects/Legos/3D/Modules/3x3/Deadend Bottom Door.prefab
-  artifactKey: Guid(9b68be009b7d7459aa1e6d458df0d56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Legos/3D/Modules/3x3/Deadend Bottom Door.prefab using Guid(9b68be009b7d7459aa1e6d458df0d56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3936c8241fce79f516b84c009c6e95e5') in 0.017761 seconds
+  path: Assets/Objects/Legos/3D/Rooms/9x9 Room Door Bottom Right.prefab
+  artifactKey: Guid(1496d87b6d6c648bcade00db51dfbaab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos/3D/Rooms/9x9 Room Door Bottom Right.prefab using Guid(1496d87b6d6c648bcade00db51dfbaab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cf24f43e90a7d6320788f058105a855') in 0.021135 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 226
+Number of asset objects unloaded after import = 547
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Objects/Legos/3D/Rooms/9x9 Room Doors Top Right+Left Middle.prefab
+  artifactKey: Guid(dc4557087e56a46bd862c1f4f8862194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos/3D/Rooms/9x9 Room Doors Top Right+Left Middle.prefab using Guid(dc4557087e56a46bd862c1f4f8862194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b98fed78b3981571bf67885324d0699') in 0.030153 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 557
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Objects/Legos/3D/Rooms/9x7 Room Door Bottom Left.prefab
+  artifactKey: Guid(a5e35a17e1aad4badb1cf4a36b6184f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos/3D/Rooms/9x7 Room Door Bottom Left.prefab using Guid(a5e35a17e1aad4badb1cf4a36b6184f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '334bc5c7e8de599e7413a9d72fa291e7') in 0.013052 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 536
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Objects/Legos/3D/Rooms/9x6 Room Door Bottom Left.prefab
+  artifactKey: Guid(ee109a954c2ab4a26a7284470d61b6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos/3D/Rooms/9x6 Room Door Bottom Left.prefab using Guid(ee109a954c2ab4a26a7284470d61b6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54a3cc99f5eeb2b62dd40fdf860a6af7') in 0.013289 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 400
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Objects/Legos/3D/Rooms/9x9 Room Door Top Right.prefab
+  artifactKey: Guid(5c62581ffc67444318f64019441fe59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos/3D/Rooms/9x9 Room Door Top Right.prefab using Guid(5c62581ffc67444318f64019441fe59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73b74983ca2186a6e9aea51b9fc58a10') in 0.015744 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 543
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Objects/Legos/3D/Rooms/9x9 Room Door Bottom Left.prefab
+  artifactKey: Guid(a0a96052112e44e60bb331fe39013250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos/3D/Rooms/9x9 Room Door Bottom Left.prefab using Guid(a0a96052112e44e60bb331fe39013250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c663fe081ef6e43b873f5db55e3d21a4') in 0.013824 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 471
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
 AssetImportWorker is now disconnected from the server
