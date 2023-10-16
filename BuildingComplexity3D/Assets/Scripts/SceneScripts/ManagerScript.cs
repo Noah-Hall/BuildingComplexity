@@ -27,6 +27,7 @@ public class ManagerScript : MonoBehaviour
         Camera.main.orthographicSize = 16;
         GameObject[] moduleNodes = GameObject.FindGameObjectsWithTag("ModuleNode");
         GameObject[] roomNodes = GameObject.FindGameObjectsWithTag("RoomNode");
+        GameObject[] intersectionNodes = GameObject.FindGameObjectsWithTag("IntersectionNode");
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
         GameObject[] exits = GameObject.FindGameObjectsWithTag("Exit");
         GameObject[] stairs = GameObject.FindGameObjectsWithTag("Stair");
@@ -45,6 +46,12 @@ public class ManagerScript : MonoBehaviour
         for(int i = 1; i < moduleNodes.Length + 1; i++) {
             if (moduleNodes[i - 1].activeInHierarchy) {
                 moduleNodes[i - 1].name = "module node " + i;
+            }
+        }
+
+        for(int i = 1; i < intersectionNodes.Length + 1; i++) {
+            if (intersectionNodes[i - 1].activeInHierarchy) {
+                intersectionNodes[i - 1].name = "intersection node " + i;
             }
         }
 
