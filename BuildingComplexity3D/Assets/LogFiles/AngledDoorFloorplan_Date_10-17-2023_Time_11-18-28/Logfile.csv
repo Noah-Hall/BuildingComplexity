@@ -1,0 +1,12 @@
+Object Name, Agent Name, Position-X, Position-Z, Time (Seconds)
+module node 10, smart agent 1, -15.18, -0.40, 0.96
+door 5, smart agent 1, -13.74, -0.40, 1.44
+door 5, smart agent 1, -13.74, -0.40, 1.66
+door 5, smart agent 1, -13.74, -0.40, 2.80
+door 5, smart agent 1, -13.74, -0.40, 3.02
+door 5, smart agent 1, -13.74, -0.40, 3.24
+module node 13, smart agent 1, -18.18, 2.60, 5.56
+door 8, smart agent 1, -18.18, 4.04, 6.04
+door 8, smart agent 1, -18.18, 4.04, 6.98
+module node 13, smart agent 1, -18.18, 2.60, 7.64
+module node 12, smart agent 1, -21.18, -0.40, 9.12

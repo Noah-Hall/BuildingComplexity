@@ -41,12 +41,12 @@ public class AgentBehaviorSmart : MonoBehaviour
     }
 
     // sets targetBound to false if agent has reached target
-    private void Update()
-    {
-        if (transform.position == navMeshAgent.destination) {
-            targetBound = false;
-        }
-    }
+    // private void Update()
+    // {
+    //     if (transform.position == navMeshAgent.destination) {
+    //         targetBound = false;
+    //     }
+    // }
 
     // calls FieldOfViewCheck 5 times a second (this is more optimal than every frame)
     private IEnumerator FOVRoutine() 
@@ -61,7 +61,7 @@ public class AgentBehaviorSmart : MonoBehaviour
     private IEnumerator Cooldown()
     {
         reachedCooldown = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.2f);
         reachedCooldown = false;
     }
 
@@ -69,6 +69,9 @@ public class AgentBehaviorSmart : MonoBehaviour
     // Sets that "target" as agent's destination
     private void FieldOfViewCheck()
     {
+        if (reachedCooldown) {
+            return;
+        }
         targetBound = false;
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
         if (rangeChecks.Length > 0) {
@@ -108,13 +111,11 @@ public class AgentBehaviorSmart : MonoBehaviour
             if (targetBound) {
                 navMeshAgent.destination = closest.transform.position;
                 targetObject = closest;
+                transform.LookAt(navMeshAgent.destination);
             } else {
-                // Debug.Log("FOV Check targetBound else");
                 Debug.Log(gameObject.name + " stranded. Try adding Nodes to scene to prevent \"dead zones\"");
             }
-            // Debug.Log("Agent Target Location: " + navMeshAgent.destination + "\ntarget: " + targetObject + "\ntag: " + targetObject.tag);
         } else {
-            // Debug.Log("FOV Check else");
             Debug.Log(gameObject.name + " stranded. Try adding Nodes to scene to prevent \"dead zones\"");
         }
     }
@@ -122,11 +123,46 @@ public class AgentBehaviorSmart : MonoBehaviour
     // Method called by TargetScript when agent triggers object
     public void TargetReached(GameObject target)
     {
+        targetBound = false;
         StartCoroutine(Cooldown());
         visitedTargets[target] = visitedTargets[target] + 1;
         if (target.layer == LayerMask.NameToLayer("Doors")) {
-            Vector3 move = transform.forward;
-            navMeshAgent.Move(move);
+            Vector3 move = navMeshAgent.destination;
+            // use y rotation of transform to find direction of agent and use direction to find vector of other side of door
+            // (1.111111111 * (y-rotation % 90)) / 100 = x
+            // z = 1.0 - x
+            int switch_direction = (int)(transform.eulerAngles.y) / 90;
+            float x, z;
+            switch (switch_direction) {
+                // down
+                case 0:
+                    x = (1.111111111f * (transform.eulerAngles.y % 90f)) / 100f;
+                    z = 1f - x;
+                    move = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
+                    break;
+                // left
+                case 1:
+                    x = (1.111111111f * (transform.eulerAngles.y % 90f)) / 100f;
+                    z = 1f - x;
+                    move = new Vector3(transform.position.x + x, transform.position.y, transform.position.z - z);
+                    break;
+                // up
+                case 2:
+                    x = (1.111111111f * (transform.eulerAngles.y % 90f)) / 100f;
+                    z = 1f - x;
+                    move = new Vector3(transform.position.x - x, transform.position.y, transform.position.z - z);
+                    break;
+                // right
+                default:
+                    x = (1.111111111f * (transform.eulerAngles.y % 90f)) / 100f;
+                    z = 1f - x;
+                    move = new Vector3(transform.position.x - x, transform.position.y, transform.position.z + z);
+                    break;
+
+            }
+            // Debug.Log("---TargetReached---\nx: " + x + ", z: " + z + "\nY-rotation: " + transform.eulerAngles.y + "\nswitch_dir: " + switch_direction);
+            navMeshAgent.destination = move;
+            transform.LookAt(navMeshAgent.destination);
         }
     }
 
