@@ -1,0 +1,7 @@
+Category, Minimun, Min Count, Maximum, Max Count, Average
+Node Records, room node 44 : 0 agents, 154 nodes, smart agent 14 : 24 agents, 2 nodes, 1.41 agents
+Node Visits, smart agent 10 : 0 nodes, 1 agents, exit 1 : 15 nodes, 1 agents, 2.39 nodes
+Door Records, door 109 : 0 agents, 109 doors, smart agent 14 : 24 agents, 2 doors, 1.83 agents
+Door Visits, smart agent 10 : 0 doors, 1 agents, exit 1 : 15 doors, 1 agents, 2.39 doors
+Exit Records, exit 5 : 0 agents, 5 exits, smart agent 14 : 24 agents, 2 exits, 5.71 agents
+Exit Time, 0.00 seconds, 45, 47.72 seconds, 2, 9.76 seconds
