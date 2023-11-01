@@ -93,8 +93,9 @@ public class FileManager: MonoBehaviour
         ScreenCapture.CaptureScreenshot(Application.dataPath + ("/LogFiles/" + FolderName + "/_Floorplan.png"));
     }
 
-    public void GenerateFloorplanData(int nodes, int doors, int exits, int stairwells, int floors) {
+    public void GenerateFloorplanData(float size, int nodes, int doors, int exits, int stairwells, int floors) {
         TextWriter wt = new StreamWriter(FloorplanFile, false);
+        wt.WriteLine("Square Meters: " + size);
         wt.WriteLine("Number of Nodes: " + nodes);
         wt.WriteLine("Number of Doors: " + doors);
         wt.WriteLine("Number of Exits: " + exits);

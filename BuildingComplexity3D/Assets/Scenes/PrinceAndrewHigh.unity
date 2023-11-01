@@ -4124,6 +4124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmartAgent3D
       objectReference: {fileID: 0}
+    - target: {fileID: 4420779287126334193, guid: d302beabe46ba4bf6903eea289309809, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13008,6 +13012,14 @@ PrefabInstance:
     - target: {fileID: 474792511088447257, guid: 28ab688eab4354292b5d41d96b49476e, type: 3}
       propertyPath: m_Name
       value: floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209910249318457791, guid: 28ab688eab4354292b5d41d96b49476e, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209910249318457791, guid: 28ab688eab4354292b5d41d96b49476e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5854325237948447035, guid: 28ab688eab4354292b5d41d96b49476e, type: 3}
       propertyPath: m_RootOrder

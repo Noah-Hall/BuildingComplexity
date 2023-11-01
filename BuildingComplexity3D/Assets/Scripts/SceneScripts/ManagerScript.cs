@@ -80,10 +80,15 @@ public class ManagerScript : MonoBehaviour
         FillStairwells();
 
         //calculate floor area
-        int floorArea = 0;
+        // float floorAreaC = 0; // for collider calculation (removed)
+        float floorAreaS = 0;
         foreach(GameObject floor in floors) {
             // Vector3 size = floor.GetComponent<Collider>().bounds.size;
+            // floorAreaC += size.x * size.z;
+            float tempArea = floor.transform.localScale.x * floor.transform.localScale.z;
+            floorAreaS += tempArea;
         }
+        Debug.Log("Square Meters Colliders: " + floorAreaC + "\nSquare Meters Local Scale: " + floorAreaS);
 
         GameObject[] smartAgents = GameObject.FindGameObjectsWithTag("Smart Agent");
         
@@ -97,7 +102,7 @@ public class ManagerScript : MonoBehaviour
             testAgents[i - 1].name = "test agent " + i;
         }
 
-        gameObject.GetComponent<FileManager>().GenerateFloorplanData(moduleNodes.Length + roomNodes.Length, doors.Length, exits.Length, _stairwellNum, navMeshes.Length);
+        gameObject.GetComponent<FileManager>().GenerateFloorplanData(floorAreaS, moduleNodes.Length + roomNodes.Length, doors.Length, exits.Length, _stairwellNum, navMeshes.Length);
     }
 
     public Stairwell GetStairwell(int num)

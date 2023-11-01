@@ -69,9 +69,6 @@ public class AgentBehaviorSmart : MonoBehaviour
     // Sets that "target" as agent's destination
     private void FieldOfViewCheck()
     {
-        if (reachedCooldown) {
-            return;
-        }
         targetBound = false;
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
         if (rangeChecks.Length > 0) {
@@ -197,7 +194,8 @@ public class AgentBehaviorSmart : MonoBehaviour
                 return TargetsEnum.DOOR;
                 break;
             case var value when value == LayerMask.NameToLayer("Nodes"):
-                if (target.tag == "IntersectionNode") {
+                bool unvisited = visitedTargets[target] < 1;
+                if (target.tag == "IntersectionNode" && unvisited) {
                     return TargetsEnum.INTERSECTION;
                 }
                 return TargetsEnum.NODE;
