@@ -1,0 +1,33 @@
+Object Name, Agent Name, Position-X, Position-Z, Time (Seconds)
+module node 10, smart agent 1, -15.18, -0.40, 0.96
+door 5, smart agent 1, -13.74, -0.40, 1.44
+door 5, smart agent 1, -13.74, -0.40, 3.34
+module node 10, smart agent 1, -15.18, -0.40, 4.02
+module node 12, smart agent 1, -21.18, -0.40, 5.74
+door 7, smart agent 1, -22.62, -0.40, 6.20
+door 7, smart agent 1, -22.62, -0.40, 8.16
+door 7, smart agent 1, -22.62, -0.40, 8.22
+door 7, smart agent 1, -22.62, -0.40, 10.58
+door 7, smart agent 1, -22.62, -0.40, 13.18
+door 7, smart agent 1, -22.62, -0.40, 15.84
+module node 12, smart agent 1, -21.18, -0.40, 18.22
+module node 10, smart agent 1, -15.18, -0.40, 19.94
+door 5, smart agent 1, -13.74, -0.40, 20.42
+door 5, smart agent 1, -13.74, -0.40, 21.96
+door 5, smart agent 1, -13.74, -0.40, 22.44
+door 5, smart agent 1, -13.74, -0.40, 23.98
+door 5, smart agent 1, -13.74, -0.40, 24.46
+door 5, smart agent 1, -13.74, -0.40, 26.00
+door 5, smart agent 1, -13.74, -0.40, 26.48
+door 5, smart agent 1, -13.74, -0.40, 28.02
+door 5, smart agent 1, -13.74, -0.40, 28.50
+door 5, smart agent 1, -13.74, -0.40, 30.04
+door 5, smart agent 1, -13.74, -0.40, 30.52
+door 5, smart agent 1, -13.74, -0.40, 32.06
+door 5, smart agent 1, -13.74, -0.40, 32.54
+door 5, smart agent 1, -13.74, -0.40, 34.08
+door 5, smart agent 1, -13.74, -0.40, 34.56
+door 5, smart agent 1, -13.74, -0.40, 36.10
+door 5, smart agent 1, -13.74, -0.40, 36.58
+door 5, smart agent 1, -13.74, -0.40, 38.12
+door 5, smart agent 1, -13.74, -0.40, 38.60

@@ -1,0 +1,27 @@
+Object Name, First Visit, Last Visit, Total # of Visits
+module node 1, 2.02, 37.28, 5
+module node 2, 1.16, 36.44, 5
+module node 3, 20.76, 25.98, 3
+module node 4, 19.72, 24.96, 3
+module node 5, 18.86, 24.10, 3
+module node 6, 1.16, 28.12, 4
+module node 7, 16.78, 22.00, 3
+module node 8, 10.04, 13.28, 4
+module node 9, 4.96, 11.06, 5
+module node 10, 2.82, 16.28, 5
+module node 11, 10.26, 33.78, 4
+module node 12, 1.02, 6.92, 4
+module node 13, 4.84, 18.00, 5
+module node 14, 2.98, 32.06, 6
+module node 15, 11.28, 34.64, 4
+module node 16, 0.00, 0.00, 1
+module node 17, 2.06, 15.54, 5
+module node 18, 0.68, 14.40, 5
+module node 19, 17.70, 22.94, 3
+module node 20, 0.00, 26.98, 4
+module node 21, 15.66, 20.88, 3
+module node 22, 14.58, 19.76, 3
+module node 23, 24.90, 30.12, 3
+module node 24, 23.76, 28.98, 3
+door 1, 1.62, 36.88, 5
+exit 1, 2.48, 37.74, 5
