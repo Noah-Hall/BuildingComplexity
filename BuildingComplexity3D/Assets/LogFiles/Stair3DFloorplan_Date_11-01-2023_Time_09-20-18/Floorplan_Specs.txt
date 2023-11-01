@@ -1,6 +1,0 @@
-Square Meters: 1722
-Number of Nodes: 48
-Number of Doors: 38
-Number of Exits: 4
-Number of Stairwells: 1
-Number of Floors: 2
