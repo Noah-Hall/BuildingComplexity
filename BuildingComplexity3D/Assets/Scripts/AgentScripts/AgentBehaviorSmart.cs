@@ -25,6 +25,7 @@ public class AgentBehaviorSmart : MonoBehaviour
         List<GameObject> targets = new List<GameObject>();
         targets.AddRange(GameObject.FindGameObjectsWithTag("ModuleNode"));
         targets.AddRange(GameObject.FindGameObjectsWithTag("RoomNode"));
+        targets.AddRange(GameObject.FindGameObjectsWithTag("IntersectionNode"));
         targets.AddRange(GameObject.FindGameObjectsWithTag("Door"));
         targets.AddRange(GameObject.FindGameObjectsWithTag("Exit"));
         targets.AddRange(GameObject.FindGameObjectsWithTag("Stair"));
@@ -40,12 +41,12 @@ public class AgentBehaviorSmart : MonoBehaviour
     }
 
     // sets targetBound to false if agent has reached target
-    private void Update()
-    {
-        if (transform.position == navMeshAgent.destination) {
-            targetBound = false;
-        }
-    }
+    // private void Update()
+    // {
+    //     if (transform.position == navMeshAgent.destination) {
+    //         targetBound = false;
+    //     }
+    // }
 
     // calls FieldOfViewCheck 5 times a second (this is more optimal than every frame)
     private IEnumerator FOVRoutine() 
@@ -60,7 +61,7 @@ public class AgentBehaviorSmart : MonoBehaviour
     private IEnumerator Cooldown()
     {
         reachedCooldown = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.2f);
         reachedCooldown = false;
     }
 
@@ -73,147 +74,45 @@ public class AgentBehaviorSmart : MonoBehaviour
         if (rangeChecks.Length > 0) {
             GameObject closest = null;
             float closestDistance = float.MaxValue;
+            TargetsEnum closestEnum = TargetsEnum.UNKNOWN;
 
             foreach (Collider check in rangeChecks) {
                 Vector3 target = check.transform.position;
                 Vector3 direction = (target - transform.position).normalized;
                 float distance = Vector3.Distance(target, transform.position);
+                TargetsEnum checkEnum = GetTargetsEnum(check.gameObject);
 
                 if (!Physics.Raycast(transform.position, direction, distance, obstructionMask)) {
-                    if (closest == null) { 
+                    bool truth = checkEnum < closestEnum;
+                    TargetsEnum ch = checkEnum, cl = closestEnum;
+                    
+                    if (closest == null || checkEnum < closestEnum) { 
                         closest = check.gameObject;
                         targetBound = true;
                         closestDistance = distance;
-                    }
-                    switch(check.gameObject.layer) {
-                        case var value when value == LayerMask.NameToLayer("Exits"):
-                            if (closest.layer != LayerMask.NameToLayer("Exits") || distance < closestDistance) {
-                                targetBound = true;
-                                closest = check.gameObject;
-                                closestDistance = distance;
-                            }
-                            break;
-                        case var value when value == LayerMask.NameToLayer("Doors"):
-                            switch (closest.layer) {
-                                case var val when val == LayerMask.NameToLayer("Exits"):
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Doors"):
-                                    if (distance < closestDistance) {
-                                        if (visitedTargets[check.gameObject] <= visitedTargets[closest]) {
-                                            targetBound = true;
-                                            closest = check.gameObject;
-                                            closestDistance = distance;
-                                        }
-                                    } else if (visitedTargets[check.gameObject] < visitedTargets[closest]) {
-                                        targetBound = true;
-                                        closest = check.gameObject;
-                                        closestDistance = distance;
-                                    }
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Nodes"):
-                                    targetBound = true;
-                                    closest = check.gameObject;
-                                    closestDistance = distance;
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Stairs"):
-                                    if(closest.gameObject.GetComponent<StairScript>()._isExitFloor) {
-                                        targetBound = true;
-                                        closest = check.gameObject;
-                                        closestDistance = distance;
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    // Debug.Log("Default Reached");
-                                    break;
-                            }
-                            break;
-                        case var value when value == LayerMask.NameToLayer("Nodes"):
-                            switch (closest.layer) {
-                                case var val when val == LayerMask.NameToLayer("Exits"):
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Doors"):
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Nodes"):
-                                    if (distance < closestDistance) {
-                                        if (visitedTargets[check.gameObject] <= visitedTargets[closest]) {
-                                            targetBound = true;
-                                            closest = check.gameObject;
-                                            closestDistance = distance;
-                                        }
-                                    } else if (visitedTargets[check.gameObject] < visitedTargets[closest]) {
-                                        targetBound = true;
-                                        closest = check.gameObject;
-                                        closestDistance = distance;
-                                    }
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Stairs"):
-                                    if(closest.gameObject.GetComponent<StairScript>()._isExitFloor) {
-                                        targetBound = true;
-                                        closest = check.gameObject;
-                                        closestDistance = distance;
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    // Debug.Log("Default Reached");
-                                    break;
-                            }
-                            break;
-                        case var value when value == LayerMask.NameToLayer("Stairs"):
-                            switch (closest.layer) {
-                                case var val when val == LayerMask.NameToLayer("Exits"):
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Doors"):
-                                    if (check.gameObject.GetComponent<StairScript>()._isExitFloor) {
-                                        break;
-                                    }
-                                    targetBound = true;
-                                    closest = check.gameObject;
-                                    closestDistance = distance;
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Nodes"):
-                                    if (check.gameObject.GetComponent<StairScript>()._isExitFloor) {
-                                        break;
-                                    }
-                                    targetBound = true;
-                                    closest = check.gameObject;
-                                    closestDistance = distance;
-                                    break;
-                                case var val when val == LayerMask.NameToLayer("Stairs"):
-                                    if (distance < closestDistance) {
-                                        if (visitedTargets[check.gameObject] <= visitedTargets[closest]) {
-                                            targetBound = true;
-                                            closest = check.gameObject;
-                                            closestDistance = distance;
-                                        }
-                                    } else if (visitedTargets[check.gameObject] < visitedTargets[closest]) {
-                                        targetBound = true;
-                                        closest = check.gameObject;
-                                        closestDistance = distance;
-                                    }
-                                    break;
-                                default:
-                                    // Debug.Log("Default Reached");
-                                    break;
-                            }
-                            break;
-                        default:
-                            // Debug.Log("Default Reached");
-                            break;
+                        closestEnum = GetTargetsEnum(closest);
+                    } else if (checkEnum == closestEnum) {
+                        bool lessVisited = visitedTargets[check.gameObject] < visitedTargets[closest];
+                        bool closerEqualVisited = visitedTargets[check.gameObject] == visitedTargets[closest] && distance < closestDistance;
+                        if (lessVisited || closerEqualVisited) {
+                            closest = check.gameObject;
+                            targetBound = true;
+                            closestDistance = distance;
+                            closestEnum = GetTargetsEnum(closest);
+                        }
                     }
                 }
             }
+            
 
             if (targetBound) {
                 navMeshAgent.destination = closest.transform.position;
                 targetObject = closest;
+                transform.LookAt(navMeshAgent.destination);
             } else {
-                // Debug.Log("FOV Check targetBound else");
                 Debug.Log(gameObject.name + " stranded. Try adding Nodes to scene to prevent \"dead zones\"");
             }
         } else {
-            // Debug.Log("FOV Check else");
             Debug.Log(gameObject.name + " stranded. Try adding Nodes to scene to prevent \"dead zones\"");
         }
     }
@@ -221,11 +120,46 @@ public class AgentBehaviorSmart : MonoBehaviour
     // Method called by TargetScript when agent triggers object
     public void TargetReached(GameObject target)
     {
+        targetBound = false;
         StartCoroutine(Cooldown());
         visitedTargets[target] = visitedTargets[target] + 1;
         if (target.layer == LayerMask.NameToLayer("Doors")) {
-            Vector3 move = transform.forward;
-            navMeshAgent.Move(move);
+            Vector3 move = navMeshAgent.destination;
+            // use y rotation of transform to find direction of agent and use direction to find vector of other side of door
+            // (1.111111111 * (y-rotation % 90)) / 100 = x
+            // z = 1.0 - x
+            int switch_direction = (int)(transform.eulerAngles.y) / 90;
+            float x, z;
+            switch (switch_direction) {
+                // down
+                case 0:
+                    x = (1.111111111f * (transform.eulerAngles.y % 90f)) / 100f;
+                    z = 1f - x;
+                    move = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
+                    break;
+                // left
+                case 1:
+                    x = (1.111111111f * (transform.eulerAngles.y % 90f)) / 100f;
+                    z = 1f - x;
+                    move = new Vector3(transform.position.x + x, transform.position.y, transform.position.z - z);
+                    break;
+                // up
+                case 2:
+                    x = (1.111111111f * (transform.eulerAngles.y % 90f)) / 100f;
+                    z = 1f - x;
+                    move = new Vector3(transform.position.x - x, transform.position.y, transform.position.z - z);
+                    break;
+                // right
+                default:
+                    x = (1.111111111f * (transform.eulerAngles.y % 90f)) / 100f;
+                    z = 1f - x;
+                    move = new Vector3(transform.position.x - x, transform.position.y, transform.position.z + z);
+                    break;
+
+            }
+            // Debug.Log("---TargetReached---\nx: " + x + ", z: " + z + "\nY-rotation: " + transform.eulerAngles.y + "\nswitch_dir: " + switch_direction);
+            navMeshAgent.destination = move;
+            transform.LookAt(navMeshAgent.destination);
         }
     }
 
@@ -244,5 +178,30 @@ public class AgentBehaviorSmart : MonoBehaviour
         navMeshAgent.Move(move);
 
         return loc;
+    }
+
+    public TargetsEnum GetTargetsEnum(GameObject target)
+    {
+        switch(target.layer)
+        {
+            case var value when value == LayerMask.NameToLayer("Exits"):
+                return TargetsEnum.EXIT;
+                break;
+            case var value when value == LayerMask.NameToLayer("Stairs"):
+                return TargetsEnum.STAIR;
+                break;
+            case var value when value == LayerMask.NameToLayer("Doors"):
+                return TargetsEnum.DOOR;
+                break;
+            case var value when value == LayerMask.NameToLayer("Nodes"):
+                bool unvisited = visitedTargets[target] < 1;
+                if (target.tag == "IntersectionNode" && unvisited) {
+                    return TargetsEnum.INTERSECTION;
+                }
+                return TargetsEnum.NODE;
+                break;
+            default:
+                return TargetsEnum.UNKNOWN;
+        }
     }
 }

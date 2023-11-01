@@ -16,6 +16,7 @@ TagManager:
   - Test Agent
   - NavMesh
   - Border
+  - IntersectionNode
   layers:
   - Default
   - TransparentFX

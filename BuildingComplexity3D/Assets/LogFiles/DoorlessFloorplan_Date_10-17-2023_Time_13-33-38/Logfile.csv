@@ -1,0 +1,4 @@
+Object Name, Agent Name, Position-X, Position-Z, Time (Seconds)
+module node 20, smart agent 1, -0.94, -13.56, 0.00
+intersection node 3, smart agent 4, -9.94, -4.56, 0.00
+module node 16, smart agent 3, -0.94, 7.44, 0.00
