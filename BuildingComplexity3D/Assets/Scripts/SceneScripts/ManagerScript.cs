@@ -88,7 +88,7 @@ public class ManagerScript : MonoBehaviour
             float tempArea = floor.transform.localScale.x * floor.transform.localScale.z;
             floorAreaS += tempArea;
         }
-        Debug.Log("Square Meters Colliders: " + floorAreaC + "\nSquare Meters Local Scale: " + floorAreaS);
+        // Debug.Log("Square Meters Colliders: " + floorAreaC + "\nSquare Meters Local Scale: " + floorAreaS);
 
         GameObject[] smartAgents = GameObject.FindGameObjectsWithTag("Smart Agent");
         
