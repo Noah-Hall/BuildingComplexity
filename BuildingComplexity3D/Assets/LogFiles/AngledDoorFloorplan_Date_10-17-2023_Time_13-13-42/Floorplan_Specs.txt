@@ -1,5 +1,0 @@
-Number of Nodes: 16
-Number of Doors: 8
-Number of Exits: 0
-Number of Stairwells: 0
-Number of Floors: 0
