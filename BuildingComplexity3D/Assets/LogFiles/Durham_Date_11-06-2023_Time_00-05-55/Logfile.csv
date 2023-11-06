@@ -1,0 +1,685 @@
+Object Name, Agent Name, Position-X, Position-Z, Time (Seconds)
+room node 15, smart agent 15, -66.70, 36.60, 0.00
+room node 14, smart agent 14, -66.50, 24.90, 0.00
+room node 13, smart agent 13, -64.44, 1.45, 0.00
+room node 12, smart agent 12, -63.62, -6.55, 0.00
+room node 16, smart agent 16, -58.40, 38.70, 0.00
+room node 11, smart agent 11, -55.51, -6.59, 0.00
+room node 10, smart agent 10, -47.48, -7.24, 0.00
+room node 36, smart agent 36, -46.60, 9.50, 0.00
+room node 17, smart agent 17, -39.50, 37.10, 0.00
+room node 9, smart agent 9, -39.37, -7.28, 0.00
+room node 37, smart agent 37, -33.60, 5.30, 0.00
+room node 8, smart agent 8, -31.64, -7.12, 0.00
+room node 35, smart agent 35, -28.10, 14.40, 0.00
+room node 18, smart agent 18, -24.20, 28.70, 0.00
+room node 38, smart agent 38, -23.70, 4.30, 0.00
+room node 7, smart agent 7, -23.05, -7.16, 0.00
+room node 6, smart agent 6, -15.32, -7.00, 0.00
+room node 39, smart agent 39, -15.30, 5.00, 0.00
+room node 19, smart agent 19, -11.40, 36.00, 0.00
+room node 34, smart agent 34, -9.40, 14.70, 0.00
+room node 5, smart agent 5, -7.78, -7.25, 0.00
+room node 40, smart agent 40, -6.00, 5.20, 0.00
+room node 4, smart agent 4, -0.05, -7.09, 0.00
+room node 21, smart agent 21, 0.50, 42.20, 0.00
+room node 20, smart agent 20, 5.30, 30.70, 0.00
+room node 30, smart agent 30, 8.40, 17.20, 0.00
+room node 23, smart agent 23, 8.80, 46.70, 0.00
+room node 32, smart agent 32, 8.90, 9.10, 0.00
+room node 3, smart agent 3, 9.01, -5.71, 0.00
+room node 33, smart agent 33, 9.29, 13.87, 0.00
+room node 22, smart agent 22, 9.70, 40.20, 0.00
+room node 31, smart agent 31, 11.20, 4.60, 0.00
+room node 24, smart agent 24, 21.30, 38.00, 0.00
+room node 2, smart agent 2, 22.19, -6.43, 0.00
+room node 1, smart agent 1, 32.79, -7.06, 0.00
+room node 47, smart agent 47, 33.60, -23.20, 0.00
+room node 50, smart agent 50, 47.10, -17.00, 0.00
+room node 27, smart agent 27, 50.60, 6.40, 0.00
+room node 29, smart agent 29, 50.70, 22.70, 0.00
+room node 28, smart agent 28, 50.80, 14.70, 0.00
+room node 46, smart agent 46, 50.80, -32.30, 0.00
+room node 48, smart agent 48, 59.60, -18.60, 0.00
+room node 45, smart agent 45, 60.00, -32.90, 0.00
+room node 26, smart agent 26, 61.30, 15.00, 0.00
+room node 49, smart agent 49, 62.30, -9.20, 0.00
+room node 25, smart agent 25, 62.70, 38.20, 0.00
+room node 44, smart agent 44, 68.10, -31.30, 0.00
+room node 43, smart agent 43, 70.00, -40.80, 0.00
+room node 52, smart agent 52, 71.32, 2.32, 0.00
+room node 41, smart agent 41, 75.80, -19.60, 0.00
+room node 51, smart agent 51, 77.80, -0.60, 0.00
+room node 42, smart agent 42, 78.10, -40.80, 0.00
+door 56, smart agent 31, 10.36, 3.04, 0.88
+door 24, smart agent 31, 10.36, 2.92, 0.92
+door 124, smart agent 52, 68.53, 2.61, 1.18
+door 111, smart agent 52, 68.41, 2.61, 1.24
+door 4, smart agent 18, -21.15, 28.39, 1.24
+door 5, smart agent 18, -21.03, 28.39, 1.28
+door 85, smart agent 11, -57.55, -3.96, 1.28
+door 116, smart agent 51, 74.55, -0.32, 1.32
+door 27, smart agent 11, -57.55, -3.84, 1.34
+door 91, smart agent 4, -1.69, -3.96, 1.36
+door 97, smart agent 4, -1.69, -3.84, 1.40
+door 94, smart agent 8, -33.61, -3.96, 1.40
+door 92, smart agent 6, -17.65, -3.96, 1.42
+door 96, smart agent 5, -9.67, -3.96, 1.42
+door 69, smart agent 1, 33.47, -10.76, 1.44
+door 89, smart agent 8, -33.61, -3.84, 1.46
+door 86, smart agent 10, -49.57, -3.96, 1.46
+door 109, smart agent 24, 19.67, 34.51, 1.46
+door 76, smart agent 5, -9.67, -3.84, 1.48
+door 74, smart agent 6, -17.65, -3.84, 1.48
+door 40, smart agent 1, 33.48, -10.88, 1.48
+door 90, smart agent 9, -41.59, -3.96, 1.48
+door 9, smart agent 20, 4.38, 26.82, 1.48
+door 87, smart agent 10, -49.57, -3.84, 1.50
+door 95, smart agent 7, -25.63, -3.96, 1.50
+exit 6, smart agent 24, 19.67, 34.39, 1.50
+door 67, smart agent 27, 46.73, 5.45, 1.52
+door 88, smart agent 9, -41.59, -3.84, 1.52
+door 17, smart agent 20, 4.38, 26.70, 1.54
+door 75, smart agent 7, -25.63, -3.84, 1.56
+door 115, smart agent 27, 46.61, 5.45, 1.56
+door 89, smart agent 8, -33.61, -3.84, 1.62
+module node 29, smart agent 52, 66.90, 2.00, 1.66
+door 45, smart agent 44, 71.48, -34.38, 1.68
+door 59, smart agent 44, 71.51, -34.38, 1.68
+door 14, smart agent 23, 4.95, 49.50, 1.72
+door 68, smart agent 38, -20.52, 0.68, 1.74
+door 12, smart agent 23, 4.83, 49.50, 1.76
+door 71, smart agent 39, -17.52, 0.68, 1.76
+door 93, smart agent 42, 77.92, -35.94, 1.78
+door 34, smart agent 39, -17.52, 0.58, 1.80
+door 29, smart agent 38, -20.52, 0.58, 1.80
+door 64, smart agent 37, -35.52, 0.68, 1.80
+door 47, smart agent 42, 77.91, -35.82, 1.82
+door 66, smart agent 13, -59.11, 0.91, 1.88
+door 12, smart agent 23, 4.83, 49.50, 1.88
+door 14, smart agent 23, 4.95, 49.50, 1.88
+module node 29, smart agent 52, 66.90, 2.00, 1.88
+door 45, smart agent 44, 71.48, -34.38, 1.88
+door 59, smart agent 44, 71.51, -34.38, 1.88
+intersection node 2, smart agent 11, -58.00, -2.00, 1.88
+door 64, smart agent 37, -35.52, 0.68, 1.88
+door 33, smart agent 37, -35.52, 0.58, 1.88
+door 75, smart agent 7, -25.63, -3.84, 1.88
+door 95, smart agent 7, -25.63, -3.96, 1.88
+door 68, smart agent 38, -20.52, 0.68, 1.88
+door 29, smart agent 38, -20.52, 0.58, 1.88
+door 71, smart agent 39, -17.52, 0.68, 1.88
+door 34, smart agent 39, -17.52, 0.58, 1.88
+door 13, smart agent 22, 4.95, 38.25, 1.88
+door 47, smart agent 42, 77.91, -35.82, 1.88
+door 93, smart agent 42, 77.92, -35.94, 1.88
+door 11, smart agent 22, 4.83, 38.25, 1.90
+door 84, smart agent 3, 6.29, -0.96, 1.90
+door 30, smart agent 13, -59.01, 0.91, 1.94
+exit 3, smart agent 16, -56.84, 43.83, 1.94
+door 25, smart agent 3, 6.29, -0.84, 1.94
+door 78, smart agent 43, 72.77, -35.94, 1.98
+door 65, smart agent 40, -2.52, 0.68, 1.98
+door 70, smart agent 29, 55.61, 25.45, 1.98
+door 57, smart agent 33, 3.67, 13.96, 1.98
+door 73, smart agent 48, 56.53, -15.32, 2.00
+door 35, smart agent 41, 71.53, -23.58, 2.02
+door 48, smart agent 41, 71.53, -23.57, 2.02
+door 50, smart agent 29, 55.73, 25.47, 2.02
+door 72, smart agent 12, -59.12, -2.58, 2.02
+door 33, smart agent 37, -35.52, 0.58, 2.02
+door 123, smart agent 33, 3.55, 13.96, 2.04
+door 44, smart agent 43, 72.77, -35.82, 2.04
+door 58, smart agent 49, 56.53, -9.32, 2.04
+door 28, smart agent 40, -2.52, 0.58, 2.04
+door 38, smart agent 48, 56.41, -15.32, 2.06
+door 11, smart agent 21, 4.83, 38.25, 2.08
+door 102, smart agent 2, 25.47, -1.88, 2.08
+door 39, smart agent 49, 56.41, -9.32, 2.08
+door 26, smart agent 12, -58.99, -2.58, 2.08
+exit 10, smart agent 2, 25.47, -1.76, 2.10
+door 60, smart agent 14, -60.38, 24.79, 2.10
+door 62, smart agent 28, 55.61, 18.45, 2.12
+door 83, smart agent 46, 54.15, -27.19, 2.12
+door 98, smart agent 34, -8.52, 20.80, 2.14
+door 16, smart agent 14, -60.26, 24.79, 2.14
+door 37, smart agent 46, 54.15, -27.07, 2.16
+door 79, smart agent 47, 37.47, -18.23, 2.16
+door 51, smart agent 28, 55.73, 18.45, 2.16
+door 112, smart agent 51, 72.97, -1.76, 2.18
+door 41, smart agent 47, 37.47, -18.17, 2.18
+door 23, smart agent 34, -8.52, 20.92, 2.18
+door 70, smart agent 29, 55.61, 25.45, 2.20
+door 55, smart agent 30, 2.38, 15.01, 2.22
+door 38, smart agent 48, 56.41, -15.32, 2.22
+door 81, smart agent 45, 57.02, -27.19, 2.24
+door 46, smart agent 51, 72.97, -1.88, 2.24
+door 70, smart agent 29, 55.61, 25.45, 2.24
+door 99, smart agent 35, -26.52, 20.80, 2.26
+door 35, smart agent 41, 71.53, -23.58, 2.26
+door 122, smart agent 30, 2.38, 14.89, 2.28
+door 36, smart agent 45, 57.02, -27.07, 2.28
+door 13, smart agent 21, 4.95, 38.25, 2.30
+door 22, smart agent 35, -26.52, 20.92, 2.32
+door 51, smart agent 26, 55.73, 18.45, 2.32
+door 44, smart agent 44, 72.77, -35.82, 2.38
+door 62, smart agent 26, 55.61, 18.45, 2.42
+door 50, smart agent 29, 55.73, 25.47, 2.42
+door 78, smart agent 44, 72.77, -35.94, 2.44
+door 122, smart agent 30, 2.38, 14.89, 2.44
+door 61, smart agent 15, -60.38, 32.65, 2.48
+intersection node 2, smart agent 12, -58.00, -2.00, 2.50
+door 15, smart agent 15, -60.28, 32.65, 2.52
+door 54, smart agent 32, 2.38, 12.91, 2.60
+door 121, smart agent 32, 2.38, 13.03, 2.66
+module node 7, smart agent 6, -16.00, -2.00, 2.68
+door 62, smart agent 26, 55.61, 18.45, 2.68
+intersection node 1, smart agent 14, -58.00, 24.00, 2.76
+door 48, smart agent 41, 71.53, -23.57, 2.88
+door 35, smart agent 41, 71.53, -23.58, 2.88
+door 59, smart agent 43, 71.51, -34.38, 2.90
+door 51, smart agent 26, 55.73, 18.45, 2.90
+door 45, smart agent 43, 71.48, -34.38, 2.92
+exit 11, smart agent 31, 15.27, -1.76, 3.04
+intersection node 6, smart agent 20, 0.00, 24.00, 3.06
+door 38, smart agent 50, 56.41, -15.32, 3.10
+door 126, smart agent 27, 42.17, 4.01, 3.12
+door 8, smart agent 19, -21.03, 37.50, 3.14
+door 73, smart agent 50, 56.53, -15.32, 3.14
+door 3, smart agent 19, -21.19, 37.50, 3.18
+door 125, smart agent 27, 42.17, 3.89, 3.20
+module node 28, smart agent 52, 60.90, 2.00, 3.36
+door 122, smart agent 32, 2.38, 14.89, 3.52
+door 55, smart agent 32, 2.38, 15.01, 3.58
+door 44, smart agent 42, 72.77, -35.82, 3.58
+door 78, smart agent 42, 72.77, -35.94, 3.64
+door 123, smart agent 30, 3.55, 13.96, 3.68
+intersection node 5, smart agent 4, 3.00, 2.00, 3.76
+door 122, smart agent 33, 2.38, 14.89, 3.76
+door 55, smart agent 33, 2.38, 15.01, 3.82
+door 80, smart agent 36, -54.51, 0.67, 3.90
+door 37, smart agent 45, 54.15, -27.07, 3.94
+door 41, smart agent 1, 37.47, -18.17, 3.94
+door 31, smart agent 36, -54.51, 0.58, 3.94
+door 79, smart agent 1, 37.47, -18.23, 3.98
+door 83, smart agent 45, 54.15, -27.19, 3.98
+door 36, smart agent 46, 57.02, -27.07, 4.00
+door 81, smart agent 46, 57.02, -27.19, 4.06
+door 73, smart agent 50, 56.53, -15.32, 4.10
+door 123, smart agent 30, 3.55, 13.96, 4.14
+door 80, smart agent 36, -54.51, 0.67, 4.14
+door 31, smart agent 36, -54.51, 0.58, 4.14
+door 10, smart agent 23, -3.03, 49.50, 4.14
+door 41, smart agent 1, 37.47, -18.17, 4.14
+door 79, smart agent 1, 37.47, -18.23, 4.14
+door 37, smart agent 45, 54.15, -27.07, 4.14
+door 83, smart agent 45, 54.15, -27.19, 4.14
+door 73, smart agent 50, 56.53, -15.32, 4.14
+door 36, smart agent 46, 57.02, -27.07, 4.14
+door 81, smart agent 46, 57.02, -27.19, 4.14
+exit 1, smart agent 13, -60.26, 6.79, 4.16
+door 7, smart agent 23, -3.15, 49.50, 4.16
+door 57, smart agent 30, 3.67, 13.96, 4.18
+door 2, smart agent 17, -48.31, 26.85, 4.18
+door 20, smart agent 17, -48.31, 26.72, 4.24
+door 78, smart agent 42, 72.77, -35.94, 4.28
+door 38, smart agent 50, 56.41, -15.32, 4.34
+door 36, smart agent 46, 57.02, -27.07, 4.36
+module node 8, smart agent 6, -10.00, -2.00, 4.38
+door 55, smart agent 32, 2.38, 15.01, 4.38
+door 44, smart agent 42, 72.77, -35.82, 4.40
+door 122, smart agent 32, 2.38, 14.89, 4.44
+door 55, smart agent 33, 2.38, 15.01, 4.46
+door 37, smart agent 45, 54.15, -27.07, 4.56
+module node 19, smart agent 20, 3.40, 24.00, 4.58
+door 36, smart agent 46, 57.02, -27.07, 4.62
+door 123, smart agent 30, 3.55, 13.96, 4.64
+door 122, smart agent 33, 2.38, 14.89, 4.64
+module node 31, smart agent 14, -58.00, 18.00, 4.68
+exit 1, smart agent 11, -60.26, 6.79, 4.68
+door 79, smart agent 1, 37.47, -18.23, 4.70
+door 39, smart agent 48, 56.41, -9.32, 4.74
+door 41, smart agent 1, 37.47, -18.17, 4.74
+door 58, smart agent 48, 56.53, -9.32, 4.78
+door 40, smart agent 47, 33.48, -10.88, 4.84
+intersection node 6, smart agent 34, 0.00, 24.00, 4.90
+door 69, smart agent 47, 33.47, -10.76, 4.90
+door 51, smart agent 29, 55.73, 18.45, 4.96
+module node 1, smart agent 9, -52.00, -2.00, 4.98
+door 62, smart agent 29, 55.61, 18.45, 5.02
+door 38, smart agent 49, 56.41, -15.32, 5.02
+module node 27, smart agent 52, 54.90, 2.00, 5.06
+door 73, smart agent 49, 56.53, -15.32, 5.08
+door 47, smart agent 44, 77.91, -35.82, 5.08
+module node 4, smart agent 7, -34.00, -2.00, 5.10
+door 59, smart agent 42, 71.51, -34.38, 5.10
+door 45, smart agent 42, 71.48, -34.38, 5.12
+exit 1, smart agent 12, -60.26, 6.79, 5.12
+door 93, smart agent 44, 77.92, -35.94, 5.14
+intersection node 1, smart agent 15, -58.00, 24.00, 5.18
+door 62, smart agent 29, 55.61, 18.45, 5.18
+door 62, smart agent 29, 55.61, 18.45, 5.24
+module node 30, smart agent 3, 10.00, 1.00, 5.28
+door 93, smart agent 44, 77.92, -35.94, 5.30
+door 45, smart agent 42, 71.48, -34.38, 5.34
+door 121, smart agent 33, 2.38, 13.03, 5.36
+door 54, smart agent 33, 2.38, 12.91, 5.40
+door 47, smart agent 43, 77.91, -35.82, 5.46
+door 93, smart agent 43, 77.92, -35.94, 5.52
+door 59, smart agent 42, 71.51, -34.38, 5.56
+door 121, smart agent 33, 2.38, 13.03, 5.58
+door 54, smart agent 33, 2.38, 12.91, 5.62
+door 123, smart agent 32, 3.55, 13.96, 5.74
+door 58, smart agent 48, 56.53, -9.32, 5.74
+door 39, smart agent 48, 56.41, -9.32, 5.78
+door 50, smart agent 28, 55.73, 25.47, 5.80
+door 70, smart agent 28, 55.61, 25.45, 5.86
+module node 19, smart agent 34, 3.40, 24.00, 5.88
+door 47, smart agent 43, 77.91, -35.82, 5.94
+intersection node 5, smart agent 5, 3.00, 2.00, 5.96
+door 123, smart agent 32, 3.55, 13.96, 6.02
+door 93, smart agent 44, 77.92, -35.94, 6.06
+door 70, smart agent 28, 55.61, 25.45, 6.14
+door 57, smart agent 32, 3.67, 13.96, 6.18
+door 47, smart agent 44, 77.91, -35.82, 6.20
+exit 2, smart agent 25, 76.67, 50.89, 6.20
+door 12, smart agent 22, 4.83, 49.50, 6.24
+door 57, smart agent 32, 3.67, 13.96, 6.24
+door 14, smart agent 22, 4.95, 49.50, 6.28
+module node 20, smart agent 20, 9.40, 24.00, 6.30
+door 121, smart agent 30, 2.38, 13.03, 6.36
+door 123, smart agent 33, 3.55, 13.96, 6.40
+door 54, smart agent 30, 2.38, 12.91, 6.42
+door 57, smart agent 33, 3.67, 13.96, 6.46
+door 123, smart agent 33, 3.55, 13.96, 6.58
+door 57, smart agent 33, 3.67, 13.96, 6.58
+door 12, smart agent 21, 4.83, 49.50, 6.58
+door 54, smart agent 30, 2.38, 12.91, 6.58
+door 121, smart agent 30, 2.38, 13.03, 6.58
+door 14, smart agent 22, 4.95, 49.50, 6.58
+door 14, smart agent 21, 4.95, 49.50, 6.62
+door 54, smart agent 30, 2.38, 12.91, 6.64
+door 70, smart agent 28, 55.61, 25.45, 6.68
+door 59, smart agent 41, 71.51, -34.38, 6.78
+door 45, smart agent 41, 71.48, -34.38, 6.78
+module node 3, smart agent 7, -40.00, -2.00, 6.78
+module node 1, smart agent 8, -52.00, -2.00, 6.78
+door 50, smart agent 28, 55.73, 25.47, 6.80
+door 14, smart agent 22, 4.95, 49.50, 6.84
+exit 1, smart agent 10, -60.26, 6.79, 6.86
+module node 1, smart agent 37, -52.00, -2.00, 6.90
+door 50, smart agent 28, 55.73, 25.47, 6.90
+exit 11, smart agent 3, 15.27, -1.76, 7.00
+door 12, smart agent 22, 4.83, 49.50, 7.06
+door 14, smart agent 21, 4.95, 49.50, 7.10
+door 57, smart agent 32, 3.67, 13.96, 7.10
+door 123, smart agent 32, 3.55, 13.96, 7.18
+room node 44, smart agent 42, 68.10, -31.30, 7.24
+door 12, smart agent 21, 4.83, 49.50, 7.30
+exit 1, smart agent 36, -60.26, 6.79, 7.34
+door 49, smart agent 26, 60.17, 4.01, 7.38
+door 117, smart agent 26, 60.17, 3.89, 7.46
+room node 44, smart agent 42, 68.10, -31.30, 7.46
+module node 20, smart agent 34, 9.40, 24.00, 7.60
+exit 11, smart agent 4, 15.27, -1.76, 7.60
+room node 44, smart agent 42, 68.10, -31.30, 7.68
+exit 4, smart agent 27, 28.47, -1.76, 7.76
+door 45, smart agent 41, 71.48, -34.38, 7.80
+door 59, smart agent 41, 71.51, -34.38, 7.80
+door 123, smart agent 30, 3.55, 13.96, 7.90
+room node 44, smart agent 42, 68.10, -31.30, 7.90
+module node 47, smart agent 33, 0.00, 14.00, 7.92
+door 121, smart agent 32, 2.38, 13.03, 8.00
+door 57, smart agent 30, 3.67, 13.96, 8.04
+door 54, smart agent 32, 2.38, 12.91, 8.04
+exit 1, smart agent 14, -60.26, 6.79, 8.08
+exit 11, smart agent 40, 15.27, -1.76, 8.10
+room node 44, smart agent 42, 68.10, -31.30, 8.12
+door 57, smart agent 30, 3.67, 13.96, 8.12
+door 36, smart agent 50, 57.02, -27.07, 8.14
+door 81, smart agent 50, 57.02, -27.19, 8.20
+room node 44, smart agent 42, 68.10, -31.30, 8.34
+door 81, smart agent 50, 57.02, -27.19, 8.36
+module node 2, smart agent 7, -46.00, -2.00, 8.48
+door 38, smart agent 45, 56.41, -15.32, 8.50
+door 73, smart agent 45, 56.53, -15.32, 8.56
+module node 31, smart agent 17, -58.00, 18.00, 8.56
+room node 44, smart agent 42, 68.10, -31.30, 8.56
+door 42, smart agent 48, 50.47, -1.88, 8.60
+door 44, smart agent 41, 72.77, -35.82, 8.62
+door 114, smart agent 48, 50.47, -1.76, 8.66
+door 78, smart agent 41, 72.77, -35.94, 8.66
+room node 44, smart agent 42, 68.10, -31.30, 8.78
+door 36, smart agent 49, 57.02, -27.07, 8.80
+door 48, smart agent 51, 71.53, -23.57, 8.84
+door 35, smart agent 51, 71.53, -23.58, 8.84
+door 81, smart agent 49, 57.02, -27.19, 8.86
+module node 18, smart agent 35, -4.40, 24.00, 8.92
+door 57, smart agent 30, 3.67, 13.96, 8.92
+door 123, smart agent 30, 3.55, 13.96, 8.96
+door 81, smart agent 49, 57.02, -27.19, 9.00
+room node 44, smart agent 42, 68.10, -31.30, 9.00
+exit 1, smart agent 9, -60.26, 6.79, 9.04
+door 73, smart agent 45, 56.53, -15.32, 9.10
+room node 44, smart agent 42, 68.10, -31.30, 9.22
+door 38, smart agent 45, 56.41, -15.32, 9.24
+module node 47, smart agent 32, 0.00, 14.00, 9.30
+module node 27, smart agent 26, 54.90, 2.00, 9.34
+door 10, smart agent 22, -3.03, 49.50, 9.38
+door 78, smart agent 41, 72.77, -35.94, 9.38
+door 7, smart agent 22, -3.15, 49.50, 9.42
+room node 44, smart agent 42, 68.10, -31.30, 9.44
+door 44, smart agent 41, 72.77, -35.82, 9.46
+door 122, smart agent 30, 2.38, 14.89, 9.48
+door 55, smart agent 30, 2.38, 15.01, 9.52
+door 6, smart agent 18, -4.62, 26.82, 9.54
+door 18, smart agent 18, -4.62, 26.70, 9.58
+room node 44, smart agent 42, 68.10, -31.30, 9.66
+door 48, smart agent 51, 71.53, -23.57, 9.70
+door 35, smart agent 51, 71.53, -23.58, 9.72
+door 10, smart agent 21, -3.03, 49.50, 9.74
+exit 11, smart agent 5, 15.27, -1.76, 9.76
+door 7, smart agent 21, -3.15, 49.50, 9.80
+door 35, smart agent 46, 71.53, -23.58, 9.88
+door 48, smart agent 46, 71.53, -23.57, 9.88
+room node 44, smart agent 42, 68.10, -31.30, 9.88
+door 43, smart agent 1, 44.47, -1.88, 9.94
+door 6, smart agent 19, -4.62, 26.82, 9.94
+door 113, smart agent 1, 44.47, -1.76, 9.98
+door 18, smart agent 19, -4.62, 26.70, 10.00
+door 49, smart agent 29, 60.17, 4.01, 10.00
+door 117, smart agent 29, 60.17, 3.89, 10.06
+door 43, smart agent 47, 44.47, -1.88, 10.08
+room node 44, smart agent 42, 68.10, -31.30, 10.10
+door 113, smart agent 47, 44.47, -1.76, 10.14
+intersection node 6, smart agent 35, 0.00, 24.00, 10.16
+module node 1, smart agent 7, -52.00, -2.00, 10.20
+room node 44, smart agent 42, 68.10, -31.30, 10.32
+door 37, smart agent 50, 54.15, -27.07, 10.42
+door 8, smart agent 23, -21.03, 37.50, 10.46
+door 83, smart agent 50, 54.15, -27.19, 10.48
+door 3, smart agent 23, -21.19, 37.50, 10.50
+exit 1, smart agent 15, -60.26, 6.79, 10.52
+room node 44, smart agent 42, 68.10, -31.30, 10.54
+exit 5, smart agent 20, 16.45, 34.41, 10.58
+door 37, smart agent 49, 54.15, -27.07, 10.64
+door 83, smart agent 49, 54.15, -27.19, 10.68
+room node 44, smart agent 42, 68.10, -31.30, 10.76
+exit 1, smart agent 37, -60.26, 6.79, 10.82
+intersection node 6, smart agent 33, 0.00, 24.00, 10.98
+door 35, smart agent 43, 71.53, -23.58, 10.98
+room node 44, smart agent 42, 68.10, -31.30, 10.98
+door 48, smart agent 43, 71.53, -23.57, 11.00
+module node 26, smart agent 26, 48.90, 2.00, 11.06
+intersection node 6, smart agent 18, 0.00, 24.00, 11.16
+module node 19, smart agent 35, 3.40, 24.00, 11.16
+room node 44, smart agent 42, 68.10, -31.30, 11.20
+door 48, smart agent 44, 71.53, -23.57, 11.32
+door 35, smart agent 44, 71.53, -23.58, 11.32
+exit 1, smart agent 8, -60.26, 6.79, 11.40
+door 83, smart agent 50, 54.15, -27.19, 11.40
+room node 44, smart agent 42, 68.10, -31.30, 11.42
+door 37, smart agent 50, 54.15, -27.07, 11.48
+door 39, smart agent 45, 56.41, -9.32, 11.52
+intersection node 6, smart agent 19, 0.00, 24.00, 11.54
+door 58, smart agent 45, 56.53, -9.32, 11.58
+room node 44, smart agent 42, 68.10, -31.30, 11.64
+exit 5, smart agent 34, 16.45, 34.41, 11.84
+room node 44, smart agent 42, 68.10, -31.30, 11.86
+exit 1, smart agent 17, -60.26, 6.79, 12.00
+exit 11, smart agent 6, 15.27, -1.76, 12.04
+door 47, smart agent 41, 77.91, -35.82, 12.04
+room node 44, smart agent 42, 68.10, -31.30, 12.08
+door 93, smart agent 41, 77.92, -35.94, 12.10
+intersection node 6, smart agent 32, 0.00, 24.00, 12.22
+module node 19, smart agent 33, 3.40, 24.00, 12.26
+module node 19, smart agent 18, 3.40, 24.00, 12.30
+room node 44, smart agent 42, 68.10, -31.30, 12.30
+door 58, smart agent 45, 56.53, -9.32, 12.36
+door 39, smart agent 45, 56.41, -9.32, 12.42
+room node 44, smart agent 42, 68.10, -31.30, 12.52
+module node 19, smart agent 19, 3.40, 24.00, 12.60
+module node 19, smart agent 19, 3.40, 24.00, 12.70
+room node 44, smart agent 42, 68.10, -31.30, 12.70
+door 93, smart agent 41, 77.92, -35.94, 12.70
+room node 44, smart agent 42, 68.10, -31.30, 12.74
+door 47, smart agent 41, 77.91, -35.82, 12.76
+exit 4, smart agent 52, 28.47, -1.76, 12.82
+module node 20, smart agent 35, 9.40, 24.00, 12.86
+room node 44, smart agent 42, 68.10, -31.30, 12.92
+room node 44, smart agent 42, 68.10, -31.30, 12.96
+room node 44, smart agent 42, 68.10, -31.30, 13.14
+room node 44, smart agent 42, 68.10, -31.30, 13.18
+room node 44, smart agent 42, 68.10, -31.30, 13.36
+module node 19, smart agent 32, 3.40, 24.00, 13.40
+room node 44, smart agent 42, 68.10, -31.30, 13.40
+door 59, smart agent 51, 71.51, -34.38, 13.50
+door 45, smart agent 51, 71.48, -34.38, 13.52
+room node 44, smart agent 42, 68.10, -31.30, 13.58
+door 49, smart agent 28, 60.17, 4.01, 13.62
+room node 44, smart agent 42, 68.10, -31.30, 13.62
+door 117, smart agent 28, 60.17, 3.89, 13.68
+module node 26, smart agent 29, 48.90, 2.00, 13.76
+room node 44, smart agent 42, 68.10, -31.30, 13.80
+room node 44, smart agent 42, 68.10, -31.30, 13.84
+door 117, smart agent 28, 60.17, 3.89, 13.84
+door 59, smart agent 46, 71.51, -34.38, 13.88
+door 45, smart agent 46, 71.48, -34.38, 13.90
+module node 20, smart agent 33, 9.40, 24.00, 13.98
+room node 44, smart agent 42, 68.10, -31.30, 14.02
+module node 20, smart agent 18, 9.40, 24.00, 14.04
+room node 44, smart agent 42, 68.10, -31.30, 14.06
+room node 44, smart agent 42, 68.10, -31.30, 14.24
+room node 44, smart agent 42, 68.10, -31.30, 14.28
+module node 20, smart agent 19, 9.40, 24.00, 14.32
+room node 44, smart agent 42, 68.10, -31.30, 14.46
+room node 44, smart agent 42, 68.10, -31.30, 14.50
+door 59, smart agent 51, 71.51, -34.38, 14.60
+door 45, smart agent 51, 71.48, -34.38, 14.60
+exit 1, smart agent 7, -60.26, 6.79, 14.62
+door 1, smart agent 23, -27.31, 26.85, 14.68
+room node 44, smart agent 42, 68.10, -31.30, 14.68
+room node 44, smart agent 42, 68.10, -31.30, 14.72
+door 19, smart agent 23, -27.31, 26.72, 14.74
+room node 44, smart agent 42, 68.10, -31.30, 14.90
+room node 44, smart agent 42, 68.10, -31.30, 14.94
+door 45, smart agent 46, 71.48, -34.38, 15.00
+door 59, smart agent 46, 71.51, -34.38, 15.00
+module node 20, smart agent 32, 9.40, 24.00, 15.10
+exit 4, smart agent 1, 28.47, -1.76, 15.10
+room node 44, smart agent 42, 68.10, -31.30, 15.14
+room node 44, smart agent 42, 68.10, -31.30, 15.16
+exit 4, smart agent 47, 28.47, -1.76, 15.30
+door 42, smart agent 45, 50.47, -1.88, 15.32
+door 114, smart agent 45, 50.47, -1.76, 15.36
+room node 44, smart agent 42, 68.10, -31.30, 15.36
+room node 44, smart agent 42, 68.10, -31.30, 15.38
+door 44, smart agent 51, 72.77, -35.82, 15.52
+exit 4, smart agent 48, 28.47, -1.76, 15.56
+door 78, smart agent 51, 72.77, -35.94, 15.58
+module node 27, smart agent 28, 54.90, 2.00, 15.58
+room node 44, smart agent 42, 68.10, -31.30, 15.58
+room node 44, smart agent 42, 68.10, -31.30, 15.60
+door 8, smart agent 22, -21.03, 37.50, 15.70
+door 78, smart agent 51, 72.77, -35.94, 15.74
+door 3, smart agent 22, -21.19, 37.50, 15.76
+door 44, smart agent 46, 72.77, -35.82, 15.78
+door 36, smart agent 43, 57.02, -27.07, 15.78
+room node 44, smart agent 42, 68.10, -31.30, 15.80
+door 78, smart agent 51, 72.77, -35.94, 15.80
+room node 44, smart agent 42, 68.10, -31.30, 15.82
+door 81, smart agent 43, 57.02, -27.19, 15.84
+door 8, smart agent 21, -21.03, 37.50, 15.90
+door 3, smart agent 21, -21.19, 37.50, 15.94
+door 44, smart agent 51, 72.77, -35.82, 15.96
+door 36, smart agent 44, 57.02, -27.07, 16.00
+room node 44, smart agent 42, 68.10, -31.30, 16.02
+door 44, smart agent 51, 72.77, -35.82, 16.02
+door 81, smart agent 44, 57.02, -27.19, 16.04
+room node 44, smart agent 42, 68.10, -31.30, 16.04
+door 3, smart agent 21, -21.19, 37.50, 16.12
+exit 1, smart agent 38, -60.26, 6.79, 16.18
+door 78, smart agent 46, 72.77, -35.94, 16.24
+room node 44, smart agent 42, 68.10, -31.30, 16.24
+room node 44, smart agent 42, 68.10, -31.30, 16.26
+room node 44, smart agent 42, 68.10, -31.30, 16.46
+room node 44, smart agent 42, 68.10, -31.30, 16.48
+door 36, smart agent 44, 57.02, -27.07, 16.56
+door 3, smart agent 21, -21.19, 37.50, 16.64
+room node 44, smart agent 42, 68.10, -31.30, 16.68
+room node 44, smart agent 42, 68.10, -31.30, 16.70
+door 39, smart agent 50, 56.41, -9.32, 16.78
+door 8, smart agent 21, -21.03, 37.50, 16.80
+door 58, smart agent 50, 56.53, -9.32, 16.82
+room node 44, smart agent 42, 68.10, -31.30, 16.90
+room node 44, smart agent 42, 68.10, -31.30, 16.92
+door 81, smart agent 43, 57.02, -27.19, 17.02
+door 36, smart agent 43, 57.02, -27.07, 17.10
+exit 5, smart agent 35, 16.45, 34.41, 17.12
+exit 4, smart agent 26, 28.47, -1.76, 17.12
+room node 44, smart agent 42, 68.10, -31.30, 17.12
+room node 44, smart agent 42, 68.10, -31.30, 17.14
+room node 44, smart agent 42, 68.10, -31.30, 17.34
+room node 44, smart agent 42, 68.10, -31.30, 17.36
+room node 44, smart agent 42, 68.10, -31.30, 17.56
+room node 44, smart agent 42, 68.10, -31.30, 17.58
+door 48, smart agent 49, 71.53, -23.57, 17.64
+door 35, smart agent 49, 71.53, -23.58, 17.64
+room node 41, smart agent 41, 75.80, -19.60, 17.68
+door 58, smart agent 50, 56.53, -9.32, 17.78
+room node 44, smart agent 42, 68.10, -31.30, 17.78
+room node 44, smart agent 42, 68.10, -31.30, 17.80
+door 39, smart agent 50, 56.41, -9.32, 17.82
+room node 44, smart agent 42, 68.10, -31.30, 18.00
+room node 44, smart agent 42, 68.10, -31.30, 18.02
+door 37, smart agent 44, 54.15, -27.07, 18.18
+exit 5, smart agent 33, 16.45, 34.41, 18.20
+room node 44, smart agent 42, 68.10, -31.30, 18.22
+door 83, smart agent 44, 54.15, -27.19, 18.24
+room node 44, smart agent 42, 68.10, -31.30, 18.24
+exit 5, smart agent 18, 16.45, 34.41, 18.40
+room node 44, smart agent 42, 68.10, -31.30, 18.44
+room node 44, smart agent 42, 68.10, -31.30, 18.46
+exit 5, smart agent 19, 16.45, 34.41, 18.58
+exit 1, smart agent 39, -60.26, 6.79, 18.64
+room node 44, smart agent 42, 68.10, -31.30, 18.66
+room node 44, smart agent 42, 68.10, -31.30, 18.68
+door 37, smart agent 43, 54.15, -27.07, 18.76
+door 47, smart agent 51, 77.91, -35.82, 18.78
+door 83, smart agent 43, 54.15, -27.19, 18.80
+door 93, smart agent 51, 77.92, -35.94, 18.84
+room node 44, smart agent 42, 68.10, -31.30, 18.88
+room node 44, smart agent 42, 68.10, -31.30, 18.90
+door 83, smart agent 43, 54.15, -27.19, 18.98
+door 93, smart agent 51, 77.92, -35.94, 19.00
+door 47, smart agent 46, 77.91, -35.82, 19.06
+door 93, smart agent 51, 77.92, -35.94, 19.06
+room node 44, smart agent 42, 68.10, -31.30, 19.10
+door 93, smart agent 46, 77.92, -35.94, 19.12
+room node 44, smart agent 42, 68.10, -31.30, 19.12
+door 83, smart agent 44, 54.15, -27.19, 19.24
+room node 44, smart agent 42, 68.10, -31.30, 19.32
+door 37, smart agent 44, 54.15, -27.07, 19.34
+room node 44, smart agent 42, 68.10, -31.30, 19.34
+exit 5, smart agent 32, 16.45, 34.41, 19.36
+door 93, smart agent 51, 77.92, -35.94, 19.44
+room node 44, smart agent 42, 68.10, -31.30, 19.54
+room node 44, smart agent 42, 68.10, -31.30, 19.56
+door 47, smart agent 51, 77.91, -35.82, 19.58
+door 83, smart agent 43, 54.15, -27.19, 19.62
+door 37, smart agent 43, 54.15, -27.07, 19.68
+door 1, smart agent 22, -27.31, 26.85, 19.76
+room node 44, smart agent 42, 68.10, -31.30, 19.76
+room node 44, smart agent 42, 68.10, -31.30, 19.78
+door 19, smart agent 22, -27.31, 26.72, 19.80
+exit 4, smart agent 29, 28.47, -1.76, 19.82
+room node 44, smart agent 42, 68.10, -31.30, 19.98
+door 19, smart agent 22, -27.31, 26.72, 19.98
+room node 44, smart agent 42, 68.10, -31.30, 20.00
+room node 44, smart agent 42, 68.10, -31.30, 20.20
+room node 44, smart agent 42, 68.10, -31.30, 20.22
+room node 44, smart agent 42, 68.10, -31.30, 20.42
+room node 44, smart agent 42, 68.10, -31.30, 20.44
+door 42, smart agent 50, 50.47, -1.88, 20.62
+room node 44, smart agent 42, 68.10, -31.30, 20.64
+room node 44, smart agent 42, 68.10, -31.30, 20.66
+door 114, smart agent 50, 50.47, -1.76, 20.68
+room node 44, smart agent 42, 68.10, -31.30, 20.86
+room node 44, smart agent 42, 68.10, -31.30, 20.88
+room node 44, smart agent 42, 68.10, -31.30, 21.08
+room node 44, smart agent 42, 68.10, -31.30, 21.10
+door 59, smart agent 49, 71.51, -34.38, 21.30
+room node 44, smart agent 42, 68.10, -31.30, 21.30
+room node 44, smart agent 42, 68.10, -31.30, 21.32
+door 45, smart agent 49, 71.48, -34.38, 21.34
+room node 44, smart agent 42, 68.10, -31.30, 21.52
+room node 44, smart agent 42, 68.10, -31.30, 21.54
+module node 18, smart agent 23, -4.40, 24.00, 21.64
+room node 44, smart agent 42, 68.10, -31.30, 21.74
+room node 44, smart agent 42, 68.10, -31.30, 21.76
+exit 4, smart agent 45, 28.47, -1.76, 21.92
+room node 44, smart agent 42, 68.10, -31.30, 21.96
+room node 44, smart agent 42, 68.10, -31.30, 21.98
+room node 44, smart agent 42, 68.10, -31.30, 22.18
+room node 44, smart agent 42, 68.10, -31.30, 22.20
+door 44, smart agent 49, 72.77, -35.82, 22.34
+door 78, smart agent 49, 72.77, -35.94, 22.38
+room node 44, smart agent 42, 68.10, -31.30, 22.40
+room node 44, smart agent 42, 68.10, -31.30, 22.42
+door 6, smart agent 21, -4.62, 26.82, 22.60
+room node 44, smart agent 42, 68.10, -31.30, 22.62
+room node 44, smart agent 42, 68.10, -31.30, 22.64
+door 18, smart agent 21, -4.62, 26.70, 22.66
+room node 44, smart agent 42, 68.10, -31.30, 22.84
+door 46, smart agent 41, 72.97, -1.88, 22.86
+room node 44, smart agent 42, 68.10, -31.30, 22.86
+door 112, smart agent 41, 72.97, -1.76, 22.90
+intersection node 6, smart agent 23, 0.00, 24.00, 22.90
+door 38, smart agent 44, 56.41, -15.32, 22.98
+door 73, smart agent 44, 56.53, -15.32, 23.04
+room node 44, smart agent 42, 68.10, -31.30, 23.06
+room node 44, smart agent 42, 68.10, -31.30, 23.08
+room node 44, smart agent 42, 68.10, -31.30, 23.28
+room node 44, smart agent 42, 68.10, -31.30, 23.30
+door 38, smart agent 43, 56.41, -15.32, 23.34
+exit 4, smart agent 28, 28.47, -1.76, 23.36
+door 73, smart agent 43, 56.53, -15.32, 23.48
+room node 44, smart agent 42, 68.10, -31.30, 23.50
+room node 44, smart agent 42, 68.10, -31.30, 23.52
+door 73, smart agent 43, 56.53, -15.32, 23.56
+door 73, smart agent 43, 56.53, -15.32, 23.68
+room node 44, smart agent 42, 68.10, -31.30, 23.72
+room node 44, smart agent 42, 68.10, -31.30, 23.74
+door 116, smart agent 41, 74.55, -0.32, 23.80
+room node 44, smart agent 42, 68.10, -31.30, 23.94
+room node 44, smart agent 42, 68.10, -31.30, 23.96
+module node 19, smart agent 23, 3.40, 24.00, 23.98
+room node 41, smart agent 46, 75.80, -19.60, 24.10
+intersection node 6, smart agent 21, 0.00, 24.00, 24.14
+room node 44, smart agent 42, 68.10, -31.30, 24.16
+room node 44, smart agent 42, 68.10, -31.30, 24.18
+door 116, smart agent 41, 74.55, -0.32, 24.28
+room node 41, smart agent 51, 75.80, -19.60, 24.38
+room node 44, smart agent 42, 68.10, -31.30, 24.38
+room node 44, smart agent 42, 68.10, -31.30, 24.40
+room node 44, smart agent 42, 68.10, -31.30, 24.60
+room node 44, smart agent 42, 68.10, -31.30, 24.62
+room node 44, smart agent 42, 68.10, -31.30, 24.82
+room node 44, smart agent 42, 68.10, -31.30, 24.84
+door 47, smart agent 49, 77.91, -35.82, 24.92
+door 93, smart agent 49, 77.92, -35.94, 24.98
+room node 44, smart agent 42, 68.10, -31.30, 25.04
+room node 44, smart agent 42, 68.10, -31.30, 25.06
+module node 17, smart agent 22, -10.40, 24.00, 25.18
+module node 19, smart agent 21, 3.40, 24.00, 25.22
+room node 44, smart agent 42, 68.10, -31.30, 25.26
+room node 44, smart agent 42, 68.10, -31.30, 25.28
+room node 44, smart agent 42, 68.10, -31.30, 25.48
+room node 44, smart agent 42, 68.10, -31.30, 25.50
+door 39, smart agent 44, 56.41, -9.32, 25.54
+door 58, smart agent 44, 56.53, -9.32, 25.60
+module node 20, smart agent 23, 9.40, 24.00, 25.70
+room node 44, smart agent 42, 68.10, -31.30, 25.70
+room node 44, smart agent 42, 68.10, -31.30, 25.72
+room node 44, smart agent 42, 68.10, -31.30, 25.92
+room node 44, smart agent 42, 68.10, -31.30, 25.94

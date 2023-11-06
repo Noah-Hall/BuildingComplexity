@@ -6,5 +6,6 @@ public enum TargetsEnum
     DOOR,
     NODE,
     VISITED_DOOR,
+    VISITED_NODE,
     UNKNOWN,
 }

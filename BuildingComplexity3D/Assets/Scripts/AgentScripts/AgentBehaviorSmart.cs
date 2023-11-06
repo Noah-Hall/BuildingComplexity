@@ -201,6 +201,9 @@ public class AgentBehaviorSmart : MonoBehaviour
                 if (target.tag == "IntersectionNode" && unvisited) {
                     return TargetsEnum.INTERSECTION;
                 }
+                if (visitedTargets[target] > 0) {
+                    return TargetsEnum.VISITED_NODE;
+                }
                 return TargetsEnum.NODE;
                 break;
             default:
