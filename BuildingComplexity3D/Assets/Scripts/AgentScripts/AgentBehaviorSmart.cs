@@ -197,11 +197,10 @@ public class AgentBehaviorSmart : MonoBehaviour
                 return TargetsEnum.DOOR;
                 break;
             case var value when value == LayerMask.NameToLayer("Nodes"):
-                bool unvisited = visitedTargets[target] < 1;
-                if (target.tag == "IntersectionNode" && unvisited) {
+                if (target.tag == "IntersectionNode" && visitedTargets[target] < 1) {
                     return TargetsEnum.INTERSECTION;
                 }
-                if (visitedTargets[target] > 0) {
+                if (visitedTargets[target] >= 1) {
                     return TargetsEnum.VISITED_NODE;
                 }
                 return TargetsEnum.NODE;
