@@ -204,12 +204,17 @@ public class AgentBehaviorSmart : MonoBehaviour
                 return TargetsEnum.STAIR;
                 break;
             case var value when value == LayerMask.NameToLayer("Doors"):
+                if (visitedTargets[target] > 1) {
+                    return TargetsEnum.VISITED_DOOR;
+                }
                 return TargetsEnum.DOOR;
                 break;
             case var value when value == LayerMask.NameToLayer("Nodes"):
-                bool unvisited = visitedTargets[target] < 1;
-                if (target.tag == "IntersectionNode" && unvisited) {
+                if (target.tag == "IntersectionNode" && visitedTargets[target] < 1) {
                     return TargetsEnum.INTERSECTION;
+                }
+                if (visitedTargets[target] >= 1) {
+                    return TargetsEnum.VISITED_NODE;
                 }
                 return TargetsEnum.NODE;
                 break;

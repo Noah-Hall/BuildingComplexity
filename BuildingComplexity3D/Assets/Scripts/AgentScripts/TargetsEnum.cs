@@ -5,5 +5,7 @@ public enum TargetsEnum
     INTERSECTION,
     DOOR,
     NODE,
+    VISITED_DOOR,
+    VISITED_NODE,
     UNKNOWN,
 }
