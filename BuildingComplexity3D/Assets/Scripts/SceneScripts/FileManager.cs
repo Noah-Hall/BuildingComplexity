@@ -27,6 +27,7 @@ public class FileManager: MonoBehaviour
     private string SummaryRecordFile;
     private string ResultsFile;
     private string FloorplanFile;
+    private string AgentDataFile;
     private Scene scene;
     List<TargetInfo> nodeResultsList = new List<TargetInfo>();
     List<TargetInfo> doorResultsList = new List<TargetInfo>();
@@ -45,21 +46,23 @@ public class FileManager: MonoBehaviour
         AssetDatabase.CreateFolder("Assets/LogFiles", FolderName);
 
         LogFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Logfile.csv");
-
         TextWriter wt = new StreamWriter(LogFile, false);
         wt.WriteLine("Object Name, Agent Name, Position-X, Position-Z, Time (Seconds)");
         wt.Close();
 
         SummaryRecordFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Summary.csv");
-
         wt = new StreamWriter(SummaryRecordFile, false);
         wt.WriteLine("Category, Minimun, Min Count, Maximum, Max Count, Average");
         wt.Close();
 
         ResultsFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Results.csv");
-
         wt = new StreamWriter(ResultsFile, false);
         wt.WriteLine("Object Name, First Visit, Last Visit, Total # of Visits");
+        wt.Close();
+
+        AgentDataFile = Application.dataPath + ("/LogFiles/" + FolderName + "/AgentData.csv");
+        wt = new StreamWriter(AgentDataFile, false);
+        wt.WriteLine("Agent Name, Line to Exit, Distance Traveled, # of Visited Targets");
         wt.Close();
 
         FloorplanFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Floorplan_Specs.txt");
@@ -199,29 +202,49 @@ public class FileManager: MonoBehaviour
         }
     }
 
-    // calculates results and writes all lines to Results.csv
-    public void CalculateResults()
+    // calculates agent data and writes lines AgentData.csv
+    public void WriteAgentData(GameObject agent)
     {
-        List<string> results = new List<string>();
-        List<string> temp = new List<string>();
-        Debug.Log("Calculating results");
-        results = CalculateNodes();
-        temp = CalculateDoors();
-        results.AddRange(temp);
-        temp = CalculateExits();
-        results.AddRange(temp);
-        GenerateResultsFile();
+        AgentBehaviorSmart agentScript = agent.GetComponent<AgentBehaviorSmart>();
+        string line = string.Format("{0}, {1:F2}m, {2:F2}m, {3} targets", agent.name, agentScript.lineToExit, agentScript.totalDistanceTraveled, agentScript.numVisitedTargets);
         
+        StreamWriter writer = new StreamWriter(AgentDataFile, true);
+        writer.WriteLine(line);
+        writer.Close();
+    }
+
+    // Calls all functions that generate files
+    public void GenerateFiles()
+    {
+        GenerateResultsFile();
+        GenerateSummaryFile();
+        // GenerateAgentDataFile();
+    }
+    
+    // calculates summary and writes lines Summary.csv
+    private void GenerateSummaryFile()
+    {
+        List<string> summary = new List<string>();
+        List<string> temp = new List<string>();
+        Debug.Log("Calculating Summary");
+        summary = CalculateNodes();
+        temp = CalculateDoors();
+        summary.AddRange(temp);
+        temp = CalculateExits();
+        summary.AddRange(temp);
+
         StreamWriter writer = new StreamWriter(SummaryRecordFile, true);
-        foreach(string line in results) {
+        foreach(string line in summary) {
             writer.WriteLine(line);
         }
         writer.Close();
         Debug.Log("Summary Calculated");
     }
 
+    // calculates results and writes lines to Results.csv
     private void GenerateResultsFile()
     {
+        Debug.Log("Calculating Results");
         StreamWriter writer = new StreamWriter(ResultsFile, true);
 
         foreach(TargetInfo ti in nodeResultsList) {
