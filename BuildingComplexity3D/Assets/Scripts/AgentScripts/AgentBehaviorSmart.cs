@@ -188,9 +188,9 @@ public class AgentBehaviorSmart : MonoBehaviour
         return loc;
     }
 
-    public void FingerPrint()
+    public void FingerPrint(Vector3 exitPosition)
     {
-        lineToExit = Vector3.Distance(transform.position, startPosition);
+        lineToExit = Vector3.Distance(exitPosition, startPosition);
     }
 
     public TargetsEnum GetTargetsEnum(GameObject target)
