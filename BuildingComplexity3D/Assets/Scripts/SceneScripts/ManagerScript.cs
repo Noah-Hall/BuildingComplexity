@@ -27,6 +27,7 @@ public class ManagerScript : MonoBehaviour
         Camera.main.orthographicSize = 16;
         GameObject[] moduleNodes = GameObject.FindGameObjectsWithTag("ModuleNode");
         GameObject[] roomNodes = GameObject.FindGameObjectsWithTag("RoomNode");
+        GameObject[] intersectionNodes = GameObject.FindGameObjectsWithTag("IntersectionNode");
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
         GameObject[] exits = GameObject.FindGameObjectsWithTag("Exit");
         GameObject[] stairs = GameObject.FindGameObjectsWithTag("Stair");
@@ -45,6 +46,12 @@ public class ManagerScript : MonoBehaviour
         for(int i = 1; i < moduleNodes.Length + 1; i++) {
             if (moduleNodes[i - 1].activeInHierarchy) {
                 moduleNodes[i - 1].name = "module node " + i;
+            }
+        }
+
+        for(int i = 1; i < intersectionNodes.Length + 1; i++) {
+            if (intersectionNodes[i - 1].activeInHierarchy) {
+                intersectionNodes[i - 1].name = "intersection node " + i;
             }
         }
 
@@ -73,10 +80,15 @@ public class ManagerScript : MonoBehaviour
         FillStairwells();
 
         //calculate floor area
-        int floorArea = 0;
+        // float floorAreaC = 0; // for collider calculation (removed)
+        float floorAreaS = 0;
         foreach(GameObject floor in floors) {
             // Vector3 size = floor.GetComponent<Collider>().bounds.size;
+            // floorAreaC += size.x * size.z;
+            float tempArea = floor.transform.localScale.x * floor.transform.localScale.z;
+            floorAreaS += tempArea;
         }
+        // Debug.Log("Square Meters Colliders: " + floorAreaC + "\nSquare Meters Local Scale: " + floorAreaS);
 
         GameObject[] smartAgents = GameObject.FindGameObjectsWithTag("Smart Agent");
         
@@ -90,7 +102,7 @@ public class ManagerScript : MonoBehaviour
             testAgents[i - 1].name = "test agent " + i;
         }
 
-        gameObject.GetComponent<FileManager>().GenerateFloorplanData(moduleNodes.Length + roomNodes.Length, doors.Length, exits.Length, _stairwellNum, navMeshes.Length);
+        gameObject.GetComponent<FileManager>().GenerateFloorplanData(floorAreaS, moduleNodes.Length + roomNodes.Length, doors.Length, exits.Length, _stairwellNum, navMeshes.Length);
     }
 
     public Stairwell GetStairwell(int num)

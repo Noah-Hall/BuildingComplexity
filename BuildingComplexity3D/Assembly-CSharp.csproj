@@ -68,11 +68,9 @@
     <Compile Include="Assets\Scripts\TargetScripts\TargetScript.cs" />
     <Compile Include="Assets\Scripts\SceneScripts\ManagerScript.cs" />
     <Compile Include="Assets\Scripts\AgentScripts\AgentSpawner.cs" />
+    <Compile Include="Assets\Scripts\AgentScripts\TargetsEnum.cs" />
     <Compile Include="Assets\Scripts\TargetScripts\ExitScript.cs" />
     <Compile Include="Assets\Scripts\SceneScripts\FileManager.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\LogFiles\Stair3DFloorplan_Date_09-05-2023_Time_23-47-10\Floorplan_Specs.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
