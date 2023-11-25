@@ -1,0 +1,320 @@
+Using pre-set license
+Built from '2022.2/staging' branch; Version is '2022.2.14f1 (b2c9b1ac6cc0) revision 11717041'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'en' Physical Memory: 16218 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2022.2.14f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/chmca/OneDrive/Desktop/Ease/BuildingComplexity/BuildingComplexity3D
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+59609
+Successfully changed project path to: C:/Users/chmca/OneDrive/Desktop/Ease/BuildingComplexity/BuildingComplexity3D
+C:/Users/chmca/OneDrive/Desktop/Ease/BuildingComplexity/BuildingComplexity3D
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8128] Host "[IP] 192.168.0.142 [Port] 0 [Flags] 2 [Guid] 1180458624 [EditorId] 1180458624 [Version] 1048832 [Id] WindowsEditor(7,Charltonpro8) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [8128] Host "[IP] 192.168.0.142 [Port] 0 [Flags] 2 [Guid] 1180458624 [EditorId] 1180458624 [Version] 1048832 [Id] WindowsEditor(7,Charltonpro8) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 9.15 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.2.14f1 (b2c9b1ac6cc0)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2022.2.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/chmca/OneDrive/Desktop/Ease/BuildingComplexity/BuildingComplexity3D/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x9a49)
+    Vendor:   Intel
+    VRAM:     8109 MB
+    Driver:   31.0.101.3889
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 2022.2.14f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2022.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 2022.2.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56100
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003704 seconds.
+- Loaded All Assemblies, in  0.430 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.342 seconds
+Domain Reload Profiling:
+	ReloadAssembly (246ms)
+		BeginReloadAssembly (95ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		LoadAllAssembliesAndSetupDomain (0ms)
+			LoadAssemblies (93ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (176ms)
+				TypeCache.Initialize (175ms)
+					TypeCache.ScanAssembly (173ms)
+				ResolveRequiredComponents (1ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (264ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (11ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (176ms)
+				ProcessInitializeOnLoadMethodAttributes (63ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\chmca\OneDrive\Desktop\Ease\BuildingComplexity\BuildingComplexity3D\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\chmca\OneDrive\Desktop\Ease\BuildingComplexity\BuildingComplexity3D\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.075 seconds
+Refreshing native plugins compatible for Editor in 5.00 ms, found 6 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.922 seconds
+Domain Reload Profiling:
+	ReloadAssembly (274ms)
+		BeginReloadAssembly (158ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		LoadAllAssembliesAndSetupDomain (799ms)
+			LoadAssemblies (337ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (536ms)
+				TypeCache.Initialize (510ms)
+					TypeCache.ScanAssembly (501ms)
+				ResolveRequiredComponents (5ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (656ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (507ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 4.96 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3278 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 37 unused Assets / (69.4 KB). Loaded Objects now: 3736.
+Memory consumption went from 114.2 MB to 114.1 MB.
+Total: 3.326800 ms (FindLiveObjects: 0.260000 ms CreateObjectMapping: 0.128900 ms MarkObjects: 2.779300 ms  DeleteObjects: 0.157000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 826702.446160 seconds.
+  path: Assets/Floorplans/Durham/First_Floor.jpg
+  artifactKey: Guid(190d88c9fe6a8aa45a3ce4f5eb1adf35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Floorplans/Durham/First_Floor.jpg using Guid(190d88c9fe6a8aa45a3ce4f5eb1adf35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d764feffddf24693918fa057892bc7b') in 0.158529 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Floorplans/Durham
+  artifactKey: Guid(d17b6b28c04acd945b059d0942e183a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Floorplans/Durham using Guid(d17b6b28c04acd945b059d0942e183a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9dffa5b930c64de8d0f96ebfa4eb485') in 0.001457 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000132 seconds.
+  path: Assets/Floorplans/Durham/Plat_penthouse.jpg
+  artifactKey: Guid(555095137f4ca5249af6c2ff1bf57ab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Floorplans/Durham/Plat_penthouse.jpg using Guid(555095137f4ca5249af6c2ff1bf57ab6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94f8fd6c243dbd63c5da70bb8bd50538') in 0.056375 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Floorplans/Durham/Plat_Third.jpg
+  artifactKey: Guid(b81dfba0e895faf4db3bbd0f268a7825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Floorplans/Durham/Plat_Third.jpg using Guid(b81dfba0e895faf4db3bbd0f268a7825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '129019c2edc900f638f7e08dd54c5dcc') in 0.031425 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 52.445684 seconds.
+  path: Assets/Scenes/Science 2.unity
+  artifactKey: Guid(8246b45cd8ae17e4c92fe7797e891d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Science 2.unity using Guid(8246b45cd8ae17e4c92fe7797e891d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d10fa5b9c32659ce59e3588ab8d1f46') in 0.000927 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.134292 seconds.
+  path: Assets/Floorplans/science 2.pdf
+  artifactKey: Guid(d48b05311d845db488df3d4595ee21d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Floorplans/science 2.pdf using Guid(d48b05311d845db488df3d4595ee21d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88b4837aecbe56e1ae6af564c40fc85f') in 0.001696 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 33.870404 seconds.
+  path: Assets/Floorplans/science 2.jpg
+  artifactKey: Guid(753eba72309412541b5e53f028f8d5fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Floorplans/science 2.jpg using Guid(753eba72309412541b5e53f028f8d5fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b08767057ef48d3aa0149639d0f156f') in 0.019953 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 59.844603 seconds.
+  path: Assets/Floorplans/science 2(1).jpg
+  artifactKey: Guid(6c7fdb0ea072d8b45be07e6a6da5ca14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Floorplans/science 2(1).jpg using Guid(6c7fdb0ea072d8b45be07e6a6da5ca14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec67909581e2dd39304a6b2fe0a0af1e') in 0.013491 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 120.771478 seconds.
+  path: Assets/Scenes/Durham.unity
+  artifactKey: Guid(ae3ed9f422ff30c4c83b224ff5af0c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Durham.unity using Guid(ae3ed9f422ff30c4c83b224ff5af0c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6b443f90f32dd123920359802f59739') in 0.001288 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.105139 seconds.
+  path: Assets/Scenes/Stair3DFloorplan.unity
+  artifactKey: Guid(4a1a75b5bb9e04bf5a3e1275379f5f73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Stair3DFloorplan.unity using Guid(4a1a75b5bb9e04bf5a3e1275379f5f73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91c70a9f3ca298f73fb2191a260f2e16') in 0.000708 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.786498 seconds.
+  path: Assets/Scenes/Tutorial.unity
+  artifactKey: Guid(ed90c86fbfbe54e0e96a3f606c056b0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Tutorial.unity using Guid(ed90c86fbfbe54e0e96a3f606c056b0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '219539019a2dbef1325db89605e06d2c') in 0.000942 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.704090 seconds.
+  path: Assets/Scenes/Stair3DFloorplan/NavMesh-NavMesh.asset
+  artifactKey: Guid(a1c6099ba0410499bbb2855e6428a77c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Stair3DFloorplan/NavMesh-NavMesh.asset using Guid(a1c6099ba0410499bbb2855e6428a77c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a8c6155649432b1c389912d0c5fdfd5') in 0.002101 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.009144 seconds.
+  path: Assets/Scenes/Stair3DFloorplan/NavMesh-Second Floor NavMesh.asset
+  artifactKey: Guid(ae85d0e76ca004fc0a9fed6157eb0a67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Stair3DFloorplan/NavMesh-Second Floor NavMesh.asset using Guid(ae85d0e76ca004fc0a9fed6157eb0a67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b435c01c647c6e9bdb8570076a3d50f8') in 0.001247 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.385231 seconds.
+  path: Assets/Scenes/Simple3DFloorplan/NavMesh-NavMesh.asset
+  artifactKey: Guid(7743580c69f584a0f8ee082674be0640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Simple3DFloorplan/NavMesh-NavMesh.asset using Guid(7743580c69f584a0f8ee082674be0640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '274a5b184a2a5d977bae741025f11f28') in 0.001163 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.391111 seconds.
+  path: Assets/Scenes/PrinceAndrewHigh/NavMesh-NavMesh.asset
+  artifactKey: Guid(ba9ec2e9111724b7ab65961b0bb05156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/PrinceAndrewHigh/NavMesh-NavMesh.asset using Guid(ba9ec2e9111724b7ab65961b0bb05156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf96ea6e270cd21ed78028918138223d') in 0.001258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.388850 seconds.
+  path: Assets/Scenes/Durham/NavMesh-NavMesh.asset
+  artifactKey: Guid(7f16d5797c3e549cb8be85a76a378d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Durham/NavMesh-NavMesh.asset using Guid(7f16d5797c3e549cb8be85a76a378d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05d7262d7bb41bd10db095a4854c6044') in 0.001310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.377626 seconds.
+  path: Assets/Scenes/DoorlessFloorplan/NavMesh-NavMesh.asset
+  artifactKey: Guid(b52a8f1c58b4e40e69722a681b64a10f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/DoorlessFloorplan/NavMesh-NavMesh.asset using Guid(b52a8f1c58b4e40e69722a681b64a10f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42f3592f7f995d1847a38ff35f96bf5') in 0.001220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.545538 seconds.
+  path: Assets/Scenes/Carver Hall/NavMesh-NavMesh.asset
+  artifactKey: Guid(bd707c16fe4e44990a668cf640c925a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Carver Hall/NavMesh-NavMesh.asset using Guid(bd707c16fe4e44990a668cf640c925a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cefd361a7a1351189bda07f3d985f560') in 0.001488 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.448650 seconds.
+  path: Assets/Scenes/AngledDoorFloorplan/NavMesh-NavMesh.asset
+  artifactKey: Guid(234820b4d72f54dd79b68aea8fc15804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/AngledDoorFloorplan/NavMesh-NavMesh.asset using Guid(234820b4d72f54dd79b68aea8fc15804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea64790ed03dad46d156c8d8b09fc55a') in 0.001169 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
