@@ -15,7 +15,7 @@ C:/Users/chmca/OneDrive/Desktop/Ease/BuildingComplexity/BuildingComplexity3D
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-59609
+60127
 Successfully changed project path to: C:/Users/chmca/OneDrive/Desktop/Ease/BuildingComplexity/BuildingComplexity3D
 C:/Users/chmca/OneDrive/Desktop/Ease/BuildingComplexity/BuildingComplexity3D
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/chmca/OneDrive/Desktop/Ease/BuildingComplexity/BuildingComplexity3D
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [16252] Host "[IP] 192.168.0.142 [Port] 0 [Flags] 2 [Guid] 668695902 [EditorId] 668695902 [Version] 1048832 [Id] WindowsEditor(7,Charltonpro8) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [20040] Host "[IP] 192.168.0.142 [Port] 0 [Flags] 2 [Guid] 3533529432 [EditorId] 3533529432 [Version] 1048832 [Id] WindowsEditor(7,Charltonpro8) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [16252] Host "[IP] 192.168.0.142 [Port] 0 [Flags] 2 [Guid] 668695902 [EditorId] 668695902 [Version] 1048832 [Id] WindowsEditor(7,Charltonpro8) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [20040] Host "[IP] 192.168.0.142 [Port] 0 [Flags] 2 [Guid] 3533529432 [EditorId] 3533529432 [Version] 1048832 [Id] WindowsEditor(7,Charltonpro8) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 10.17 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 44.77 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.14f1 (b2c9b1ac6cc0)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2022.2.14f1/Editor/Data/Resources/UnitySubsystems
@@ -67,41 +67,41 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2022.2.14f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2022.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2022.2.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56428
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56580
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2022.2.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005660 seconds.
-- Loaded All Assemblies, in  0.428 seconds
+Registered in 0.008089 seconds.
+- Loaded All Assemblies, in  0.462 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.336 seconds
+- Finished resetting the current domain, in  0.368 seconds
 Domain Reload Profiling:
-	ReloadAssembly (257ms)
-		BeginReloadAssembly (100ms)
+	ReloadAssembly (295ms)
+		BeginReloadAssembly (155ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-			LoadAssemblies (98ms)
+			LoadAssemblies (152ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (165ms)
-				TypeCache.Initialize (164ms)
-					TypeCache.ScanAssembly (162ms)
-				ResolveRequiredComponents (1ms)
+			SetupTypeCache (161ms)
+				TypeCache.Initialize (160ms)
+					TypeCache.ScanAssembly (158ms)
+				ResolveRequiredComponents (0ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (260ms)
+			SetupLoadedEditorAssemblies (290ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (9ms)
+				SetLoadedEditorAssemblies (10ms)
 				RefreshPlugins (0ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (174ms)
-				ProcessInitializeOnLoadMethodAttributes (63ms)
+				ProcessInitializeOnLoadAttributes (189ms)
+				ProcessInitializeOnLoadMethodAttributes (77ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -111,48 +111,48 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\chmca\OneDrive\Desktop\Ease\BuildingComplexity\BuildingComplexity3D\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\chmca\OneDrive\Desktop\Ease\BuildingComplexity\BuildingComplexity3D\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  1.068 seconds
-Refreshing native plugins compatible for Editor in 5.02 ms, found 6 plugins.
+- Loaded All Assemblies, in  1.110 seconds
+Refreshing native plugins compatible for Editor in 5.85 ms, found 6 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.917 seconds
+- Finished resetting the current domain, in  0.827 seconds
 Domain Reload Profiling:
-	ReloadAssembly (265ms)
-		BeginReloadAssembly (152ms)
+	ReloadAssembly (264ms)
+		BeginReloadAssembly (162ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (25ms)
-		LoadAllAssembliesAndSetupDomain (803ms)
-			LoadAssemblies (334ms)
+			CreateAndSetChildDomain (28ms)
+		LoadAllAssembliesAndSetupDomain (842ms)
+			LoadAssemblies (462ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (534ms)
-				TypeCache.Initialize (508ms)
-					TypeCache.ScanAssembly (499ms)
+			SetupTypeCache (455ms)
+				TypeCache.Initialize (425ms)
+					TypeCache.ScanAssembly (416ms)
 				ResolveRequiredComponents (6ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (652ms)
+			SetupLoadedEditorAssemblies (556ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (7ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (8ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (85ms)
-				ProcessInitializeOnLoadAttributes (501ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				BeforeProcessingInitializeOnLoad (123ms)
+				ProcessInitializeOnLoadAttributes (384ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 4.95 ms, found 6 plugins.
+			AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 4.41 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3278 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 37 unused Assets / (69.4 KB). Loaded Objects now: 3736.
+Unloading 37 unused Assets / (69.3 KB). Loaded Objects now: 3736.
 Memory consumption went from 114.1 MB to 114.0 MB.
-Total: 3.762900 ms (FindLiveObjects: 0.267100 ms CreateObjectMapping: 0.165700 ms MarkObjects: 3.203300 ms  DeleteObjects: 0.125200 ms)
+Total: 3.493800 ms (FindLiveObjects: 0.311100 ms CreateObjectMapping: 0.269300 ms MarkObjects: 2.765200 ms  DeleteObjects: 0.146300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -168,25 +168,17 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 826702.444333 seconds.
-  path: Assets/Floorplans/Durham/Plat_Basement.jpg
-  artifactKey: Guid(107d1978d80655e4c8ad32d273f292b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Floorplans/Durham/Plat_Basement.jpg using Guid(107d1978d80655e4c8ad32d273f292b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '945277335551565cb535387125d7f5e5') in 0.183270 seconds
+  Time since last request: 827394.605553 seconds.
+  path: Assets/Scenes/Simple3DFloorplan
+  artifactKey: Guid(77a6827d48e704d99a32a669ef7e6d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Simple3DFloorplan using Guid(77a6827d48e704d99a32a669ef7e6d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2c203ee7f5797cac97a39beaa42efb9') in 0.004095 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Floorplans/Durham/Plat_Second.jpg
-  artifactKey: Guid(e0406bcaf7606864fa5f0bd56e1e78dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Floorplans/Durham/Plat_Second.jpg using Guid(e0406bcaf7606864fa5f0bd56e1e78dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6f743d754ded0b1b1a039418e16e642') in 0.048231 seconds
+  Time since last request: 201.787792 seconds.
+  path: Assets/Objects/Legos/3D/Rooms/18x10 Room Door Bottom Middle.prefab
+  artifactKey: Guid(45eed3ab4820e3440b8a929fa3c3cb7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/Legos/3D/Rooms/18x10 Room Door Bottom Middle.prefab using Guid(45eed3ab4820e3440b8a929fa3c3cb7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '235e925e4f467ee4c31942d0e4ed4ea5') in 0.159390 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Floorplans/Durham/Plat_SubBasement.jpg
-  artifactKey: Guid(36512eceff8669f409f6063075286255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Floorplans/Durham/Plat_SubBasement.jpg using Guid(36512eceff8669f409f6063075286255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b498523ec560edb9af47652f96de0bed') in 0.050159 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 653
