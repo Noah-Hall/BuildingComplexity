@@ -23,16 +23,17 @@ public class ExitScript : TargetScript
         TargetReached(agent);
     }
 
-      public override void OnTriggerStay(Collider col)
-      {
+    // simply returns since agent should be destroyed after on OnTriggerEnter
+    public override void OnTriggerStay(Collider col)
+    {
         return;
-      }
+    }
 
     // calls method to log Target from FileManager
     // Destroys agent, and checks if there are any more agents in scene
     public override void TargetReached(GameObject agent)
     {
-        agent.GetComponent<AgentBehaviorSmart>().FingerPrint();
+        agent.GetComponent<AgentBehaviorSmart>().FingerPrint(transform.position);
 
         FileManager file = manager.GetComponent<FileManager>();
         file.WriteStringLogFile(agent, gameObject);

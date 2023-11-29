@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+// I do not think this script is currently functional or up to date with all changes to AgentBehaviorSmart.cs
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 *   AgentTestingScript used for testing new features before  *
 *   migrating them to SmartAgents                            *

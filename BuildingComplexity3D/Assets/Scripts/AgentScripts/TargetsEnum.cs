@@ -1,3 +1,6 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *  TargetsEnum used for comparing weights of target objects   *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 public enum TargetsEnum
 {
     EXIT,

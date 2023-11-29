@@ -19,6 +19,7 @@ public class ManagerScript : MonoBehaviour
 
     // Sets camera
     // names all important objects in scene for coherant LogFiles
+    // does some general initialization
     void Awake()
     {
         if (spawnAgents) {
@@ -105,6 +106,7 @@ public class ManagerScript : MonoBehaviour
         gameObject.GetComponent<FileManager>().GenerateFloorplanData(floorAreaS, moduleNodes.Length + roomNodes.Length, doors.Length, exits.Length, _stairwellNum, navMeshes.Length);
     }
 
+    // gets Stairwell with given passed _num value
     public Stairwell GetStairwell(int num)
     {
         foreach (Stairwell stairwell in _stairwells) {
@@ -115,6 +117,7 @@ public class ManagerScript : MonoBehaviour
         return null;
     }
 
+    // fills Stairwell objects with stair GameObjects
     private void FillStairwells()
     {
         GameObject[] stairs = GameObject.FindGameObjectsWithTag("Stair");
@@ -143,6 +146,7 @@ public class ManagerScript : MonoBehaviour
         _stairwells.Sort(CompareStairNum);
     }
 
+    // compares two Stairwell objects
     private static int CompareStairNum(Stairwell x_object, Stairwell y_object)
     {
         int x = x_object._num;

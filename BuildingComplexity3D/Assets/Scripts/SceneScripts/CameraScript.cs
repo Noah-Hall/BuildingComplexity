@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*   CameraScript was used for cinematics                     *
+ *   CameraScript was used for cinematics                    *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 public class CameraScript : MonoBehaviour
