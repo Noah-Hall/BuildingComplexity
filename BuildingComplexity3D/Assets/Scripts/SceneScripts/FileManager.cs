@@ -79,6 +79,7 @@ public class FileManager: MonoBehaviour
         SaveFloorplan();
     }
 
+    // fills TargetInfo lists and calls InitSummary()
     private void Start()
     {
         GameObject[] moduleNodes = GameObject.FindGameObjectsWithTag("ModuleNode");
@@ -103,10 +104,12 @@ public class FileManager: MonoBehaviour
         InitSummary();
     }
 
+    // captures and saves screenshot
     public void SaveFloorplan() {
         ScreenCapture.CaptureScreenshot(Application.dataPath + ("/LogFiles/" + FolderName + "/_Floorplan.png"));
     }
 
+    // writes to FloorplanFile based on passed parameters
     public void GenerateFloorplanData(float size, int nodes, int doors, int exits, int stairwells, int floors) {
         TextWriter wt = new StreamWriter(FloorplanFile, false);
         wt.WriteLine("Square Meters: " + size);
@@ -213,7 +216,7 @@ public class FileManager: MonoBehaviour
         }
     }
 
-    // calculates agent data and writes lines AgentData.csv
+    // writes lines to AgentData.csv
     public void WriteAgentData(GameObject agent)
     {
         AgentBehaviorSmart agentScript = agent.GetComponent<AgentBehaviorSmart>();
@@ -534,6 +537,7 @@ public struct MinMaxAve<T, U, V>
     }
 }
 
+// Structure to hold info about a target
 public struct TargetInfo
 {
     public string name;

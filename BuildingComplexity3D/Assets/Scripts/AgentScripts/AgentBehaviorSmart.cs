@@ -170,6 +170,7 @@ public class AgentBehaviorSmart : MonoBehaviour
         }
     }
 
+    // Method called by StairScript when agent triggers stair object
     public GameObject StairReached(GameObject target)
     {
         numVisitedTargets++;
@@ -188,11 +189,13 @@ public class AgentBehaviorSmart : MonoBehaviour
         return loc;
     }
 
+    // Method called by ExitScript to calculate the agent's beginning and ending positions
     public void FingerPrint(Vector3 exitPosition)
     {
         lineToExit = Vector3.Distance(exitPosition, startPosition);
     }
 
+    // Helper method for FieldOfViewCheck that returns the enum value of a given target object
     public TargetsEnum GetTargetsEnum(GameObject target)
     {
         switch(target.layer)

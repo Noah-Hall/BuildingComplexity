@@ -23,10 +23,11 @@ public class ExitScript : TargetScript
         TargetReached(agent);
     }
 
-      public override void OnTriggerStay(Collider col)
-      {
+    // simply returns since agent should be destroyed after on OnTriggerEnter
+    public override void OnTriggerStay(Collider col)
+    {
         return;
-      }
+    }
 
     // calls method to log Target from FileManager
     // Destroys agent, and checks if there are any more agents in scene
