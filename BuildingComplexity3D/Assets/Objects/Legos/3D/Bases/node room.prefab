@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 722526121126658101}
   - component: {fileID: 2847286307807763050}
-  - component: {fileID: 2568595355800109065}
+  - component: {fileID: 7318482254181487293}
   m_Layer: 12
   m_Name: node room
   m_TagString: RoomNode
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2568595355800109065
+--- !u!114 &7318482254181487293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,8 +63,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3770698129906628783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79bebbbfaf22f429785e819ed3427a74, type: 3}
+  m_Script: {fileID: 11500000, guid: 900edc2fbf901495596e863f5012bf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  manager: {fileID: 0}
+  weight: 1

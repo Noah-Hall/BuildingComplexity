@@ -56,7 +56,7 @@ public class FileManager: MonoBehaviour
 
         LogFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Logfile.csv");
         TextWriter wt = new StreamWriter(LogFile, false);
-        wt.WriteLine("Object Name, Agent Name, Position-X, Position-Z, Time (Seconds)");
+        wt.WriteLine("Object Name, Agent Name, Agent Weight, Position-X, Position-Z, Time (Seconds)");
         wt.Close();
 
         SummaryRecordFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Summary.csv");
@@ -71,7 +71,7 @@ public class FileManager: MonoBehaviour
 
         AgentDataFile = Application.dataPath + ("/LogFiles/" + FolderName + "/AgentData.csv");
         wt = new StreamWriter(AgentDataFile, false);
-        wt.WriteLine("Agent Name, Line to Exit, Distance Traveled, # of Visited Targets");
+        wt.WriteLine("Agent Name, Agent Weight, Line to Exit, Distance Traveled, # of Visited Targets");
         wt.Close();
 
         FloorplanFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Floorplan_Specs.txt");
@@ -124,11 +124,13 @@ public class FileManager: MonoBehaviour
     // writes a formatted line to LogFile.csv
     public void WriteStringLogFile(GameObject agent, GameObject obj)
     {
+        int increment = agent.GetComponent<AgentBehaviorSmart>().weight;
         float tempTime = (Mathf.Round(Time.time * 100f) / 100f);
         string tempTimeS = tempTime.ToString("0.00");
         string tempX = (Mathf.Round(obj.transform.position.x * 100f) / 100f).ToString("0.00");
         string tempZ = (Mathf.Round(obj.transform.position.z * 100f) / 100f).ToString("0.00");
-        string tempWrite = string.Format("{0}, {1}, {2:F2}, {3:F2}, {4}", obj.name, agent.name, tempX, tempZ, tempTimeS);
+        // Object Name, Agent Name, Agent Weight, Position-X, Position-Z, Time (Seconds)
+        string tempWrite = string.Format("{0}, {1}, {2}, {3:F2}, {4:F2}, {5}", obj.name, agent.name, increment, tempX, tempZ, tempTimeS);
         //Write some text to the test.txt file
         StreamWriter writer = new StreamWriter(LogFile, true);
         writer.WriteLine(tempWrite);
@@ -153,11 +155,11 @@ public class FileManager: MonoBehaviour
                 tempNode.firstSet = true;
                 tempNode.last = tempTime;
                 tempNode.lastSet = true;
-                tempNode.count++;
+                tempNode.count += increment;
             } else {
                 tempNode.last = tempTime;
                 tempNode.lastSet = true;
-                tempNode.count++;
+                tempNode.count += increment;
             }
 
             nodeResultsList[index] = tempNode;
@@ -179,11 +181,11 @@ public class FileManager: MonoBehaviour
                 tempNode.firstSet = true;
                 tempNode.last = tempTime;
                 tempNode.lastSet = true;
-                tempNode.count++;
+                tempNode.count += increment;
             } else {
                 tempNode.last = tempTime;
                 tempNode.lastSet = true;
-                tempNode.count++;
+                tempNode.count += increment;
             }
 
             doorResultsList[index] = tempNode;
@@ -205,11 +207,11 @@ public class FileManager: MonoBehaviour
                 tempNode.firstSet = true;
                 tempNode.last = tempTime;
                 tempNode.lastSet = true;
-                tempNode.count++;
+                tempNode.count += increment;
             } else {
                 tempNode.last = tempTime;
                 tempNode.lastSet = true;
-                tempNode.count++;
+                tempNode.count += increment;
             }
 
             exitResultsList[index] = tempNode;
@@ -220,7 +222,7 @@ public class FileManager: MonoBehaviour
     public void WriteAgentData(GameObject agent)
     {
         AgentBehaviorSmart agentScript = agent.GetComponent<AgentBehaviorSmart>();
-        string line = string.Format("{0}, {1:F2}m, {2:F2}m, {3} targets", agent.name, agentScript.lineToExit, agentScript.totalDistanceTraveled, agentScript.numVisitedTargets);
+        string line = string.Format("{0}, {1:D}, {2:F2}m, {3:F2}m, {4} targets", agent.name, agent.GetComponent<AgentBehaviorSmart>().weight, agentScript.lineToExit, agentScript.totalDistanceTraveled, agentScript.numVisitedTargets);
         
         StreamWriter writer = new StreamWriter(AgentDataFile, true);
         writer.WriteLine(line);
@@ -317,6 +319,7 @@ public class FileManager: MonoBehaviour
     // calculates Node related results 
     private List<string> CalculateNodes()
     {
+        // Object Name, Agent Name, Agent Weight, Position-X, Position-Z, Time (Seconds)
         List<string> nodeResults = new List<string>();
         try {
             StreamReader sr = new StreamReader(LogFile);
@@ -330,15 +333,16 @@ public class FileManager: MonoBehaviour
             sr.ReadLine();
             while((line = sr.ReadLine()) != null) {
                 string[] segments = line.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
+                int tempInt = Int32.Parse(segments[2]);
                 if (!nodeDict.ContainsKey(segments[0]) && segments[0].Contains("node")) {
-                    nodeDict.Add(segments[0], 1);
+                    nodeDict.Add(segments[0], tempInt);
                 } else if (nodeDict.ContainsKey(segments[0])) {
-                    nodeDict[segments[0]]++;
+                    nodeDict[segments[0]] += tempInt;
                 }
                 if (!nodeAgentDict.ContainsKey(segments[1]) && segments[0].Contains("node")) {
-                    nodeAgentDict.Add(segments[1], 1);
+                    nodeAgentDict.Add(segments[1], tempInt);
                 } else if (nodeAgentDict.ContainsKey(segments[1])) {
-                    nodeAgentDict[segments[1]]++;
+                    nodeAgentDict[segments[1]] += tempInt;
                 }
             }
             sr.Close();
@@ -399,15 +403,16 @@ public class FileManager: MonoBehaviour
             sr.ReadLine();
             while((line = sr.ReadLine()) != null) {
                 string[] segments = line.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
+                int tempInt = Int32.Parse(segments[2]);
                 if (!doorDict.ContainsKey(segments[0]) && segments[0].Contains("door")) {
-                    doorDict.Add(segments[0], 1);
+                    doorDict.Add(segments[0], tempInt);
                 } else if (doorDict.ContainsKey(segments[0])) {
-                    doorDict[segments[0]]++;
+                    doorDict[segments[0]] += tempInt;
                 }
                 if (!doorAgentDict.ContainsKey(segments[1]) && segments[0].Contains("door")) {
-                    doorAgentDict.Add(segments[1], 1);
+                    doorAgentDict.Add(segments[1], tempInt);
                 } else if (doorAgentDict.ContainsKey(segments[1])) {
-                    doorAgentDict[segments[1]]++;
+                    doorAgentDict[segments[1]] += tempInt;
                 }
             }
             sr.Close();
@@ -455,6 +460,7 @@ public class FileManager: MonoBehaviour
     // calculates Exit related results 
     private List<string> CalculateExits()
     {
+        // 0-Object Name, 1-Agent Name, 2-Agent Weight, 3-Position-X, 4-Position-Z, 5-Time (Seconds)
         List<string> exitResults = new List<string>();
         try {
             StreamReader sr = new StreamReader(LogFile);
@@ -466,13 +472,14 @@ public class FileManager: MonoBehaviour
             sr.ReadLine();
             while((line = sr.ReadLine()) != null) {
                 string[] segments = line.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
+                int tempInt = Int32.Parse(segments[2]);
                 if (!exitDict.ContainsKey(segments[0]) && segments[0].Contains("exit")) {
-                    exitDict.Add(segments[0], 1);
+                    exitDict.Add(segments[0], tempInt);
                 } else if (exitDict.ContainsKey(segments[0])) {
-                    exitDict[segments[0]]++;
+                    exitDict[segments[0]] += tempInt;
                 }
                 if (exitDict.ContainsKey(segments[0])) {
-                    float temp = float.Parse(segments[4]);
+                    float temp = float.Parse(segments[5]);
                     if (timeVals.min > temp) { 
                         timeVals.min = temp; 
                         timeVals.minCount = 1;

@@ -38,7 +38,10 @@ public class ManagerScript : MonoBehaviour
         for(int i = 1; i < roomNodes.Length + 1; i++) {
             if (roomNodes[i - 1].activeInHierarchy) {
                 if (spawnAgents) {
-                    spawner.Spawn(roomNodes[i - 1].transform.position);
+                    // spawn agent, check weight of current RoomNode, and then set Agent weight accordingly
+                    AgentBehaviorSmart tempAgent = spawner.Spawn(roomNodes[i - 1].transform.position);
+                    int tempInt = roomNodes[i - 1].GetComponent<NodeScriptRoom>().weight;
+                    tempAgent.weight = tempInt < 1 ? 1 : tempInt;
                 }
                 roomNodes[i - 1].name = "room node " + i;
             }

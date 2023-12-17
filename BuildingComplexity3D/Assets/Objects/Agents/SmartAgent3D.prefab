@@ -217,6 +217,7 @@ MonoBehaviour:
   numVisitedTargets: 0
   lineToExit: 0
   totalDistanceTraveled: 0
+  weight: 0
 --- !u!1 &8431957135594784123
 GameObject:
   m_ObjectHideFlags: 0
