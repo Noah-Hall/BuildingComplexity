@@ -22,6 +22,7 @@ public class AgentBehaviorSmart : MonoBehaviour
     public int numVisitedTargets = 0;
     public float lineToExit;
     public float totalDistanceTraveled = 0;
+    public int weight;
 
 
     // general initialization
