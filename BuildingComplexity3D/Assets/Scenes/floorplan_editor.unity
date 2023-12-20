@@ -344,11 +344,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseIndicator: {fileID: 764535304}
-  cellIndicator: {fileID: 292635662}
   inputManager: {fileID: 1861934895}
   grid: {fileID: 1581897183}
   database: {fileID: 11400000, guid: 899a39a44c00f46bb93f83a5e71c92e3, type: 2}
   gridVisualization: {fileID: 841288914}
+  preview: {fileID: 1794355149}
 --- !u!1 &206832505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +1989,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787644333}
   m_CullTransparentMesh: 1
+--- !u!1 &1794355148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794355150}
+  - component: {fileID: 1794355149}
+  m_Layer: 0
+  m_Name: PreviewSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1794355149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794355148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9acd75bfe0994dc0ab415ffa84b34f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previewOffset: 0.06
+  cellIndicator: {fileID: 292635662}
+  previewMaterialPrefab: {fileID: 2100000, guid: 481ec64ef5e4349159a6ee215d4c84ad, type: 2}
+--- !u!4 &1794355150
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794355148}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 240.72623, y: 93.9944, z: 12.353027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2126284207}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1861934894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2418,7 @@ Transform:
   m_Children:
   - {fileID: 1861934896}
   - {fileID: 154140990}
+  - {fileID: 1794355150}
   - {fileID: 764535305}
   - {fileID: 1425400671}
   - {fileID: 1553155013}
