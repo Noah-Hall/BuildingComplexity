@@ -10,12 +10,19 @@ public class ObjectPlacer : MonoBehaviour
     { 
         placedObjects = new List<GameObject>(); 
     }
-    
+
     public int PlaceObject(GameObject prefab, Vector3 pos)
     {
         GameObject newObject = Instantiate(prefab);
         newObject.transform.position = pos;
         placedObjects.Add(newObject);
         return placedObjects.Count - 1;
+    }
+
+    public void RemoveObjectAt(int index)
+    {
+        if (placedObjects.Count <= index || placedObjects[index] == null) { return; }
+        Destroy(placedObjects[index]);
+        placedObjects[index] = null;
     }
 }

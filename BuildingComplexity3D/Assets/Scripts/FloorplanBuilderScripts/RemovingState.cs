@@ -10,9 +10,8 @@ public class RemovingState : IBuildingState
     private PreviewSystem previewSystem;
     private GridData floorData, sideWallData, bottomWallData, centerData;
     private ObjectPlacer objectPlacer;
-    private ObjectsDatabaseSO database;
 
-    public RemovingState(Grid grid, PreviewSystem previewSystem, GridData floorData, GridData sideWallData, GridData bottomWallData, GridData centerData, ObjectPlacer objectPlacer, ObjectsDatabaseSO database)
+    public RemovingState(Grid grid, PreviewSystem previewSystem, GridData floorData, GridData sideWallData, GridData bottomWallData, GridData centerData, ObjectPlacer objectPlacer)
     {
         this.grid = grid;
         this.previewSystem = previewSystem;
@@ -21,10 +20,54 @@ public class RemovingState : IBuildingState
         this.bottomWallData = bottomWallData;
         this.centerData = centerData;
         this.objectPlacer = objectPlacer;
-        this.database = database;
+
+        previewSystem.StartShowingRemovePreview();
     }
 
-    public void EndState() {}
-    public void OnAction(Vector3Int gridPosition) {}
-    public void UpdateState(Vector3Int gridPosition) {}
+    public void EndState()
+    {
+        previewSystem.StopShowingPreview();
+    }
+
+    public void OnAction(Vector3Int gridPosition) 
+    {
+        GridData selectedData = GetData(gridPosition);
+        if (selectedData != null) 
+        {
+            gameObjectIndex = selectedData.GetObjectIndex(gridPosition);
+            if (gameObjectIndex == -1) { return; }
+            selectedData.RemoveObjectAt(gridPosition);
+            objectPlacer.RemoveObjectAt(gameObjectIndex);
+        }
+        previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), IsCellEmpty(gridPosition));
+    }
+
+    private GridData GetData(Vector3Int gridPosition)
+    {
+        if (!sideWallData.CanPlaceObjectAt(gridPosition, Vector2Int.one))
+        {
+            return sideWallData;
+        } else if (!bottomWallData.CanPlaceObjectAt(gridPosition, Vector2Int.one))
+        {
+            return bottomWallData;
+        } else if (!centerData.CanPlaceObjectAt(gridPosition, Vector2Int.one))
+        {
+            return centerData;
+        } else if (!floorData.CanPlaceObjectAt(gridPosition, Vector2Int.one))
+        {
+            return floorData;
+        }
+        return null;
+    }
+
+    private bool IsCellEmpty(Vector3Int gridPosition)
+    {
+        if (GetData(gridPosition) == null) { return false; }
+        return true;
+    }
+
+    public void UpdateState(Vector3Int gridPosition) 
+    {
+        previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), IsCellEmpty(gridPosition));
+    }
 }

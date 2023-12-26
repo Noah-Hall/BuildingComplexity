@@ -31,6 +31,13 @@ public class PreviewSystem : MonoBehaviour
         cellIndicator.SetActive(true);
     }
 
+    public void StartShowingRemovePreview()
+    {
+        cellIndicator.SetActive(true);
+        PrepareCursor(Vector2Int.one);
+        ApplyFeedbackToCursor(false);
+    }
+
     private void PreparePreview()
     {
         Renderer[] renderers = previewObject.GetComponentsInChildren<Renderer>();
@@ -57,14 +64,22 @@ public class PreviewSystem : MonoBehaviour
     public void StopShowingPreview()
     {
         cellIndicator.SetActive(false);
+        if (previewObject == null) { return; }
         Destroy(previewObject);
+    }
+
+    public void UpdatePosition(Vector3 position, bool validity)
+    {
+        MoveCursor(position);
+        ApplyFeedbackToCursor(validity);
     }
 
     public void UpdatePreview(Vector3 objectPosition, Vector3 cursorPosition, bool validity, Color previewColor)
     {
+        UpdatePosition(cursorPosition, validity);
+        if (previewObject == null) { return; }
         MovePreview(objectPosition);
-        MoveCursor(cursorPosition);
-        ApplyFeedback(validity, previewColor);
+        ApplyFeedbackToPreview(validity, previewColor);
     }
 
     private void MovePreview(Vector3 position)
@@ -77,12 +92,16 @@ public class PreviewSystem : MonoBehaviour
         cellIndicator.transform.position = position;
     }
 
-    private void ApplyFeedback(bool valid, Color previewColor)
+    private void ApplyFeedbackToPreview(bool valid, Color previewColor)
     {
-        cellIndicatorRenderer.material.color = valid ? Color.white : Color.red;
         Color c = valid ? previewColor : Color.red;
         c.a = 0.9f;
         previewMaterialInstance.color = c;
+    }
+
+    private void ApplyFeedbackToCursor(bool valid)
+    {
+        cellIndicatorRenderer.material.color = valid ? Color.white : Color.red;
     }
 
 }
