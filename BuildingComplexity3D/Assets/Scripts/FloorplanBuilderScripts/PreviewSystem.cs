@@ -74,6 +74,11 @@ public class PreviewSystem : MonoBehaviour
         ApplyFeedbackToCursor(validity);
     }
 
+    public void RotatePreview()
+    {
+        previewObject.transform.Rotate(0, 90, 0);
+    }
+
     public void UpdatePreview(Vector3 objectPosition, Vector3 cursorPosition, bool validity, Color previewColor)
     {
         UpdatePosition(cursorPosition, validity);

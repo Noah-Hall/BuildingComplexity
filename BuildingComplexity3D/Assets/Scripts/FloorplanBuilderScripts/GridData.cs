@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GridData
 {
-    Dictionary<Vector3Int, PlacementData> placedObjects = new Dictionary<Vector3Int, PlacementData>();
+    private Dictionary<Vector3Int, PlacementData> placedObjects = new Dictionary<Vector3Int, PlacementData>();
 
     public void AddObjectAt(Vector3Int gridPosition, Vector2Int objectSize, int ID, PlacementOrientation orientation, int placedObjectIndex)
     {

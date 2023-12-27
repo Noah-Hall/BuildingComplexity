@@ -6,13 +6,14 @@ using UnityEngine;
 public class PlacementState : IBuildingState
 {
     private int selectedObjectIndex = -1;
-    private PlacementOrientation selectedOrientation = PlacementOrientation.NONE;
-    private int ID;
+    public PlacementOrientation selectedOrientation { get; private set; } 
+    public int ID { get; private set; }
     private Grid grid;
     private PreviewSystem previewSystem;
     private GridData floorData, sideWallData, bottomWallData, centerData;
     private ObjectPlacer objectPlacer;
     private ObjectsDatabaseSO database;
+    private bool isRotated = false;
 
     public PlacementState(int ID, Grid grid, PreviewSystem previewSystem, GridData floorData, GridData sideWallData, GridData bottomWallData, GridData centerData, ObjectPlacer objectPlacer, ObjectsDatabaseSO database)
     {
@@ -25,6 +26,7 @@ public class PlacementState : IBuildingState
         this.centerData = centerData;
         this.objectPlacer = objectPlacer;
         this.database = database;
+        this.selectedOrientation = PlacementOrientation.NONE;
 
         selectedObjectIndex = database.objectsData.FindIndex(data => data.ID == ID);
         selectedOrientation = database.objectsData[selectedObjectIndex].orientation;
@@ -46,7 +48,7 @@ public class PlacementState : IBuildingState
         bool placementValidity = CheckPlacementValidity(gridPosition);
         if (!placementValidity) { return; }
 
-        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, GetNewPlacementPosition(gridPosition));
+        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, GetNewPlacementPosition(gridPosition), isRotated);
 
         GridData selectedData = GetGridData();
         selectedData.AddObjectAt(gridPosition, 
@@ -55,6 +57,26 @@ public class PlacementState : IBuildingState
                                 selectedOrientation, 
                                 index);
         previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), false, database.objectsData[selectedObjectIndex].color);
+    }
+
+    public void OnRotate(Vector3Int gridPosition)
+    {
+        if (selectedOrientation == PlacementOrientation.NONE) { return; }
+        if (selectedOrientation == PlacementOrientation.SIDE) 
+        { 
+            selectedOrientation = PlacementOrientation.BOTTOM;
+            isRotated = !isRotated;
+            previewSystem.RotatePreview();
+            bool placementValidity = CheckPlacementValidity(gridPosition);
+            previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), placementValidity, database.objectsData[selectedObjectIndex].color);
+        } else if (selectedOrientation == PlacementOrientation.BOTTOM) 
+        { 
+            selectedOrientation = PlacementOrientation.SIDE;
+            isRotated = !isRotated;
+            previewSystem.RotatePreview();
+            bool placementValidity = CheckPlacementValidity(gridPosition);
+            previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), placementValidity, database.objectsData[selectedObjectIndex].color);
+        }
     }
 
     private bool CheckPlacementValidity(Vector3Int gridPosition)

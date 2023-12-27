@@ -5,15 +5,14 @@ using UnityEngine;
 public class PlacementSystem : MonoBehaviour
 {
     [SerializeField] 
-    private GameObject mouseIndicator;
+    private GameObject mouseIndicator, scaleUI, scaleXYUI;
     [SerializeField] 
     private InputManager inputManager;
     [SerializeField]
     private Grid grid;
     [SerializeField]
     private ObjectsDatabaseSO database;
-    // private int selectedObjectIndex = -1;
-    // private PlacementOrientation slectedOrientation = PlacementOrientation.NONE;
+    
 
     [SerializeField]
     private GameObject gridVisualization;
@@ -32,6 +31,8 @@ public class PlacementSystem : MonoBehaviour
         sideWallData = new GridData();
         bottomWallData = new GridData();
         centerData = new GridData();
+        scaleUI.SetActive(false);
+        scaleXYUI.SetActive(false);
     }
 
     public void StartPlacement(int ID)
@@ -40,6 +41,7 @@ public class PlacementSystem : MonoBehaviour
         gridVisualization.SetActive(true);
 
         buildingState = new PlacementState(ID, grid, preview, floorData, sideWallData, bottomWallData, centerData, objectPlacer, database);
+        SetScaleUIs();
 
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
@@ -51,6 +53,7 @@ public class PlacementSystem : MonoBehaviour
         gridVisualization.SetActive(true);
 
         buildingState = new RemovingState(grid, preview, floorData, sideWallData, bottomWallData, centerData, objectPlacer);
+        SetScaleUIs();
         
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
@@ -63,6 +66,15 @@ public class PlacementSystem : MonoBehaviour
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
 
         buildingState.OnAction(gridPosition);
+    }
+
+    public void RotateStructure()
+    {
+        if (!(buildingState is PlacementState)) { return; }
+        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+
+        ((PlacementState)buildingState).OnRotate(gridPosition);
     }
 
     private void StopPlacement()
@@ -90,5 +102,32 @@ public class PlacementSystem : MonoBehaviour
         if (lastDetectedPosition == gridPosition) { return; }
         buildingState.UpdateState(gridPosition);
         lastDetectedPosition = gridPosition;
+    }
+
+    private void SetScaleUIs()
+    {
+        if (buildingState == null) { return; }
+        if (buildingState is RemovingState) 
+        {
+            scaleUI.SetActive(false);
+            scaleXYUI.SetActive(false);
+            return; 
+        }
+        PlacementState placementState = ((PlacementState)buildingState);
+        scaleUI.SetActive(false);
+        scaleXYUI.SetActive(false);
+
+        switch (placementState.selectedOrientation)
+        {
+            case PlacementOrientation.CENTER:
+                if (placementState.ID == 1) { scaleXYUI.SetActive(true); }
+                break;
+            case PlacementOrientation.SIDE:
+            case PlacementOrientation.BOTTOM:
+                scaleUI.SetActive(true);
+                break;
+            case PlacementOrientation.NONE:
+                break;
+        }
     }
 }
