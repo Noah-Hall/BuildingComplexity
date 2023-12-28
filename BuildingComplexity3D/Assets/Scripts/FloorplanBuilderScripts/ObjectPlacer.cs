@@ -11,11 +11,17 @@ public class ObjectPlacer : MonoBehaviour
         placedObjects = new List<GameObject>(); 
     }
 
-    public int PlaceObject(GameObject prefab, Vector3 pos, bool rotate)
+    public int PlaceObject(GameObject prefab, Vector3 pos, bool rotate, Vector2Int scale)
     {
         GameObject newObject = Instantiate(prefab);
         newObject.transform.position = pos;
         if (rotate) { newObject.transform.Rotate(0, 90, 0); }
+
+        Vector3 newScale = newObject.transform.localScale;
+        newScale.x = scale.x > 1 ? scale.x : newScale.x;
+        newScale.z = scale.y > 1 ? scale.y : newScale.z;
+        newObject.transform.localScale = newScale;
+        
         placedObjects.Add(newObject);
         return placedObjects.Count - 1;
     }

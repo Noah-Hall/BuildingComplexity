@@ -54,11 +54,8 @@ public class PreviewSystem : MonoBehaviour
 
     private void PrepareCursor(Vector2Int size)
     {
-        if (size.x > 1 || size.y > 1)
-        {
-            cellIndicator.transform.localScale = new Vector3(size.x, 1, size.y);
-            cellIndicatorRenderer.material.mainTextureScale = size;
-        }
+        cellIndicator.transform.localScale = new Vector3(size.x, 1, size.y);
+        cellIndicatorRenderer.material.mainTextureScale = size;
     }
 
     public void StopShowingPreview()
@@ -74,9 +71,20 @@ public class PreviewSystem : MonoBehaviour
         ApplyFeedbackToCursor(validity);
     }
 
-    public void RotatePreview()
+    public void RotatePreview(Vector2Int cursorSize)
     {
         previewObject.transform.Rotate(0, 90, 0);
+        PrepareCursor(cursorSize);
+    }
+
+    public void ScalePreview(Vector2Int cursorSize, Vector2Int scale)
+    {
+        Vector3 newScale = previewObject.transform.localScale;
+        newScale.x = (scale.x > 1 || newScale.x > 1) ? scale.x : newScale.x;
+        newScale.z = (scale.y > 1 || newScale.z > 1) ? scale.y : newScale.z;
+        previewObject.transform.localScale = newScale;
+
+        PrepareCursor(cursorSize);
     }
 
     public void UpdatePreview(Vector3 objectPosition, Vector3 cursorPosition, bool validity, Color previewColor)

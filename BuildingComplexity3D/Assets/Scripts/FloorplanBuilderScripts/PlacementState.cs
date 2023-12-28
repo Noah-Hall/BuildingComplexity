@@ -14,6 +14,7 @@ public class PlacementState : IBuildingState
     private ObjectPlacer objectPlacer;
     private ObjectsDatabaseSO database;
     private bool isRotated = false;
+    private Vector2Int objectSize;
 
     public PlacementState(int ID, Grid grid, PreviewSystem previewSystem, GridData floorData, GridData sideWallData, GridData bottomWallData, GridData centerData, ObjectPlacer objectPlacer, ObjectsDatabaseSO database)
     {
@@ -32,7 +33,8 @@ public class PlacementState : IBuildingState
         selectedOrientation = database.objectsData[selectedObjectIndex].orientation;
         if (selectedObjectIndex > -1) 
         {
-            previewSystem.StartShowingPreview(database.objectsData[selectedObjectIndex].Prefab, database.objectsData[selectedObjectIndex].Size);
+            objectSize = database.objectsData[selectedObjectIndex].Size;
+            previewSystem.StartShowingPreview(database.objectsData[selectedObjectIndex].Prefab, objectSize);
         } else {
             throw new Exception($"No ID found {ID}");
         }
@@ -48,11 +50,12 @@ public class PlacementState : IBuildingState
         bool placementValidity = CheckPlacementValidity(gridPosition);
         if (!placementValidity) { return; }
 
-        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, GetNewPlacementPosition(gridPosition), isRotated);
+        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, GetNewPlacementPosition(gridPosition), isRotated, objectSize);
 
         GridData selectedData = GetGridData();
+        Vector2Int placedObjectSize = isRotated ? new Vector2Int(objectSize.y, objectSize.x) : objectSize;
         selectedData.AddObjectAt(gridPosition, 
-                                database.objectsData[selectedObjectIndex].Size, 
+                                placedObjectSize,
                                 database.objectsData[selectedObjectIndex].ID,
                                 selectedOrientation, 
                                 index);
@@ -62,27 +65,44 @@ public class PlacementState : IBuildingState
     public void OnRotate(Vector3Int gridPosition)
     {
         if (selectedOrientation == PlacementOrientation.NONE) { return; }
-        if (selectedOrientation == PlacementOrientation.SIDE) 
-        { 
-            selectedOrientation = PlacementOrientation.BOTTOM;
+        if (selectedOrientation == PlacementOrientation.SIDE || selectedOrientation == PlacementOrientation.BOTTOM) 
+        {
+            selectedOrientation = (selectedOrientation == PlacementOrientation.SIDE) ? PlacementOrientation.BOTTOM : PlacementOrientation.SIDE;
             isRotated = !isRotated;
-            previewSystem.RotatePreview();
-            bool placementValidity = CheckPlacementValidity(gridPosition);
-            previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), placementValidity, database.objectsData[selectedObjectIndex].color);
-        } else if (selectedOrientation == PlacementOrientation.BOTTOM) 
-        { 
-            selectedOrientation = PlacementOrientation.SIDE;
-            isRotated = !isRotated;
-            previewSystem.RotatePreview();
+
+            Vector2Int cursorSize = isRotated ? new Vector2Int(objectSize.y, objectSize.x) : objectSize;
+            previewSystem.RotatePreview(cursorSize);
+
             bool placementValidity = CheckPlacementValidity(gridPosition);
             previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), placementValidity, database.objectsData[selectedObjectIndex].color);
         }
     }
 
+    public void OnScaleXY(int x, int y, Vector3Int gridPosition)
+    {
+        objectSize.x = x < 1 ? objectSize.x : x;
+        objectSize.y = y < 1 ? objectSize.y : y;
+
+        previewSystem.ScalePreview(objectSize, objectSize);
+        bool placementValidity = CheckPlacementValidity(gridPosition);
+        previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), placementValidity, database.objectsData[selectedObjectIndex].color);
+    }
+
+    public void OnScale(int y, Vector3Int gridPosition)
+    {
+        objectSize.y = y < 1 ? objectSize.y : y;
+        Vector2Int cursorSize = isRotated ? new Vector2Int(objectSize.y, objectSize.x) : objectSize;
+
+        previewSystem.ScalePreview(cursorSize, objectSize);
+        bool placementValidity = CheckPlacementValidity(gridPosition);
+        previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), placementValidity, database.objectsData[selectedObjectIndex].color);
+    }
+
     private bool CheckPlacementValidity(Vector3Int gridPosition)
     {
         GridData selectedData = GetGridData();
-        return selectedData.CanPlaceObjectAt(gridPosition, database.objectsData[selectedObjectIndex].Size); 
+        Vector2Int cursorSize = isRotated ? new Vector2Int(objectSize.y, objectSize.x) : objectSize;
+        return selectedData.CanPlaceObjectAt(gridPosition, cursorSize); 
     }
 
     private GridData GetGridData()
@@ -110,17 +130,18 @@ public class PlacementState : IBuildingState
     private Vector3 GetNewPlacementPosition(Vector3Int gridPosition)
     {
         Vector3 returnVal = new Vector3();
+        float addedHeight = database.objectsData[selectedObjectIndex].ID < 2 ? 0f : 0.55f;
         switch (selectedOrientation)
         {
             case PlacementOrientation.NONE:
             case PlacementOrientation.CENTER:
-                returnVal = new Vector3(grid.CellToWorld(gridPosition).x + 0.5f, grid.CellToWorld(gridPosition).y, grid.CellToWorld(gridPosition).z + 0.5f);
+                returnVal = new Vector3(grid.CellToWorld(gridPosition).x + (objectSize.x / 2f), grid.CellToWorld(gridPosition).y + addedHeight, grid.CellToWorld(gridPosition).z + (objectSize.y / 2f));
                 break;
             case PlacementOrientation.SIDE:
-                returnVal = new Vector3(grid.CellToWorld(gridPosition).x, grid.CellToWorld(gridPosition).y, grid.CellToWorld(gridPosition).z + 0.5f);
+                returnVal = new Vector3(grid.CellToWorld(gridPosition).x, grid.CellToWorld(gridPosition).y + addedHeight, grid.CellToWorld(gridPosition).z + (objectSize.y / 2f));
                 break;
             case PlacementOrientation.BOTTOM:
-                returnVal = new Vector3(grid.CellToWorld(gridPosition).x + 0.5f, grid.CellToWorld(gridPosition).y, grid.CellToWorld(gridPosition).z);
+                returnVal = new Vector3(grid.CellToWorld(gridPosition).x + (objectSize.y / 2f), grid.CellToWorld(gridPosition).y + addedHeight, grid.CellToWorld(gridPosition).z);
                 break;
         }
         return returnVal;

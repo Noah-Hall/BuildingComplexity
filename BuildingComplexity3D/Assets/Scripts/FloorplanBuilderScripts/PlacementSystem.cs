@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlacementSystem : MonoBehaviour
 {
     [SerializeField] 
-    private GameObject mouseIndicator, scaleUI, scaleXYUI;
+    private GameObject mouseIndicator, scaleUI, scaleXYUI, scaleSize, scaleSizeX, scaleSizeY;
     [SerializeField] 
     private InputManager inputManager;
     [SerializeField]
@@ -31,8 +32,7 @@ public class PlacementSystem : MonoBehaviour
         sideWallData = new GridData();
         bottomWallData = new GridData();
         centerData = new GridData();
-        scaleUI.SetActive(false);
-        scaleXYUI.SetActive(false);
+        SetScaleUIs();
     }
 
     public void StartPlacement(int ID)
@@ -77,6 +77,21 @@ public class PlacementSystem : MonoBehaviour
         ((PlacementState)buildingState).OnRotate(gridPosition);
     }
 
+    public void ScaleStructure()
+    {
+        if (!(buildingState is PlacementState)) { return; }
+        Vector3 mousePosition = inputManager.GetSelectedMapPosition();
+        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+        if (scaleUI.activeSelf) {
+            int scaleTo = int.Parse(scaleSize.GetComponent<Text>().text);
+            ((PlacementState)buildingState).OnScale(scaleTo, gridPosition);
+        } else if (scaleXYUI.activeSelf) {
+            int scaleToX = int.Parse(scaleSizeX.GetComponent<Text>().text);
+            int scaleToY = int.Parse(scaleSizeY.GetComponent<Text>().text);
+            ((PlacementState)buildingState).OnScaleXY(scaleToX, scaleToY, gridPosition);
+        }
+    }
+
     private void StopPlacement()
     {
         if (buildingState == null) { return; }
@@ -106,8 +121,7 @@ public class PlacementSystem : MonoBehaviour
 
     private void SetScaleUIs()
     {
-        if (buildingState == null) { return; }
-        if (buildingState is RemovingState) 
+        if (buildingState == null || buildingState is RemovingState)
         {
             scaleUI.SetActive(false);
             scaleXYUI.SetActive(false);
