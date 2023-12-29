@@ -24,6 +24,8 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     private ObjectPlacer objectPlacer;
     private IBuildingState buildingState;
+    [SerializeField] 
+    private Camera sceneCamera;
 
     private void Start()
     {
@@ -57,6 +59,26 @@ public class PlacementSystem : MonoBehaviour
         
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
+    }
+
+    public void StartMove()
+    {
+        // StopMove();
+        // StopPlacement();
+        // gridVisualization.SetActive(true);
+
+        // buildingState = null;
+        // SetScaleUIs();
+
+        // inputManager.OnClicked += MoveCamera;
+        // inputManager.OnExit += StopMove;
+    }
+
+    private void MoveCamera()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 camPos = sceneCamera.gameObject.transform.position;
+        sceneCamera.gameObject.transform.position = new Vector3(mousePos.x, camPos.y, mousePos.z);
     }
 
     private void PlaceStructure()
@@ -104,6 +126,14 @@ public class PlacementSystem : MonoBehaviour
         lastDetectedPosition = Vector3Int.zero;
 
         buildingState = null;
+    }
+
+    public void StopMove()
+    {
+        gridVisualization.SetActive(false);
+
+        inputManager.OnClicked -= MoveCamera;
+        inputManager.OnExit -= StopMove;
     }
 
     private void Update()
