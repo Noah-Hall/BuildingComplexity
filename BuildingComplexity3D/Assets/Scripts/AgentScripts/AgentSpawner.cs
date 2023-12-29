@@ -11,7 +11,7 @@ public class AgentSpawner : MonoBehaviour
 {
     public GameObject smartAgentPrefab;
     private GameObject tempAgent;
-    private int count = 0;
+    // private int count = 0;
 
     // Start is called before the first frame update
     void Awake()

@@ -11,7 +11,7 @@ public class ManagerScript : MonoBehaviour
 {
     public List<Stairwell> _stairwells = new List<Stairwell>();
     private int _stairwellNum = 0;
-    private int _floorNum = 0;
+    // private int _floorNum = 0;
     [SerializeField] Camera cam;
     private float targetZoom;
     public AgentSpawner spawner;

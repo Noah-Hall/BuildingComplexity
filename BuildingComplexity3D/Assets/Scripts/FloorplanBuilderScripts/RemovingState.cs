@@ -5,7 +5,6 @@ using UnityEngine;
 public class RemovingState : IBuildingState
 {
     private int gameObjectIndex = -1;
-    private PlacementOrientation selectedOrientation = PlacementOrientation.NONE;
     private Grid grid;
     private PreviewSystem previewSystem;
     private GridData floorData, sideWallData, bottomWallData, centerData;

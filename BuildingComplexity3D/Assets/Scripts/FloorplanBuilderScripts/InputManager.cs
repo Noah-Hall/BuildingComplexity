@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) { OnClicked?.Invoke(); }
         if (Input.GetKeyDown(KeyCode.Escape)) { OnExit?.Invoke(); }
+        // if (Input.Scrolling) { }
     }
 
     public bool IsPointerOverUI() => EventSystem.current.IsPointerOverGameObject();

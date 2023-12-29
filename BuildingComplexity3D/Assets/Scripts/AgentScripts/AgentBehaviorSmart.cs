@@ -203,16 +203,13 @@ public class AgentBehaviorSmart : MonoBehaviour
         {
             case var value when value == LayerMask.NameToLayer("Exits"):
                 return TargetsEnum.EXIT;
-                break;
             case var value when value == LayerMask.NameToLayer("Stairs"):
                 return TargetsEnum.STAIR;
-                break;
             case var value when value == LayerMask.NameToLayer("Doors"):
                 if (visitedTargets[target] > 1) {
                     return TargetsEnum.VISITED_DOOR;
                 }
                 return TargetsEnum.DOOR;
-                break;
             case var value when value == LayerMask.NameToLayer("Nodes"):
                 if (target.tag == "IntersectionNode" && visitedTargets[target] < 1) {
                     return TargetsEnum.INTERSECTION;
@@ -221,7 +218,6 @@ public class AgentBehaviorSmart : MonoBehaviour
                     return TargetsEnum.VISITED_NODE;
                 }
                 return TargetsEnum.NODE;
-                break;
             default:
                 return TargetsEnum.UNKNOWN;
         }

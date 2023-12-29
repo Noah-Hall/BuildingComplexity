@@ -116,13 +116,10 @@ public class PlacementState : IBuildingState
                     return floorData;
                 }
                 return centerData;
-                break;
             case PlacementOrientation.SIDE:
                 return sideWallData;
-                break;
             case PlacementOrientation.BOTTOM:
                 return bottomWallData;
-                break;
         }
         return null;
     }
