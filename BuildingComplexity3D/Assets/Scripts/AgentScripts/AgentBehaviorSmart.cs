@@ -17,6 +17,13 @@ public class AgentBehaviorSmart : MonoBehaviour
     public GameObject targetObject;
     public int _currentFloor;
     public ManagerScript manager;
+    private Vector3 startPosition;
+    private Vector3 prevPosition;
+    public int numVisitedTargets = 0;
+    public float lineToExit;
+    public float totalDistanceTraveled = 0;
+    public int weight;
+
 
     // general initialization
     private void Awake()
@@ -37,16 +44,16 @@ public class AgentBehaviorSmart : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         targetMask = LayerMask.GetMask("Exits", "Doors", "Nodes", "Stairs");
         obstructionMask = LayerMask.GetMask("Walls");
+        startPosition = prevPosition = transform.position;
         StartCoroutine(FOVRoutine());
     }
 
-    // sets targetBound to false if agent has reached target
-    // private void Update()
-    // {
-    //     if (transform.position == navMeshAgent.destination) {
-    //         targetBound = false;
-    //     }
-    // }
+    // updates totalDistanceTraveled
+    private void Update()
+    {
+        totalDistanceTraveled += Vector3.Distance(transform.position, prevPosition);
+        prevPosition = transform.position;
+    }
 
     // calls FieldOfViewCheck 5 times a second (this is more optimal than every frame)
     private IEnumerator FOVRoutine() 
@@ -120,6 +127,7 @@ public class AgentBehaviorSmart : MonoBehaviour
     // Method called by TargetScript when agent triggers object
     public void TargetReached(GameObject target)
     {
+        numVisitedTargets++;
         targetBound = false;
         StartCoroutine(Cooldown());
         visitedTargets[target] = visitedTargets[target] + 1;
@@ -163,8 +171,10 @@ public class AgentBehaviorSmart : MonoBehaviour
         }
     }
 
+    // Method called by StairScript when agent triggers stair object
     public GameObject StairReached(GameObject target)
     {
+        numVisitedTargets++;
         ManagerScript manager = GameObject.Find("Manager").GetComponent<ManagerScript>();
         int temp = target.GetComponent<StairScript>()._stairwell;
         Stairwell stair = manager.GetStairwell(temp);
@@ -180,6 +190,13 @@ public class AgentBehaviorSmart : MonoBehaviour
         return loc;
     }
 
+    // Method called by ExitScript to calculate the agent's beginning and ending positions
+    public void FingerPrint(Vector3 exitPosition)
+    {
+        lineToExit = Vector3.Distance(exitPosition, startPosition);
+    }
+
+    // Helper method for FieldOfViewCheck that returns the enum value of a given target object
     public TargetsEnum GetTargetsEnum(GameObject target)
     {
         switch(target.layer)

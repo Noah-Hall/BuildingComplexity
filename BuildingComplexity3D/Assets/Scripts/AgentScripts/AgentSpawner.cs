@@ -11,7 +11,7 @@ public class AgentSpawner : MonoBehaviour
 {
     public GameObject smartAgentPrefab;
     private GameObject tempAgent;
-    private int count = 1;
+    private int count = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -19,8 +19,9 @@ public class AgentSpawner : MonoBehaviour
         // smartAgentPrefab = Resources.Load("Agents/SmartAgent3D", GameObject) as GameObject;
     }
 
-    public void Spawn(Vector3 position) {
+    public AgentBehaviorSmart Spawn(Vector3 position) {
         tempAgent = Instantiate(smartAgentPrefab, position, Quaternion.identity);
         // tempAgent.name = "smart agent " + count++;
+        return tempAgent.GetComponent<AgentBehaviorSmart>();
     }
 }

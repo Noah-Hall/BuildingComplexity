@@ -1,0 +1,7 @@
+Category, Minimun, Min Count, Maximum, Max Count, Average
+Node Records, intersection node 4 : 0 agents, 33 nodes, room node 10 : 4 agents, 1 nodes, 0.52 agents
+Node Visits, smart agent 16 : 3 nodes, 2 agents, smart agent 17 : 16 nodes, 1 agents, 7.46 nodes
+Door Records, door 63 : 0 agents, 18 doors, door 52 : 13 agents, 1 doors, 1.97 agents
+Door Visits, smart agent 16 : 6 doors, 2 agents, smart agent 17 : 32 doors, 1 agents, 14.92 doors
+Exit Records, exit 2 : 2 agents, 1 exits, exit 4 : 11 agents, 1 exits, 6.00 agents
+Exit Time, 15.24 seconds, 2 exits, 64.60 seconds, 2 exits, 33.56 seconds
