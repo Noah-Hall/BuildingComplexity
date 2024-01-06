@@ -19,6 +19,7 @@ public class ManagerScript : MonoBehaviour
 
     // Sets camera
     // names all important objects in scene for coherant LogFiles
+    // does some general initialization
     void Awake()
     {
         if (spawnAgents) {
@@ -37,7 +38,10 @@ public class ManagerScript : MonoBehaviour
         for(int i = 1; i < roomNodes.Length + 1; i++) {
             if (roomNodes[i - 1].activeInHierarchy) {
                 if (spawnAgents) {
-                    spawner.Spawn(roomNodes[i - 1].transform.position);
+                    // spawn agent, check weight of current RoomNode, and then set Agent weight accordingly
+                    AgentBehaviorSmart tempAgent = spawner.Spawn(roomNodes[i - 1].transform.position);
+                    int tempInt = roomNodes[i - 1].GetComponent<NodeScriptRoom>().weight;
+                    tempAgent.weight = tempInt < 1 ? 1 : tempInt;
                 }
                 roomNodes[i - 1].name = "room node " + i;
             }
@@ -105,6 +109,7 @@ public class ManagerScript : MonoBehaviour
         gameObject.GetComponent<FileManager>().GenerateFloorplanData(floorAreaS, moduleNodes.Length + roomNodes.Length, doors.Length, exits.Length, _stairwellNum, navMeshes.Length);
     }
 
+    // gets Stairwell with given passed _num value
     public Stairwell GetStairwell(int num)
     {
         foreach (Stairwell stairwell in _stairwells) {
@@ -115,6 +120,7 @@ public class ManagerScript : MonoBehaviour
         return null;
     }
 
+    // fills Stairwell objects with stair GameObjects
     private void FillStairwells()
     {
         GameObject[] stairs = GameObject.FindGameObjectsWithTag("Stair");
@@ -143,6 +149,7 @@ public class ManagerScript : MonoBehaviour
         _stairwells.Sort(CompareStairNum);
     }
 
+    // compares two Stairwell objects
     private static int CompareStairNum(Stairwell x_object, Stairwell y_object)
     {
         int x = x_object._num;

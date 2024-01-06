@@ -162,7 +162,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -178,7 +178,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.25
-  m_Speed: 3.5
+  m_Speed: 1.24
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -212,8 +212,12 @@ MonoBehaviour:
   targetBound: 0
   reachedCooldown: 0
   targetObject: {fileID: 0}
-  dest: {fileID: 0}
-  debuggingOn: 0
+  _currentFloor: 0
+  manager: {fileID: 0}
+  numVisitedTargets: 0
+  lineToExit: 0
+  totalDistanceTraveled: 0
+  weight: 0
 --- !u!1 &8431957135594784123
 GameObject:
   m_ObjectHideFlags: 0

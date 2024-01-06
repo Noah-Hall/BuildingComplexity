@@ -16,11 +16,13 @@ public class Stairwell
     private bool _exitFound;
     private GameObject _exitFloor;
 
+    // sorts the _stairwell list to keep floors in numerical order
     private void Order()
     {
         _stairwell.Sort(CompareStairs);
     }
 
+    // compares two stair GameObjects
     private static int CompareStairs(GameObject x_object, GameObject y_object)
     {
         int x = x_object.GetComponent<StairScript>()._floor;
@@ -29,6 +31,7 @@ public class Stairwell
         return x - y;
     }
 
+    // adds stair to _stairwell list
     public bool Add(GameObject newStair)
     {
         if (_num == newStair.GetComponent<StairScript>()._stairwell) {
@@ -41,6 +44,7 @@ public class Stairwell
         }
     }
 
+    // returns stair from floor parameter
     public GameObject Get(int floor)
     {
         if (floor <= _stairwell.Count) {
@@ -49,6 +53,7 @@ public class Stairwell
         return null;
     }
 
+    // returns the stair object on the exit floor
     public GameObject GetExitFloor()
     {
         if (_exitFound) {
@@ -66,12 +71,14 @@ public class Stairwell
         return null;
     }
 
+    // Stairwell constructor that just initializes _num and _count
     public Stairwell(int stairwellNum)
     {
         _num = stairwellNum;
         _count = _stairwell.Count;
     }
 
+    // Stairwell constructor that initializes _num, _count, and _stairwell
     public Stairwell(int stairwellNum, List<GameObject> stairs)
     {
         _num = stairwellNum;

@@ -1,0 +1,269 @@
+Object Name, First Visit, Last Visit, Total # of Visits
+module node 1, 0.00, 0.00, 0
+module node 2, 0.00, 0.00, 0
+module node 3, 0.00, 0.00, 0
+module node 4, 0.00, 0.00, 0
+module node 5, 0.00, 0.00, 0
+module node 6, 0.00, 0.00, 0
+module node 7, 0.00, 0.00, 0
+module node 8, 0.00, 0.00, 0
+module node 9, 0.00, 0.00, 0
+module node 10, 0.00, 0.00, 0
+module node 11, 0.00, 0.00, 0
+module node 12, 0.00, 0.00, 0
+module node 13, 0.00, 0.00, 0
+module node 14, 0.00, 0.00, 0
+module node 15, 0.00, 0.00, 0
+module node 16, 0.00, 0.00, 0
+module node 17, 0.00, 0.00, 0
+module node 18, 0.00, 0.00, 0
+module node 19, 0.00, 0.00, 0
+module node 20, 0.00, 0.00, 0
+module node 21, 0.00, 0.00, 0
+module node 22, 0.00, 0.00, 0
+module node 23, 0.00, 0.00, 0
+module node 24, 0.00, 0.00, 0
+module node 25, 0.00, 0.00, 0
+module node 26, 0.00, 0.00, 0
+module node 27, 0.00, 0.00, 0
+module node 28, 15.68, 27.72, 7
+module node 29, 0.00, 0.00, 0
+module node 30, 0.00, 0.00, 0
+module node 31, 0.00, 0.00, 0
+module node 32, 13.88, 100.42, 15
+module node 33, 11.62, 39.70, 6
+module node 34, 15.02, 37.28, 5
+module node 35, 0.00, 0.00, 0
+module node 36, 0.00, 0.00, 0
+module node 37, 0.00, 0.00, 0
+module node 38, 0.00, 0.00, 0
+module node 39, 0.00, 0.00, 0
+module node 40, 0.00, 0.00, 0
+module node 41, 0.00, 0.00, 0
+module node 42, 0.00, 0.00, 0
+module node 43, 0.00, 0.00, 0
+module node 44, 0.00, 0.00, 0
+module node 45, 0.00, 0.00, 0
+module node 46, 0.00, 0.00, 0
+module node 47, 0.00, 0.00, 0
+module node 48, 0.00, 0.00, 0
+module node 49, 0.00, 0.00, 0
+module node 50, 0.00, 0.00, 0
+module node 51, 0.00, 0.00, 0
+module node 52, 0.00, 0.00, 0
+module node 53, 0.00, 0.00, 0
+module node 54, 0.00, 0.00, 0
+module node 55, 0.00, 0.00, 0
+module node 56, 0.00, 0.00, 0
+module node 57, 0.00, 0.00, 0
+module node 58, 0.00, 0.00, 0
+module node 59, 0.00, 0.00, 0
+module node 60, 0.00, 0.00, 0
+module node 61, 0.00, 0.00, 0
+module node 62, 0.00, 0.00, 0
+module node 63, 0.00, 0.00, 0
+module node 64, 13.04, 34.36, 4
+module node 65, 0.00, 0.00, 0
+module node 66, 0.00, 0.00, 0
+module node 67, 0.00, 0.00, 0
+module node 68, 0.00, 0.00, 0
+module node 69, 0.00, 0.00, 0
+module node 70, 0.00, 0.00, 0
+module node 71, 0.00, 0.00, 0
+module node 72, 0.00, 0.00, 0
+module node 73, 0.00, 0.00, 0
+module node 74, 0.00, 0.00, 0
+module node 75, 0.00, 0.00, 0
+module node 76, 0.00, 0.00, 0
+module node 77, 0.00, 0.00, 0
+module node 78, 0.00, 0.00, 0
+module node 79, 0.00, 0.00, 0
+module node 80, 0.00, 0.00, 0
+module node 81, 0.00, 0.00, 0
+module node 82, 0.00, 0.00, 0
+module node 83, 0.00, 0.00, 0
+module node 84, 0.00, 0.00, 0
+module node 85, 0.00, 0.00, 0
+module node 86, 0.00, 0.00, 0
+module node 87, 0.00, 0.00, 0
+module node 88, 0.00, 0.00, 0
+module node 89, 0.00, 0.00, 0
+module node 90, 0.00, 0.00, 0
+module node 91, 0.00, 0.00, 0
+module node 92, 0.00, 0.00, 0
+module node 93, 0.00, 0.00, 0
+module node 94, 0.00, 0.00, 0
+module node 95, 0.00, 0.00, 0
+module node 96, 0.00, 0.00, 0
+module node 97, 0.00, 0.00, 0
+module node 98, 0.00, 0.00, 0
+module node 99, 14.56, 41.38, 5
+module node 100, 0.00, 0.00, 0
+module node 101, 0.00, 0.00, 0
+module node 102, 0.00, 0.00, 0
+module node 103, 0.00, 0.00, 0
+module node 104, 0.00, 0.00, 0
+module node 105, 0.00, 0.00, 0
+module node 106, 0.00, 0.00, 0
+module node 107, 0.00, 0.00, 0
+module node 108, 0.00, 0.00, 0
+module node 109, 0.00, 0.00, 0
+module node 110, 17.42, 17.42, 1
+room node 1, 0.00, 0.00, 1
+room node 2, 0.00, 120.04, 8
+room node 3, 0.00, 0.00, 1
+room node 4, 0.00, 0.00, 1
+room node 5, 0.00, 0.00, 1
+room node 6, 0.00, 0.00, 1
+room node 7, 0.00, 0.00, 1
+room node 8, 0.00, 0.00, 1
+room node 9, 0.00, 0.00, 1
+room node 10, 0.00, 0.00, 1
+room node 11, 0.00, 0.00, 1
+room node 12, 0.00, 0.00, 1
+room node 13, 0.00, 0.00, 1
+room node 14, 0.00, 0.00, 1
+room node 15, 0.00, 0.00, 1
+room node 16, 0.00, 0.00, 1
+room node 17, 0.00, 0.00, 1
+room node 18, 0.00, 0.00, 1
+room node 19, 0.00, 0.00, 1
+room node 20, 0.00, 0.00, 1
+room node 21, 0.00, 0.00, 1
+room node 22, 0.00, 0.00, 1
+room node 23, 0.00, 0.00, 1
+room node 24, 0.00, 0.00, 1
+room node 25, 0.00, 0.00, 1
+room node 26, 0.00, 0.00, 1
+room node 27, 0.00, 0.00, 1
+room node 28, 0.00, 0.00, 1
+room node 29, 0.00, 0.00, 1
+room node 30, 0.00, 0.00, 1
+room node 31, 0.00, 0.00, 1
+room node 32, 0.00, 0.00, 1
+room node 33, 0.00, 0.00, 1
+room node 34, 0.00, 0.00, 1
+room node 35, 0.00, 0.00, 1
+room node 36, 0.00, 0.00, 1
+room node 37, 0.00, 0.00, 1
+room node 38, 0.00, 0.00, 1
+room node 39, 0.00, 0.00, 1
+room node 40, 0.00, 0.00, 1
+room node 41, 0.00, 0.00, 1
+room node 42, 0.00, 0.00, 1
+room node 43, 0.00, 0.00, 1
+room node 44, 0.00, 0.00, 1
+door 1, 3.86, 5.00, 2
+door 2, 8.98, 8.98, 1
+door 3, 0.00, 0.00, 0
+door 4, 5.12, 5.12, 1
+door 5, 3.42, 3.42, 1
+door 6, 5.62, 5.62, 1
+door 7, 5.04, 5.04, 1
+door 8, 3.52, 3.64, 2
+door 9, 0.00, 0.00, 0
+door 10, 0.00, 0.00, 0
+door 11, 0.00, 0.00, 0
+door 12, 11.80, 12.18, 3
+door 13, 0.00, 0.00, 0
+door 14, 2.24, 2.58, 3
+door 15, 7.54, 7.92, 3
+door 16, 9.18, 88.18, 4
+door 17, 5.18, 51.84, 9
+door 18, 15.54, 41.28, 8
+door 19, 5.04, 52.06, 12
+door 20, 5.04, 51.12, 7
+door 21, 15.66, 41.06, 7
+door 22, 13.04, 33.70, 7
+door 23, 8.10, 69.84, 6
+door 24, 14.78, 62.70, 7
+door 25, 12.90, 33.92, 7
+door 26, 5.18, 51.34, 9
+door 27, 0.00, 0.00, 0
+door 28, 9.16, 9.16, 1
+door 29, 9.28, 9.80, 2
+door 30, 8.24, 69.70, 6
+door 31, 8.60, 8.60, 1
+door 32, 14.62, 62.86, 9
+door 33, 20.26, 96.54, 3
+door 34, 0.00, 0.00, 0
+door 35, 20.42, 96.76, 6
+door 36, 4.46, 4.92, 2
+door 37, 4.50, 4.92, 3
+door 38, 3.78, 3.78, 1
+door 39, 3.78, 3.78, 1
+door 40, 3.78, 3.78, 1
+door 41, 3.78, 3.78, 1
+door 42, 3.78, 3.78, 1
+door 43, 3.78, 3.78, 1
+door 44, 3.78, 3.78, 1
+door 45, 3.78, 3.78, 1
+door 46, 4.50, 4.92, 3
+door 47, 5.32, 5.34, 2
+door 48, 9.24, 9.80, 2
+door 49, 8.70, 8.70, 1
+door 50, 3.78, 3.78, 1
+door 51, 9.32, 88.40, 8
+door 52, 3.96, 4.06, 2
+door 53, 3.98, 4.42, 3
+door 54, 3.98, 4.42, 3
+door 55, 3.98, 4.42, 3
+door 56, 3.98, 4.92, 2
+door 57, 3.96, 4.06, 2
+door 58, 5.74, 5.74, 1
+door 59, 3.78, 3.78, 1
+door 60, 0.00, 0.00, 0
+door 61, 4.48, 4.92, 3
+door 62, 0.00, 0.00, 0
+door 63, 4.48, 4.92, 3
+door 64, 4.50, 4.92, 3
+door 65, 4.50, 4.92, 2
+door 66, 3.78, 3.78, 1
+door 67, 3.78, 3.78, 1
+door 68, 3.78, 3.78, 1
+door 69, 3.78, 3.78, 1
+door 70, 11.04, 11.42, 3
+door 71, 0.00, 0.00, 0
+door 72, 0.00, 0.00, 0
+door 73, 11.96, 11.96, 1
+door 74, 0.00, 0.00, 0
+door 75, 0.00, 0.00, 0
+door 76, 2.36, 3.10, 2
+door 77, 7.70, 7.70, 1
+door 78, 0.00, 0.00, 0
+door 79, 4.34, 4.92, 2
+door 80, 3.66, 3.66, 1
+door 81, 3.66, 3.66, 1
+door 82, 3.66, 3.66, 1
+door 83, 3.66, 3.66, 1
+door 84, 4.34, 4.34, 1
+door 85, 3.66, 3.66, 1
+door 86, 3.66, 3.66, 1
+door 87, 3.66, 3.66, 1
+door 88, 3.66, 3.66, 1
+door 89, 4.34, 4.92, 2
+door 90, 10.90, 11.42, 4
+door 91, 3.72, 5.22, 3
+door 92, 3.66, 4.00, 3
+door 93, 3.66, 4.00, 3
+door 94, 3.66, 4.00, 3
+door 95, 3.66, 4.00, 3
+door 96, 3.66, 3.66, 1
+door 97, 3.84, 4.18, 2
+door 98, 3.84, 3.84, 1
+door 99, 3.86, 4.20, 3
+door 100, 3.86, 4.20, 3
+door 101, 3.86, 4.20, 3
+door 102, 3.86, 4.20, 3
+door 103, 4.36, 4.92, 2
+door 104, 3.68, 4.00, 3
+door 105, 4.36, 4.92, 4
+door 106, 0.00, 0.00, 0
+door 107, 4.36, 4.92, 4
+door 108, 0.00, 0.00, 0
+door 109, 4.36, 4.92, 4
+exit 1, 7.28, 127.38, 14
+exit 2, 17.00, 29.06, 6
+exit 3, 15.20, 101.48, 15
+exit 4, 14.36, 35.68, 4
+exit 5, 15.82, 42.70, 5
