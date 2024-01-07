@@ -9,24 +9,45 @@ public class InputManager : MonoBehaviour
     [SerializeField] private Camera sceneCamera;
     [SerializeField] private LayerMask placementLayermask;
     private Vector3 lastPosition;
-    private Vector3 mousePosition;
     public event Action OnClicked, OnExit;
+    private float minZoom = 60f, maxZoom = 1f, sensitivity = 5f;
+    private Vector3 cameraOrigin, difference;
+    private bool drag = false;
 
-    private void Start()
-    {
-        mousePosition = Input.mousePosition;
-    }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) { OnClicked?.Invoke(); }
         if (Input.GetKeyDown(KeyCode.Escape)) { OnExit?.Invoke(); }
-        if (mousePosition != Input.mousePosition) 
+        UpdateZoom();
+    }
+
+    private void LateUpdate()
+    {
+        if (Input.GetMouseButton(2)) 
         {
-            Vector3 distance = mousePosition - Input.mousePosition;
-            Vector3 camPos = sceneCamera.gameObject.transform.position;
-            sceneCamera.gameObject.transform.position = new Vector3(camPos.x - distance.x, camPos.y, camPos.z - distance.z);
+            difference = sceneCamera.ScreenToWorldPoint(Input.mousePosition) - sceneCamera.transform.position;
+            if (drag == false) 
+            {
+                drag = true;
+                cameraOrigin = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+            }
+        } else {
+            drag = false; 
         }
+
+        if (drag)
+        {
+            sceneCamera.transform.position = cameraOrigin - difference;
+        }
+    }
+
+    private void UpdateZoom()
+    {
+        float changeZoom = Input.GetAxis("Mouse ScrollWheel") * sensitivity;
+        if (Camera.main.orthographicSize - changeZoom < maxZoom) { return; }
+        if (Camera.main.orthographicSize - changeZoom > minZoom) { return; }
+        Camera.main.orthographicSize -= changeZoom;
     }
 
     public bool IsPointerOverUI() => EventSystem.current.IsPointerOverGameObject();

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlacementSystem : MonoBehaviour
 {
     [SerializeField] 
-    private GameObject mouseIndicator, scaleUI, scaleXYUI, scaleSize, scaleSizeX, scaleSizeY;
+    private GameObject mouseIndicator, chooseNodeUI, scaleUI, scaleXYUI, scaleSize, scaleSizeX, scaleSizeY;
     [SerializeField] 
     private InputManager inputManager;
     [SerializeField]
@@ -37,6 +37,11 @@ public class PlacementSystem : MonoBehaviour
         SetScaleUIs();
     }
 
+    public void StartNode()
+    {
+        StartPlacement(chooseNodeUI.GetComponent<Dropdown>().value + 6);
+    }
+
     public void StartPlacement(int ID)
     {
         StopPlacement();
@@ -59,26 +64,6 @@ public class PlacementSystem : MonoBehaviour
         
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
-    }
-
-    public void StartMove()
-    {
-        // StopMove();
-        // StopPlacement();
-        // gridVisualization.SetActive(true);
-
-        // buildingState = null;
-        // SetScaleUIs();
-
-        // inputManager.OnClicked += MoveCamera;
-        // inputManager.OnExit += StopMove;
-    }
-
-    private void MoveCamera()
-    {
-        Vector3 mousePos = Input.mousePosition;
-        Vector3 camPos = sceneCamera.gameObject.transform.position;
-        sceneCamera.gameObject.transform.position = new Vector3(mousePos.x, camPos.y, mousePos.z);
     }
 
     private void PlaceStructure()
@@ -118,6 +103,8 @@ public class PlacementSystem : MonoBehaviour
     {
         if (buildingState == null) { return; }
         gridVisualization.SetActive(false);
+        scaleUI.SetActive(false);
+        scaleXYUI.SetActive(false);
 
         buildingState.EndState();
 
@@ -126,14 +113,6 @@ public class PlacementSystem : MonoBehaviour
         lastDetectedPosition = Vector3Int.zero;
 
         buildingState = null;
-    }
-
-    public void StopMove()
-    {
-        gridVisualization.SetActive(false);
-
-        inputManager.OnClicked -= MoveCamera;
-        inputManager.OnExit -= StopMove;
     }
 
     private void Update()
@@ -155,16 +134,19 @@ public class PlacementSystem : MonoBehaviour
         {
             scaleUI.SetActive(false);
             scaleXYUI.SetActive(false);
+            chooseNodeUI.SetActive(false);
             return; 
         }
         PlacementState placementState = ((PlacementState)buildingState);
         scaleUI.SetActive(false);
         scaleXYUI.SetActive(false);
+        chooseNodeUI.SetActive(false);
 
         switch (placementState.selectedOrientation)
         {
             case PlacementOrientation.CENTER:
                 if (placementState.ID == 1) { scaleXYUI.SetActive(true); }
+                if (placementState.ID > 5) { chooseNodeUI.SetActive(true); }
                 break;
             case PlacementOrientation.SIDE:
             case PlacementOrientation.BOTTOM:
