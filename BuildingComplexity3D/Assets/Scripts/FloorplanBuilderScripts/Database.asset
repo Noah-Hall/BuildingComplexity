@@ -54,16 +54,16 @@ MonoBehaviour:
     <orientation>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 3770698129906628783, guid: ab90985ce9b874355ba0e18bfb0082aa, type: 3}
-    <color>k__BackingField: {r: 1, g: 1, b: 1, a: 0.39215687}
+    <color>k__BackingField: {r: 0, g: 0, b: 0, a: 0.39215687}
   - <Name>k__BackingField: Intersection Node
     <ID>k__BackingField: 7
     <orientation>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 3457494437960950320, guid: ef02a7a18dfec47e085cc16932217b68, type: 3}
-    <color>k__BackingField: {r: 1, g: 1, b: 1, a: 0.39215687}
+    <color>k__BackingField: {r: 0, g: 0, b: 0, a: 0.39215687}
   - <Name>k__BackingField: Module Node
     <ID>k__BackingField: 8
     <orientation>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 3457494437960950320, guid: b40046b807680465683c98fb97ebad04, type: 3}
-    <color>k__BackingField: {r: 1, g: 1, b: 1, a: 0.39215687}
+    <color>k__BackingField: {r: 0, g: 0, b: 0, a: 0.39215687}
