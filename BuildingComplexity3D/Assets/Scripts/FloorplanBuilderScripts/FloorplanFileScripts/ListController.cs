@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using Unity.VisualScripting;
 
 public class ListController : MonoBehaviour
 {
@@ -13,20 +15,14 @@ public class ListController : MonoBehaviour
 	void Start () {
 
 		// 1. Get the data to be displayed
-		FileDatas = new ArrayList (){
-			new FileData("name1", "date1", "size1"),
-			new FileData("name2", "date2", "size2"),
-            new FileData("name3", "date3", "size3"),
-            new FileData("name4", "date4", "size4"),
-			new FileData("name5", "date5", "size5"),
-            new FileData("name6", "date6", "size6"),
-            new FileData("name1", "date1", "size1"),
-			new FileData("name2", "date2", "size2"),
-            new FileData("name3", "date3", "size3"),
-            new FileData("name4", "date4", "size4"),
-			new FileData("name5", "date5", "size5"),
-            new FileData("name6", "date6", "size6"),
-		};
+        FileDatas = new ArrayList();
+        var info = new DirectoryInfo(Application.dataPath + "/Scene_Files/Floorplan_Builds");
+        var fileInfo = info.GetFiles();
+        foreach (FileInfo file in fileInfo) {
+            if (!file.Name.Contains(".meta") ) {
+                FileDatas.Add(new FileData(file.Name, file.LastWriteTime.ToString(), file.Length.ToString()));
+            }
+        }
 
 		// 2. Iterate through the data, 
 		//	  instantiate prefab, 

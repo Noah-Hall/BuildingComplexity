@@ -50,7 +50,15 @@ public class PlacementState : IBuildingState
         bool placementValidity = CheckPlacementValidity(gridPosition);
         if (!placementValidity) { return; }
 
-        int index = objectPlacer.PlaceObject(database.objectsData[selectedObjectIndex].Prefab, GetNewPlacementPosition(gridPosition), isRotated, objectSize);
+        PlacerObject newPlacerObject = new PlacerObject(database.objectsData[selectedObjectIndex].Prefab, 
+                                                        GetNewPlacementPosition(gridPosition), 
+                                                        isRotated, 
+                                                        objectSize, 
+                                                        gridPosition, 
+                                                        database.objectsData[selectedObjectIndex].ID, 
+                                                        selectedOrientation);
+        int index = objectPlacer.PlaceObject(newPlacerObject);
+        if (index == -1) { return; }
 
         GridData selectedData = GetGridData();
         Vector2Int placedObjectSize = isRotated ? new Vector2Int(objectSize.y, objectSize.x) : objectSize;

@@ -156,4 +156,40 @@ public class PlacementSystem : MonoBehaviour
                 break;
         }
     }
+
+    public void LoadFromSceneData(SceneData data)
+    {
+        foreach(PlacerObject placerObject in data.objectsList)
+        {
+            if (placerObject == null) { continue; }
+            int index = objectPlacer.PlaceObject(placerObject);
+
+            GridData selectedData = GetGridData(placerObject.orientation, placerObject.ID);
+            Vector2Int placedObjectSize = placerObject.rotate ? new Vector2Int(placerObject.scale.y, placerObject.scale.x) : placerObject.scale;
+            selectedData.AddObjectAt(placerObject.gridPosition, 
+                                    placedObjectSize,
+                                    placerObject.ID,
+                                    placerObject.orientation, 
+                                    index);
+        }
+    }
+
+    private GridData GetGridData(PlacementOrientation orientation, int ID)
+    {
+        switch(orientation)
+        {
+            case PlacementOrientation.NONE:
+            case PlacementOrientation.CENTER:
+                if (ID < 2)
+                {
+                    return floorData;
+                }
+                return centerData;
+            case PlacementOrientation.SIDE:
+                return sideWallData;
+            case PlacementOrientation.BOTTOM:
+                return bottomWallData;
+        }
+        return null;
+    }
 }

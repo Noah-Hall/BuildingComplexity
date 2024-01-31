@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class MenuManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     public void SetFileName(string newFilename)
@@ -49,12 +50,12 @@ public class MenuManager : MonoBehaviour
 
     public void QuitButton()
     {
-
+        SceneManager.LoadScene("Main_Menu");
     }
 
     public void SaveAndQuitButton()
     {
-
+        SceneManager.LoadScene("Main_Menu");
     }
 
     /*

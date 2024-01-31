@@ -59,27 +59,65 @@
     <UnityVersion>2022.2.14f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/Users/noahhall/.vscode/extensions/visualstudiotoolsforunity.vstuc-0.9.3/Analyzers/Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="/Users/noahhall/.vscode/extensions/visualstudiotoolsforunity.vstuc-0.9.4/Analyzers/Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.2.14f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.2.14f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/FloorplanFileScripts/ListController.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/RemovingState.cs" />
     <Compile Include="Assets/Scripts/AgentScripts/AgentBehaviorSmart.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/ObjectPlacer.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/FloorplanFileScripts/DataPersistence/FileDataHandler.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/PlacementState.cs" />
     <Compile Include="Assets/Scripts/AgentScripts/AgentTestingScript.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/GridData.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/FloorplanFileScripts/FileData.cs" />
     <Compile Include="Assets/Scripts/TargetScripts/NodeScriptRoom.cs" />
     <Compile Include="Assets/Scripts/TargetScripts/StairScript.cs" />
     <Compile Include="Assets/Scripts/TargetScripts/DoorScript.cs" />
     <Compile Include="Assets/Scripts/TargetScripts/Stairwell.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/PlacerObject.cs" />
     <Compile Include="Assets/Scripts/SceneScripts/CameraScript.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/FloorplanFileScripts/DataPersistence/Data/SceneData.cs" />
     <Compile Include="Assets/Scripts/TargetScripts/NodeScript.cs" />
     <Compile Include="Assets/Scripts/TargetScripts/TargetScript.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/ObjectsDatabaseSO.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/FloorplanFileScripts/ListItemController.cs" />
     <Compile Include="Assets/Scripts/SceneScripts/ManagerScript.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/IBuildingState.cs" />
     <Compile Include="Assets/Scripts/AgentScripts/AgentSpawner.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/FloorplanFileScripts/DataPersistence/PersistenceManager.cs" />
     <Compile Include="Assets/Scripts/AgentScripts/TargetsEnum.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/PreviewSystem.cs" />
     <Compile Include="Assets/Scripts/FloorplanBuilderScripts/InputManager.cs" />
     <Compile Include="Assets/Scripts/TargetScripts/ExitScript.cs" />
     <Compile Include="Assets/Scripts/SceneScripts/FileManager.cs" />
     <Compile Include="Assets/Scripts/FloorplanBuilderScripts/PlacementSystem.cs" />
+    <Compile Include="Assets/Scripts/FloorplanBuilderScripts/MenuManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro.cginc" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
+    <None Include="Assets/Imports/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
+    <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1022,6 +1060,10 @@
       <HintPath>Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1032,10 +1074,6 @@
     </Reference>
     <Reference Include="Unity.AI.Navigation.Updater">
       <HintPath>Library/ScriptAssemblies/Unity.AI.Navigation.Updater.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
@@ -1054,12 +1092,12 @@
       <HintPath>Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.AI.Navigation.Editor">
-      <HintPath>Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PersistenceManager : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class PersistenceManager : MonoBehaviour
     private SceneData sceneData;
     private FileDataHandler dataHandler;
     private string currentFileName;
+    [SerializeField]
+    private InputField inputField;
 
     private void Awake()
     {
@@ -21,26 +25,36 @@ public class PersistenceManager : MonoBehaviour
     private void Start()
     {
         this.dataHandler = new FileDataHandler();
+        if (SceneManager.GetActiveScene().name == "Floorplan_Editor")
+        {
+            SetupFloorplan();
+        }
     }
 
-    public void SetFileName(string fileName)
+    public void SetFileName(string filename)
     {
-        currentFileName = fileName;
+        currentFileName = filename;
     }
 
-    public void NewFloorplan(string fileName)
+    public void NewFloorplan(string filename)
     {
         this.sceneData = new SceneData();
 
         // set sceneData.fileData
         string theDate = System.DateTime.Now.ToString("MM/dd/yyyy") + "_" + System.DateTime.Now.ToString("hh:mm:ss");
-        FileData newFileData = new FileData(fileName, theDate, "N/A");
+        FileData newFileData = new FileData(filename, theDate, "N/A");
         sceneData.SetFileData(newFileData);
     }
 
-    public void LoadFloorplan(string fileName)
+    public void LoadFloorplan()
     {
-        this.sceneData = dataHandler.Load(fileName);
+        Text filename = GameObject.Find("FilenameText").GetComponent<Text>();
+        dataHandler.Load(filename.text);
+    }
+
+    private void SetupFloorplan()
+    {
+        this.sceneData = dataHandler.UnpackSceneToLoad();
 
         // if no data can be loaded, initialize to a new game
         if (this.sceneData == null)
@@ -49,35 +63,34 @@ public class PersistenceManager : MonoBehaviour
         } else {
             // set sceneData.fileData
             string theDate = System.DateTime.Now.ToString("MM/dd/yyyy") + "_" + System.DateTime.Now.ToString("hh:mm:ss");
-            FileData newFileData = new FileData(fileName, theDate, "N/A");
+            FileData newFileData = new FileData(sceneData.fileData._name, theDate, sceneData.fileData._size);
             sceneData.SetFileData(newFileData);
+            GameObject.Find("PlacementSystem").GetComponent<PlacementSystem>().LoadFromSceneData(sceneData);
         }
     }
 
     public void SaveFloorplan()
     {
+        SceneData oldSceneData = dataHandler.GetCurrentSceneData();
+
+        // Set list of PlacerObjects from ObjectPlacer GameObject in Floorplan_Editor
+        List<PlacerObject> placerObjects = GameObject.Find("ObjectPlacer").GetComponent<ObjectPlacer>().GetPlacerObjects();
+
         // Add all relevant GameObjects to sceneData.objectsList
-        GameObject[] moduleNodes = GameObject.FindGameObjectsWithTag("ModuleNode");
-        sceneData.objectsList.AddRange(moduleNodes);
-        GameObject[] roomNodes = GameObject.FindGameObjectsWithTag("RoomNode");
-        sceneData.objectsList.AddRange(roomNodes);
-        GameObject[] intersectionNodes = GameObject.FindGameObjectsWithTag("IntersectionNode");
-        sceneData.objectsList.AddRange(intersectionNodes);
-        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-        sceneData.objectsList.AddRange(doors);
-        GameObject[] exits = GameObject.FindGameObjectsWithTag("Exit");
-        sceneData.objectsList.AddRange(exits);
-        GameObject[] stairs = GameObject.FindGameObjectsWithTag("Stair");
-        sceneData.objectsList.AddRange(stairs);
-        GameObject[] floors = GameObject.FindGameObjectsWithTag("Floor");
-        sceneData.objectsList.AddRange(floors);
+        // PROBLEM NullReferenceException: Object reference not set to an instance of an object
+        sceneData.objectsList = placerObjects;
 
         // set sceneData.fileData
         string theDate = System.DateTime.Now.ToString("MM/dd/yyyy") + "_" + System.DateTime.Now.ToString("hh:mm:ss");
-        FileData newFileData = new FileData(currentFileName, theDate, "N/A");
+        FileData newFileData = new FileData(oldSceneData.fileData._name, theDate, oldSceneData.fileData._size);
         sceneData.SetFileData(newFileData);
 
         // save sceneData as a file
         dataHandler.Save(sceneData);
+    }
+
+    public void CreateFloorplan()
+    {
+        dataHandler.Create(inputField.text);
     }
 }
