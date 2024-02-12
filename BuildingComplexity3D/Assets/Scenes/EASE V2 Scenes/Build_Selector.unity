@@ -1088,6 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 1288816880}
+  prefabs: []
 --- !u!1 &1146080137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,7 +1774,6 @@ RectTransform:
   - {fileID: 301393246}
   - {fileID: 1724080554}
   - {fileID: 1150975092}
-  - {fileID: 1403134669}
   m_Father: {fileID: 564324123}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1852,7 +1852,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1153425737}
-  m_Father: {fileID: 1389925085}
+  m_Father: {fileID: 1703373089}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -1987,6 +1987,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1403134669}
   - {fileID: 1146080138}
   m_Father: {fileID: 564324123}
   m_RootOrder: -1

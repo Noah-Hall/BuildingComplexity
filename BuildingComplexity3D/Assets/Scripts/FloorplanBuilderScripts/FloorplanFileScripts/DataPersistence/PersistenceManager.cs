@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,9 @@ public class PersistenceManager : MonoBehaviour
     private string currentFileName;
     [SerializeField]
     private InputField inputField;
+    [SerializeField]
+    private List<GameObject> prefabs; 
+    // border, floor, wall, door, exit, Stair, node room, node module, node intersection
 
     private void Awake()
     {
@@ -27,7 +31,11 @@ public class PersistenceManager : MonoBehaviour
         this.dataHandler = new FileDataHandler();
         if (SceneManager.GetActiveScene().name == "Floorplan_Editor")
         {
-            SetupFloorplan();
+            SetupFloorplanForEditor();
+        }
+        if (SceneManager.GetActiveScene().name == "Floorplan_Runner")
+        {
+            SetupFloorplanForRunner();
         }
     }
 
@@ -52,7 +60,7 @@ public class PersistenceManager : MonoBehaviour
         dataHandler.Load(filename.text);
     }
 
-    private void SetupFloorplan()
+    private void SetupFloorplanForEditor()
     {
         this.sceneData = dataHandler.UnpackSceneToLoad();
 
@@ -67,6 +75,75 @@ public class PersistenceManager : MonoBehaviour
             sceneData.SetFileData(newFileData);
             GameObject.Find("PlacementSystem").GetComponent<PlacementSystem>().LoadFromSceneData(sceneData);
         }
+    }
+
+    private void SetupFloorplanForRunner()
+    {
+        this.sceneData = dataHandler.UnpackSceneToLoad();
+
+        // if no data can be loaded, initialize to a new game
+        if (this.sceneData == null)
+        {
+            Debug.Log("No data was found.");
+        } else {
+            // set sceneData.fileData
+            string theDate = System.DateTime.Now.ToString("MM/dd/yyyy") + "_" + System.DateTime.Now.ToString("hh:mm:ss");
+            FileData newFileData = new FileData(sceneData.fileData._name, theDate, sceneData.fileData._size);
+            sceneData.SetFileData(newFileData);
+
+            foreach(PlacerObject placerObject in sceneData.objectsList)
+            {
+                if (placerObject == null) { continue; }
+                GameObject prefabToInstantiate = getPrefab(placerObject.prefabName);
+                if (prefabToInstantiate == null) { continue; }
+                GameObject newObject = Instantiate(prefabToInstantiate);
+                newObject.transform.position = placerObject.pos;
+                if (placerObject.rotate) { newObject.transform.Rotate(0, 90, 0); }
+
+                Vector3 newScale = newObject.transform.localScale;
+                newScale.x = placerObject.scale.x > 1 ? placerObject.scale.x : newScale.x;
+                newScale.z = placerObject.scale.y > 1 ? placerObject.scale.y : newScale.z;
+                newObject.transform.localScale = newScale;
+                newObject.transform.SetParent(GameObject.Find("Floorplan").transform);
+            }
+        }
+    }
+
+    private GameObject getPrefab(string objectName)
+    {
+        GameObject to_return = null;
+        switch(objectName) {
+            case var value when value.Contains("border"):
+                to_return = prefabs[0];
+                break;
+            case var value when value.Contains("floor"):
+                to_return = prefabs[1];
+                break;
+            case var value when value.Contains("wall"):
+                to_return = prefabs[2];
+                break;
+            case var value when value.Contains("door"):
+                to_return = prefabs[3];
+                break;
+            case var value when value.Contains("exit"):
+                to_return = prefabs[4];
+                break;
+            case var value when value.Contains("stair"):
+                to_return = prefabs[5];
+                break;
+            case var value when value.Contains("node room"):
+                to_return = prefabs[6];
+                break;
+            case var value when value.Contains("node module"):
+                to_return = prefabs[7];
+                break;
+            case var value when value.Contains("node intersection"):
+                to_return = prefabs[8];
+                break;
+            // default:
+            //     to_return = null;
+        }
+        return to_return;
     }
 
     public void SaveFloorplan()

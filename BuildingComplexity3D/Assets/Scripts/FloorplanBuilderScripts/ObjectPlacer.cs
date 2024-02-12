@@ -16,12 +16,12 @@ public class ObjectPlacer : MonoBehaviour
 
     public int PlaceObject(PlacerObject placerObject)
     {
-        if (placerObject == null || placerObject.prefab == null) 
+        if (placerObject == null || placerObject.realObj == null) 
         { 
             Debug.LogError("placerObject or prefab null: " + placerObject.ToString());
             return -1;
         }
-        GameObject newObject = Instantiate(placerObject.prefab);
+        GameObject newObject = Instantiate(placerObject.realObj);
         newObject.transform.position = placerObject.pos;
         if (placerObject.rotate) { newObject.transform.Rotate(0, 90, 0); }
 

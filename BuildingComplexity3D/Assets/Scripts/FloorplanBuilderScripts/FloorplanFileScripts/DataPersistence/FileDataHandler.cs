@@ -27,7 +27,12 @@ public class FileDataHandler
                 Debug.LogError("Error occured when trying to load data from file: " + fullpath + "\n" + e);
             }
         }
-        SceneManager.LoadScene("Floorplan_Editor");
+        if (SceneManager.GetActiveScene().name == "Build_Selector") {
+            SceneManager.LoadScene("Floorplan_Editor");
+        }
+        if (SceneManager.GetActiveScene().name == "Run_Selector") {
+            SceneManager.LoadScene("Floorplan_Runner");
+        }
     }
 
     public SceneData UnpackSceneToLoad()

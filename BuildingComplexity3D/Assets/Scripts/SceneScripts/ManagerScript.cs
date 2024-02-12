@@ -76,7 +76,7 @@ public class ManagerScript : MonoBehaviour
             if (stairs[i - 1].activeInHierarchy) {
                 int tempF = stairs[i - 1].GetComponent<StairScript>()._floor;
                 int tempN = stairs[i - 1].GetComponent<StairScript>()._stairwell;
-                stairs[i - 1].name = ("stair " + tempN + ":F" + tempF);
+                stairs[i - 1].name = "stair " + tempN + ":F" + tempF;
                 if (tempN > stairNum) { stairNum = tempN; }
             }
         }
