@@ -70,6 +70,32 @@ public class PlacementState : IBuildingState
         previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), false, database.objectsData[selectedObjectIndex].color);
     }
 
+    public void OnAction(Vector3Int gridPosition, StairInfo stairInfo)
+    {
+        bool placementValidity = CheckPlacementValidity(gridPosition);
+        if (!placementValidity) { return; }
+
+        PlacerObject newPlacerObject = new PlacerObject(database.objectsData[selectedObjectIndex].Prefab, 
+                                                        GetNewPlacementPosition(gridPosition), 
+                                                        isRotated, 
+                                                        objectSize, 
+                                                        gridPosition, 
+                                                        database.objectsData[selectedObjectIndex].ID, 
+                                                        selectedOrientation,
+                                                        stairInfo);
+        int index = objectPlacer.PlaceObject(newPlacerObject);
+        if (index == -1) { return; }
+
+        GridData selectedData = GetGridData();
+        Vector2Int placedObjectSize = isRotated ? new Vector2Int(objectSize.y, objectSize.x) : objectSize;
+        selectedData.AddObjectAt(gridPosition, 
+                                placedObjectSize,
+                                database.objectsData[selectedObjectIndex].ID,
+                                selectedOrientation, 
+                                index);
+        previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), false, database.objectsData[selectedObjectIndex].color);
+    }
+
     public void OnRotate(Vector3Int gridPosition)
     {
         if (selectedOrientation == PlacementOrientation.NONE) { return; }

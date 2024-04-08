@@ -30,6 +30,13 @@ public class ObjectPlacer : MonoBehaviour
         newScale.z = placerObject.scale.y > 1 ? placerObject.scale.y : newScale.z;
         newObject.transform.localScale = newScale;
         
+        if (placerObject.ID == 5) {
+            StairScript stairScript = newObject.GetComponent<StairScript>();
+            stairScript._floor = placerObject.stairInfo.floorNum;
+            stairScript._stairwell = placerObject.stairInfo.stairwellNum;
+            stairScript._isExitFloor = placerObject.stairInfo.isExitFloor;
+        }
+        
         placedObjects.Add(newObject);
         placerObjects.Add(placerObject);
         return placedObjects.Count - 1;

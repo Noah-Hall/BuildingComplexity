@@ -105,6 +105,13 @@ public class PersistenceManager : MonoBehaviour
                 newScale.z = placerObject.scale.y > 1 ? placerObject.scale.y : newScale.z;
                 newObject.transform.localScale = newScale;
                 newObject.transform.SetParent(GameObject.Find("Floorplan").transform);
+
+                if (placerObject.ID == 5) {
+                    StairScript stairScript = newObject.GetComponent<StairScript>();
+                    stairScript._floor = placerObject.stairInfo.floorNum;
+                    stairScript._stairwell = placerObject.stairInfo.stairwellNum;
+                    stairScript._isExitFloor = placerObject.stairInfo.isExitFloor;
+                }
             }
         }
     }

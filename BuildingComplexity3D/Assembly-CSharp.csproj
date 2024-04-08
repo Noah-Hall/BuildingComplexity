@@ -59,7 +59,7 @@
     <UnityVersion>2022.2.14f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/Users/noahhall/.vscode/extensions/visualstudiotoolsforunity.vstuc-0.9.4/Analyzers/Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="/Users/noahhall/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.0.1/Analyzers/Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.2.14f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll" />
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.2.14f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -129,6 +129,8 @@
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets/Imports/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
+    <None Include="Assets/LogFiles/Floorplan_Runner_Date_02-11-2024_Time_21-21-19/Floorplan_Specs.txt" />
+    <None Include="Assets/LogFiles/Floorplan_Runner_Date_02-11-2024_Time_21-22-50/Floorplan_Specs.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/LogFiles/Floorplan_Runner_Date_02-11-2024_Time_20-40-04/Floorplan_Specs.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
