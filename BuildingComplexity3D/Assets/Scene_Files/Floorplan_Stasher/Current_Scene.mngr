@@ -1,8 +1,121 @@
 {
-    "objectsList": [],
+    "objectsList": [
+        {
+            "realObj": {
+                "instanceID": 26994
+            },
+            "prefabName": "stair",
+            "pos": {
+                "x": 0.5,
+                "y": 0.550000011920929,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 0,
+                "y": 0,
+                "z": 2
+            },
+            "ID": 5,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 1,
+                "stairwellNum": 1,
+                "isExitFloor": true
+            }
+        },
+        {
+            "realObj": {
+                "instanceID": 26994
+            },
+            "prefabName": "stair",
+            "pos": {
+                "x": 2.5,
+                "y": 0.550000011920929,
+                "z": 0.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 2,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 5,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 1,
+                "stairwellNum": 2,
+                "isExitFloor": false
+            }
+        },
+        {
+            "realObj": {
+                "instanceID": 26994
+            },
+            "prefabName": "stair",
+            "pos": {
+                "x": 0.5,
+                "y": 0.550000011920929,
+                "z": -1.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 0,
+                "y": 0,
+                "z": -2
+            },
+            "ID": 5,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 4,
+                "stairwellNum": 2,
+                "isExitFloor": true
+            }
+        },
+        {
+            "realObj": {
+                "instanceID": 26994
+            },
+            "prefabName": "stair",
+            "pos": {
+                "x": -1.5,
+                "y": 0.550000011920929,
+                "z": 0.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -2,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 5,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 3,
+                "stairwellNum": 3,
+                "isExitFloor": false
+            }
+        }
+    ],
     "fileData": {
-        "_name": "ugh",
-        "_date": "4/8/2024 1:39:48 PM",
+        "_name": "uuuuugh",
+        "_date": "04/08/2024_01:50:26",
         "_size": "0"
     }
 }

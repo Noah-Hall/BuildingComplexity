@@ -49,6 +49,7 @@ public class PlacerObject
     }  
 }
 
+[System.Serializable]
 public struct StairInfo {
     public int floorNum;
     public int stairwellNum;
