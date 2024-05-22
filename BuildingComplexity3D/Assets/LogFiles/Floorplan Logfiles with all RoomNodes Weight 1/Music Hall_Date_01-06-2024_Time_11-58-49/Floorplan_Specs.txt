@@ -1,0 +1,6 @@
+Square Meters: 4406.552
+Number of Nodes: 49
+Number of Doors: 65
+Number of Exits: 9
+Number of Stairwells: 0
+Number of Floors: 0
