@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
@@ -11,17 +12,22 @@ public class ManagerScript : MonoBehaviour
 {
     public List<Stairwell> _stairwells = new List<Stairwell>();
     private int _stairwellNum = 0;
-    private int _floorNum = 0;
+    // private int _floorNum = 0;
     [SerializeField] Camera cam;
     private float targetZoom;
     public AgentSpawner spawner;
     public bool spawnAgents;
+    [SerializeField] private FileManager fileManager;
+    [SerializeField] private const float agentSpeed = 1.24f;
+    [SerializeField] public int simulationSpeed = 1;
 
     // Sets camera
     // names all important objects in scene for coherant LogFiles
     // does some general initialization
-    void Awake()
+    public void StartRun()
     {
+        Time.timeScale = simulationSpeed;
+        Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
         if (spawnAgents) {
             spawner = GameObject.Find("Smart Agent Spawner").GetComponent<AgentSpawner>();
         }
@@ -42,6 +48,7 @@ public class ManagerScript : MonoBehaviour
                     AgentBehaviorSmart tempAgent = spawner.Spawn(roomNodes[i - 1].transform.position);
                     int tempInt = roomNodes[i - 1].GetComponent<NodeScriptRoom>().weight;
                     tempAgent.weight = tempInt < 1 ? 1 : tempInt;
+                    tempAgent.GetComponent<NavMeshAgent>().speed = agentSpeed; // * simulationSpeed
                 }
                 roomNodes[i - 1].name = "room node " + i;
             }
@@ -76,7 +83,7 @@ public class ManagerScript : MonoBehaviour
             if (stairs[i - 1].activeInHierarchy) {
                 int tempF = stairs[i - 1].GetComponent<StairScript>()._floor;
                 int tempN = stairs[i - 1].GetComponent<StairScript>()._stairwell;
-                stairs[i - 1].name = ("stair " + tempN + ":F" + tempF);
+                stairs[i - 1].name = "stair " + tempN + ":F" + tempF;
                 if (tempN > stairNum) { stairNum = tempN; }
             }
         }
@@ -106,6 +113,7 @@ public class ManagerScript : MonoBehaviour
             testAgents[i - 1].name = "test agent " + i;
         }
 
+        fileManager.InitFileManager(simulationSpeed);
         gameObject.GetComponent<FileManager>().GenerateFloorplanData(floorAreaS, moduleNodes.Length + roomNodes.Length, doors.Length, exits.Length, _stairwellNum, navMeshes.Length);
     }
 

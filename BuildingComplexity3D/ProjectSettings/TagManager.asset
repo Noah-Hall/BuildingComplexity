@@ -33,7 +33,7 @@ TagManager:
   - Nodes
   - Stairs
   - Manager
-  - 
+  - Placement
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3021065463
     locked: 0

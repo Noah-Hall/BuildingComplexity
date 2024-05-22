@@ -5,7 +5,7 @@ This project uses a modular "Lego" system to build floorplans.
 This exploration is done with the goal of determining the ***EASE*** (Evacuation with Acceptable Simplicity in Emergencies).
 
 ## **Smart Agents** Info:
-### Priority List
+### Target Priority List
 - Search for closest **EXIT** in LOS within 50 meters
 - Search for closest **STAIR** in LOS within 50 meters (priority to least visited)
 - Search for closest **UNVISITED INTERSECTION NODE** in LOS within 50 meters
