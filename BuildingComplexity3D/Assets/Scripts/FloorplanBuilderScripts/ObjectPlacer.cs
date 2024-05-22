@@ -36,6 +36,11 @@ public class ObjectPlacer : MonoBehaviour
             stairScript._stairwell = placerObject.stairInfo.stairwellNum;
             stairScript._isExitFloor = placerObject.stairInfo.isExitFloor;
         }
+
+        if (placerObject.ID == 6) {
+            NodeScriptRoom nodeScript = newObject.GetComponent<NodeScriptRoom>();
+            nodeScript.weight = placerObject.weight;
+        }
         
         placedObjects.Add(newObject);
         placerObjects.Add(placerObject);

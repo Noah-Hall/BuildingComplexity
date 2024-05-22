@@ -1,0 +1,12 @@
+Agent Name, Agent Weight, Line to Exit, Distance Traveled, # of Visited Targets
+smart agent 4, 1, 4.27m, 4.41m, 5 targets
+smart agent 11, 1, 4.27m, 4.40m, 5 targets
+smart agent 3, 1, 6.02m, 6.75m, 4 targets
+smart agent 10, 1, 6.02m, 6.82m, 4 targets
+smart agent 5, 1, 4.50m, 6.92m, 4 targets
+smart agent 2, 1, 8.50m, 9.86m, 4 targets
+smart agent 6, 1, 7.50m, 9.81m, 4 targets
+smart agent 9, 1, 8.50m, 10.03m, 4 targets
+smart agent 8, 1, 11.24m, 12.87m, 4 targets
+smart agent 1, 1, 11.24m, 12.84m, 4 targets
+smart agent 7, 1, 10.50m, 12.94m, 4 targets

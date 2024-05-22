@@ -2,11 +2,185 @@
     "objectsList": [
         {
             "realObj": {
-                "instanceID": 26994
+                "instanceID": 26048
             },
-            "prefabName": "stair",
+            "prefabName": "floor",
             "pos": {
-                "x": 0.5,
+                "x": 1.0,
+                "y": 0.0,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 12,
+                "y": 11
+            },
+            "gridPosition": {
+                "x": -5,
+                "y": 0,
+                "z": -3
+            },
+            "ID": 1,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -5.0,
+                "y": 0.550000011920929,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 11
+            },
+            "gridPosition": {
+                "x": -5,
+                "y": 0,
+                "z": -3
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": 8.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 12
+            },
+            "gridPosition": {
+                "x": -5,
+                "y": 0,
+                "z": 8
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": -3.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 12
+            },
+            "gridPosition": {
+                "x": -5,
+                "y": 0,
+                "z": -3
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 7.0,
+                "y": 0.550000011920929,
+                "z": -0.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 5
+            },
+            "gridPosition": {
+                "x": 7,
+                "y": 0,
+                "z": -3
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 7.0,
+                "y": 0.550000011920929,
+                "z": 5.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 5
+            },
+            "gridPosition": {
+                "x": 7,
+                "y": 0,
+                "z": 3
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26054
+            },
+            "prefabName": "exit",
+            "pos": {
+                "x": 7.0,
                 "y": 0.550000011920929,
                 "z": 2.5
             },
@@ -16,29 +190,1132 @@
                 "y": 1
             },
             "gridPosition": {
-                "x": 0,
+                "x": 7,
                 "y": 0,
                 "z": 2
             },
-            "ID": 5,
-            "orientation": 0,
+            "ID": 4,
+            "orientation": 1,
             "stairInfo": {
-                "floorNum": 1,
-                "stairwellNum": 1,
-                "isExitFloor": true
-            }
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
         },
         {
             "realObj": {
-                "instanceID": 26994
+                "instanceID": 26050
             },
-            "prefabName": "stair",
+            "prefabName": "wall",
+            "pos": {
+                "x": -2.0,
+                "y": 0.550000011920929,
+                "z": -1.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": -2,
+                "y": 0,
+                "z": -3
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": -1.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": 1,
+                "y": 0,
+                "z": -3
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 4.0,
+                "y": 0.550000011920929,
+                "z": -1.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": 4,
+                "y": 0,
+                "z": -3
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 4.0,
+                "y": 0.550000011920929,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": 4,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 4.0,
+                "y": 0.550000011920929,
+                "z": 6.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": 4,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": 6.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": 1,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": 1,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -2.0,
+                "y": 0.550000011920929,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": -2,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -2.0,
+                "y": 0.550000011920929,
+                "z": 6.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 3
+            },
+            "gridPosition": {
+                "x": -2,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 2,
+            "orientation": 1,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -2.0,
+                "y": 0.550000011920929,
+                "z": 5.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": -3,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": 5.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": 0,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 4.0,
+                "y": 0.550000011920929,
+                "z": 5.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": 3,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -2.0,
+                "y": 0.550000011920929,
+                "z": 4.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": -3,
+                "y": 0,
+                "z": 4
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": 4.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": 0,
+                "y": 0,
+                "z": 4
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": 1.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": 0,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -2.0,
+                "y": 0.550000011920929,
+                "z": 1.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": -3,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -2.0,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": -3,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 1.0,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 4.0,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 2
+            },
+            "gridPosition": {
+                "x": 3,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -4.5,
+                "y": 0.550000011920929,
+                "z": 5.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -5,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -4.5,
+                "y": 0.550000011920929,
+                "z": 4.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -5,
+                "y": 0,
+                "z": 4
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -4.5,
+                "y": 0.550000011920929,
+                "z": 1.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -5,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": -4.5,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -5,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 6.5,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 6,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 6.5,
+                "y": 0.550000011920929,
+                "z": 5.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 6,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 3.5,
+                "y": 0.550000011920929,
+                "z": 4.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 3,
+                "y": 0,
+                "z": 4
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26050
+            },
+            "prefabName": "wall",
+            "pos": {
+                "x": 3.5,
+                "y": 0.550000011920929,
+                "z": 1.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 3,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 2,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26048
+            },
+            "prefabName": "floor",
+            "pos": {
+                "x": 7.5,
+                "y": 0.0,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 7,
+                "y": 0,
+                "z": 2
+            },
+            "ID": 1,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": -3.5,
+                "y": 0.550000011920929,
+                "z": 5.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -4,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": -3.5,
+                "y": 0.550000011920929,
+                "z": 4.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -4,
+                "y": 0,
+                "z": 4
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": -3.5,
+                "y": 0.550000011920929,
+                "z": 1.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -4,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": -3.5,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -4,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": -0.5,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -1,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": -0.5,
+                "y": 0.550000011920929,
+                "z": 1.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -1,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": -0.5,
+                "y": 0.550000011920929,
+                "z": 4.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -1,
+                "y": 0,
+                "z": 4
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": -0.5,
+                "y": 0.550000011920929,
+                "z": 5.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -1,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
             "pos": {
                 "x": 2.5,
                 "y": 0.550000011920929,
-                "z": 0.5
+                "z": 5.0
             },
-            "rotate": false,
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 2,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": 2.5,
+                "y": 0.550000011920929,
+                "z": 4.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 2,
+                "y": 0,
+                "z": 4
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": 2.5,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
             "scale": {
                 "x": 1,
                 "y": 1
@@ -48,21 +1325,312 @@
                 "y": 0,
                 "z": 0
             },
-            "ID": 5,
-            "orientation": 0,
+            "ID": 3,
+            "orientation": 2,
             "stairInfo": {
-                "floorNum": 1,
-                "stairwellNum": 2,
+                "floorNum": 0,
+                "stairwellNum": 0,
                 "isExitFloor": false
-            }
+            },
+            "weight": 0
         },
         {
             "realObj": {
-                "instanceID": 26994
+                "instanceID": 26052
             },
-            "prefabName": "stair",
+            "prefabName": "door",
             "pos": {
-                "x": 0.5,
+                "x": 2.5,
+                "y": 0.550000011920929,
+                "z": 1.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 2,
+                "y": 0,
+                "z": 1
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": 5.5,
+                "y": 0.550000011920929,
+                "z": 0.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 5,
+                "y": 0,
+                "z": 0
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26052
+            },
+            "prefabName": "door",
+            "pos": {
+                "x": 5.5,
+                "y": 0.550000011920929,
+                "z": 5.0
+            },
+            "rotate": true,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 5,
+                "y": 0,
+                "z": 5
+            },
+            "ID": 3,
+            "orientation": 2,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": -3.5,
+                "y": 0.550000011920929,
+                "z": 6.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -4,
+                "y": 0,
+                "z": 6
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": -0.5,
+                "y": 0.550000011920929,
+                "z": 6.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -1,
+                "y": 0,
+                "z": 6
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": 2.5,
+                "y": 0.550000011920929,
+                "z": 6.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 2,
+                "y": 0,
+                "z": 6
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": 5.5,
+                "y": 0.550000011920929,
+                "z": 6.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 5,
+                "y": 0,
+                "z": 6
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": 2.5,
+                "y": 0.550000011920929,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 2,
+                "y": 0,
+                "z": 2
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": -0.5,
+                "y": 0.550000011920929,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -1,
+                "y": 0,
+                "z": 2
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": -3.5,
+                "y": 0.550000011920929,
+                "z": 2.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -4,
+                "y": 0,
+                "z": 2
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": -3.5,
                 "y": 0.550000011920929,
                 "z": -1.5
             },
@@ -72,25 +1640,142 @@
                 "y": 1
             },
             "gridPosition": {
-                "x": 0,
+                "x": -4,
                 "y": 0,
                 "z": -2
             },
-            "ID": 5,
+            "ID": 6,
             "orientation": 0,
             "stairInfo": {
-                "floorNum": 4,
-                "stairwellNum": 2,
-                "isExitFloor": true
-            }
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
         },
         {
             "realObj": {
-                "instanceID": 26994
+                "instanceID": 26058
             },
-            "prefabName": "stair",
+            "prefabName": "node room",
             "pos": {
-                "x": -1.5,
+                "x": -0.5,
+                "y": 0.550000011920929,
+                "z": -1.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": -1,
+                "y": 0,
+                "z": -2
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": 2.5,
+                "y": 0.550000011920929,
+                "z": -1.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 2,
+                "y": 0,
+                "z": -2
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26058
+            },
+            "prefabName": "node room",
+            "pos": {
+                "x": 5.5,
+                "y": 0.550000011920929,
+                "z": -1.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 5,
+                "y": 0,
+                "z": -2
+            },
+            "ID": 6,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 1
+        },
+        {
+            "realObj": {
+                "instanceID": 26060
+            },
+            "prefabName": "node intersection",
+            "pos": {
+                "x": 5.5,
+                "y": 0.550000011920929,
+                "z": 4.5
+            },
+            "rotate": false,
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "gridPosition": {
+                "x": 5,
+                "y": 0,
+                "z": 4
+            },
+            "ID": 7,
+            "orientation": 0,
+            "stairInfo": {
+                "floorNum": 0,
+                "stairwellNum": 0,
+                "isExitFloor": false
+            },
+            "weight": 0
+        },
+        {
+            "realObj": {
+                "instanceID": 26060
+            },
+            "prefabName": "node intersection",
+            "pos": {
+                "x": 5.5,
                 "y": 0.550000011920929,
                 "z": 0.5
             },
@@ -100,22 +1785,23 @@
                 "y": 1
             },
             "gridPosition": {
-                "x": -2,
+                "x": 5,
                 "y": 0,
                 "z": 0
             },
-            "ID": 5,
+            "ID": 7,
             "orientation": 0,
             "stairInfo": {
-                "floorNum": 3,
-                "stairwellNum": 3,
+                "floorNum": 0,
+                "stairwellNum": 0,
                 "isExitFloor": false
-            }
+            },
+            "weight": 0
         }
     ],
     "fileData": {
-        "_name": "uuuuugh",
-        "_date": "04/08/2024_01:50:26",
+        "_name": "new_floorplan",
+        "_date": "05/17/2024_10:08:10",
         "_size": "0"
     }
 }

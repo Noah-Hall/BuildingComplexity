@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,6 +18,7 @@ public class PersistenceManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> prefabs; 
     // border, floor, wall, door, exit, Stair, node room, node module, node intersection
+    [SerializeField] private GameObject navMesh;
 
     private void Awake()
     {
@@ -112,7 +115,14 @@ public class PersistenceManager : MonoBehaviour
                     stairScript._stairwell = placerObject.stairInfo.stairwellNum;
                     stairScript._isExitFloor = placerObject.stairInfo.isExitFloor;
                 }
+
+                if (placerObject.ID == 6) {
+                    NodeScriptRoom nodeScript = newObject.GetComponent<NodeScriptRoom>();
+                    nodeScript.weight = placerObject.weight;
+                }
             }
+
+            navMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
         }
     }
 

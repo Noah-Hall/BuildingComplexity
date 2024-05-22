@@ -14,6 +14,7 @@ public class PlacerObject
     public int ID;
     public PlacementOrientation orientation;
     public StairInfo stairInfo;
+    public int weight;
 
     public PlacerObject(GameObject realObj, Vector3 pos, bool rotate, Vector2Int scale, Vector3Int gridPosition, int ID, PlacementOrientation orientation)
     {
@@ -40,6 +41,20 @@ public class PlacerObject
 
         this.prefabName = realObj.name;
         this.stairInfo = stairInfo;
+    }
+
+    public PlacerObject(GameObject realObj, Vector3 pos, bool rotate, Vector2Int scale, Vector3Int gridPosition, int ID, PlacementOrientation orientation, int weight)
+    {
+        this.realObj = realObj;
+        this.pos = pos;
+        this.rotate = rotate;
+        this.scale = scale;
+        this.gridPosition = gridPosition;
+        this.ID = ID;
+        this.orientation = orientation;
+
+        this.prefabName = realObj.name;
+        this.weight = weight;
     }
 
 

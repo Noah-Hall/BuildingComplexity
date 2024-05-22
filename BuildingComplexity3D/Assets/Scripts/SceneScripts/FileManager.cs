@@ -41,10 +41,12 @@ public class FileManager: MonoBehaviour
     private IDictionary<string, int> exitDict = new Dictionary<string, int>();
     // Format: <agent name, #nodes>
     private IDictionary<string, int> agentDict = new Dictionary<string, int>();
+    private int SimulationSpeed;
 
     // initializes filepath variables and writes first line of files
-    private void Awake()
+    public void InitFileManager(int simulationSpeed)
     {
+        SimulationSpeed = simulationSpeed;
         // Debug.Log("Awake:" + SceneManager.GetActiveScene().name);
         scene = SceneManager.GetActiveScene();
         ID = scene.name;
@@ -77,10 +79,11 @@ public class FileManager: MonoBehaviour
         FloorplanFile = Application.dataPath + ("/LogFiles/" + FolderName + "/Floorplan_Specs.txt");
 
         SaveFloorplan();
+        StartFileManager();
     }
 
     // fills TargetInfo lists and calls InitSummary()
-    private void Start()
+    private void StartFileManager()
     {
         GameObject[] moduleNodes = GameObject.FindGameObjectsWithTag("ModuleNode");
         foreach(GameObject obj in moduleNodes) {
@@ -125,7 +128,7 @@ public class FileManager: MonoBehaviour
     public void WriteStringLogFile(GameObject agent, GameObject obj)
     {
         int increment = agent.GetComponent<AgentBehaviorSmart>().weight;
-        float tempTime = (Mathf.Round(Time.time * 100f) / 100f);
+        float tempTime = Mathf.Round(Time.time * 100f) / 100f; // * SimulationSpeed
         string tempTimeS = tempTime.ToString("0.00");
         string tempX = (Mathf.Round(obj.transform.position.x * 100f) / 100f).ToString("0.00");
         string tempZ = (Mathf.Round(obj.transform.position.z * 100f) / 100f).ToString("0.00");

@@ -1,6 +1,0 @@
-Square Meters: 0
-Number of Nodes: 0
-Number of Doors: 0
-Number of Exits: 0
-Number of Stairwells: 0
-Number of Floors: 0

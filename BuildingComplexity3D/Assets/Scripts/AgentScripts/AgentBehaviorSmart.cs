@@ -23,6 +23,7 @@ public class AgentBehaviorSmart : MonoBehaviour
     public float lineToExit;
     public float totalDistanceTraveled = 0;
     public int weight;
+    private bool initialized = false;
 
 
     // general initialization
@@ -45,7 +46,8 @@ public class AgentBehaviorSmart : MonoBehaviour
         targetMask = LayerMask.GetMask("Exits", "Doors", "Nodes", "Stairs");
         obstructionMask = LayerMask.GetMask("Walls");
         startPosition = prevPosition = transform.position;
-        StartCoroutine(FOVRoutine());
+        // StartCoroutine(FOVRoutine());
+        initialized = true;
     }
 
     // updates totalDistanceTraveled
@@ -60,7 +62,7 @@ public class AgentBehaviorSmart : MonoBehaviour
     {
         while(true) {
             yield return new WaitForSeconds(0.2f);
-            FieldOfViewCheck();
+            // FieldOfViewCheck();
         }
     }
 
@@ -74,8 +76,9 @@ public class AgentBehaviorSmart : MonoBehaviour
 
     // Looks for closest Exit, closest least-visited Door, or closest least-visited Node (in that order of priority)
     // Sets that "target" as agent's destination
-    private void FieldOfViewCheck()
+    private void FixedUpdate()
     {
+        if (!initialized) { return; }
         targetBound = false;
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
         if (rangeChecks.Length > 0) {

@@ -39,6 +39,8 @@ public class NodeScript : TargetScript
     // calls method for agent to know it has reached its current target
     public override void TargetReached(GameObject agent)
     {
+        Debug.Log(agent);
+        Debug.Log(gameObject);
         FileManager file = manager.GetComponent<FileManager>();
         file.WriteStringLogFile(agent, gameObject);
         
