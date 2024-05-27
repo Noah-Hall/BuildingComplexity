@@ -4,19 +4,27 @@ using UnityEngine;
 using UnityEngine.AI;
 
 // I do not think this script is currently functional or up to date with all changes to AgentBehaviorSmart.cs
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*   AgentTestingScript used for testing new features before  *
-*   migrating them to SmartAgents                            *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+/// <summary>
+/// Class <c>AgentTestingScript</c> is used for testing new features before migrating them to <c>AgentBehaviorSmart</c>.
+/// </summary>
 public class AgentTestingScript : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
     [SerializeField] private float radius = 50;
     [SerializeField] private LayerMask targetMask, obstructionMask;
     private IDictionary<GameObject, int> visitedTargets = new Dictionary<GameObject, int>();
+    
     public bool targetBound, reachedCooldown;
+
+    /// <value>
+    /// Property <c>targetObject</c> the target GameObject the agent is currently moving towards.
+    /// </value>
     public GameObject targetObject;
+
+    /// <value>
+    /// Property <c>_currentFloor</c> what floor the agent is currently on.
+    /// </value>
     public int _currentFloor;
 
     // general initialization
@@ -102,7 +110,10 @@ public class AgentTestingScript : MonoBehaviour
         }
     }
 
-    // Method called by TargetScript when agent triggers object
+    /// <summary>
+    /// Method called by <c>TargetScript</c> when agent triggers target object.
+    /// </summary>
+    /// <param name="target">The <c>GameObject</c> of the triggered target.</param>
     public void TargetReached(GameObject target)
     {
         StartCoroutine(Cooldown());
@@ -113,6 +124,10 @@ public class AgentTestingScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method called by <c>StairScript</c> when agent triggers stair object.
+    /// </summary>
+    /// <param name="target">The <c>GameObject</c> of the triggered stair.</param>
     public void StairReached(GameObject target)
     {
         ManagerScript manager = GameObject.Find("Manager").GetComponent<ManagerScript>();

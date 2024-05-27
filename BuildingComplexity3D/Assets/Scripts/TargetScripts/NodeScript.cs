@@ -2,29 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*   NodeScript is attached to all Node target objects        *
-*   script calls necessary methods when an                   *
-*   Agent triggers a Node                                    *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+/// <summary>
+/// Class <c>NodeScript</c> is attached to all <c>Node</c> target <c>GameObjects</c>.
+/// Mainly deals with calling relevant methods within <c>AgentBrehaviorSmart</c> and <c>FileManager</c>.
+/// </summary>
 public class NodeScript : TargetScript
 {
-    // initializes manager GameObject
     public override void Awake()
     {
         manager = GameObject.Find("Manager");
     }
 
-    // calls relevant method when an agent triggers target
+    /// <summary>
+    /// Calls relevant methods when an agent triggers <c>Node</c>
+    /// </summary>
+    /// <param name="col">The <c>Collider</c> of the agent.</param>
     public override void OnTriggerEnter(Collider col)
     {
         GameObject agent = col.gameObject;
         TargetReached(agent);
     }
 
-    // calls relevant method if agent remains triggering target for too long
-    // (this prevents agents from getting stuck at deadends or starting positions if they spawn overlapping a target)
+    /// <summary>
+    /// Calls relevant method if agent remains triggering <c>Node</c> for too long
+    /// (this prevents agents from getting stuck at deadends).
+    /// </summary>
+    /// <param name="col">The <c>Collider</c> of the agent.</param>
     public override void OnTriggerStay(Collider col)
     {
         GameObject agent = col.gameObject;
@@ -35,8 +38,10 @@ public class NodeScript : TargetScript
         TargetReached(agent);
     }
 
-    // calls method to log Target from FileManager
-    // calls method for agent to know it has reached its current target
+    /// <summary>
+    /// Calls methods to log <c>Node</c> and agent interaction
+    /// </summary>
+    /// <param name="agent">The <c>GameObject</c> of the agent.</param>
     public override void TargetReached(GameObject agent)
     {
         Debug.Log(agent);

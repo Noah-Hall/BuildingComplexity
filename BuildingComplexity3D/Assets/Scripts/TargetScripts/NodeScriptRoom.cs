@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*   NodeScriptRoom is attached to all Node target objects    *
-*   script calls necessary methods when an                   *
-*   Agent triggers a Node                                    *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+/// <summary>
+/// Class <c>NodeScriptRoom</c> is attached to all <c>RoomNode</c> target <c>GameObjects</c>.
+/// Inherets from <c>NodeScript</c> and has <c>weight</c> property.
+/// </summary>
 public class NodeScriptRoom : NodeScript
 {
+    /// <value>
+    /// Property <c>weight</c> represents the capacity of the room.
+    /// </value>
     public int weight;
 }

@@ -7,17 +7,30 @@ using UnityEditor;
 using System;
 using System.Linq;
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*   FileManager handles creating Assers/LogFiles                 *
-*   Four files are grouped into a folder                         *
-*   - Floorplan_Specs.txt generates general specs                *
-*     about the floorplan                                        *
-*   - Logfile.csv logs everytime an Agent reaches a target       *
-*   - Results.csc lists all objects                              *
-*     (with first, last, and total # of visits)                  *
-*   - Summary.csv summarizes relevant information from above     *
-*     (mainly, lowest, largest, and average values)              *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/// <summary>
+/// Class <c>FileManager</c> handles creating Assets/LogFiles.
+/// A screenshot of the floorplan and five files are grouped into a folder.
+/// <list type="bullet">
+/// <item>
+/// _Floorplan.png: The screenshot of the floorplan.
+/// </item>
+/// <item>
+/// AgentData.csv: Agent info.
+/// </item>
+/// <item>
+/// Floorplan_Specs.txt: Floorplan info.
+/// </item>
+/// <item>
+/// Logfile.csv: Logs of all <c>Target</c> visits.
+/// </item>
+/// <item>
+/// Results.csv: First visit time, last visit time, and total # of visits.
+/// </item>
+/// <item>
+/// Summary.csv: Minimum, maximum, and average of all categories.
+/// </item>
+/// </list>
+/// </summary>
 public class FileManager: MonoBehaviour
 {
     public string ID;
@@ -43,7 +56,9 @@ public class FileManager: MonoBehaviour
     private IDictionary<string, int> agentDict = new Dictionary<string, int>();
     private int SimulationSpeed;
 
-    // initializes filepath variables and writes first line of files
+    /// <summary>
+    /// Initializes filepath variables and writes first line of files.
+    /// </summary>
     public void InitFileManager(int simulationSpeed)
     {
         SimulationSpeed = simulationSpeed;
@@ -107,12 +122,22 @@ public class FileManager: MonoBehaviour
         InitSummary();
     }
 
-    // captures and saves screenshot
+    /// <summary>
+    /// Captures and saves screenshot of floorplan.
+    /// </summary>
     public void SaveFloorplan() {
         ScreenCapture.CaptureScreenshot(Application.dataPath + ("/LogFiles/" + FolderName + "/_Floorplan.png"));
     }
 
-    // writes to FloorplanFile based on passed parameters
+    /// <summary>
+    /// Writes to FloorplanFile based on passed parameters.
+    /// </summary>
+    /// <param name="size">Size of floorplan (meters)</param>
+    /// <param name="nodes"># of <c>Nodes</c></param>
+    /// <param name="doors"># of <c>Doors</c></param>
+    /// <param name="exits"># of <c>Exits</c></param>
+    /// <param name="stairwells"># of <c>Stairwells</c></param>
+    /// <param name="floors"># of floors in floorplan</param>
     public void GenerateFloorplanData(float size, int nodes, int doors, int exits, int stairwells, int floors) {
         TextWriter wt = new StreamWriter(FloorplanFile, false);
         wt.WriteLine("Square Meters: " + size);
@@ -124,7 +149,11 @@ public class FileManager: MonoBehaviour
         wt.Close();
     }
     
-    // writes a formatted line to LogFile.csv
+    /// <summary>
+    /// Writes a formatted line to LogFile.csv.
+    /// </summary>
+    /// <param name="agent"><c>GameObject</c> of agent</param>
+    /// <param name="obj"><c>GameObject</c> of target</param>
     public void WriteStringLogFile(GameObject agent, GameObject obj)
     {
         int increment = agent.GetComponent<AgentBehaviorSmart>().weight;
@@ -221,7 +250,10 @@ public class FileManager: MonoBehaviour
         }
     }
 
-    // writes lines to AgentData.csv
+    /// <summary>
+    /// Writes line to AgentData.csv.
+    /// </summary>
+    /// <param name="agent"><c>GameObject</c> of agent</param>
     public void WriteAgentData(GameObject agent)
     {
         AgentBehaviorSmart agentScript = agent.GetComponent<AgentBehaviorSmart>();
@@ -232,7 +264,9 @@ public class FileManager: MonoBehaviour
         writer.Close();
     }
 
-    // Calls all functions that generate files
+    /// <summary>
+    /// Calls aditional methods to generate files.
+    /// </summary>
     public void GenerateFiles()
     {
         GenerateResultsFile();
@@ -240,7 +274,9 @@ public class FileManager: MonoBehaviour
         // GenerateAgentDataFile();
     }
     
-    // calculates summary and writes lines Summary.csv
+    /// <summary>
+    /// Calculates summary and writes lines Summary.csv.
+    /// </summary>
     private void GenerateSummaryFile()
     {
         List<string> summary = new List<string>();
@@ -260,7 +296,9 @@ public class FileManager: MonoBehaviour
         Debug.Log("Summary Calculated");
     }
 
-    // calculates results and writes lines to Results.csv
+    /// <summary>
+    /// Calculates results and writes lines to Results.csv.
+    /// </summary>
     private void GenerateResultsFile()
     {
         Debug.Log("Calculating Results");

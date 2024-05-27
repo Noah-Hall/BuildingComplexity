@@ -102,9 +102,13 @@
     <None Include="Assets/LogFiles/Floorplan_Runner_Date_05-18-2024_Time_13-35-40/Floorplan_Specs.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
+    <None Include="Assets/LogFiles/Floorplan Logfiles with all RoomNodes Weight 1/Science 2_Date_01-06-2024_Time_12-14-44/Floorplan_Specs.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets/LogFiles/Floorplan Logfiles with all RoomNodes Weight 1/WilsonFloorPlan_Date_01-06-2024_Time_11-18-00/Floorplan_Specs.txt" />
+    <None Include="Assets/LogFiles/Floorplan Logfiles with all RoomNodes Weight 1/Durham_Date_01-06-2024_Time_11-23-25/Floorplan_Specs.txt" />
+    <None Include="Assets/LogFiles/Floorplan Logfiles with all RoomNodes Weight 1/Pearson_Date_01-06-2024_Time_12-19-44/Floorplan_Specs.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
     <None Include="Assets/Imports/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
@@ -112,9 +116,12 @@
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets/Imports/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
+    <None Include="Assets/LogFiles/Floorplan Logfiles with all RoomNodes Weight 1/PrinceAndrewHigh_Date_01-06-2024_Time_11-19-46/Floorplan_Specs.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/Imports/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
+    <None Include="Assets/LogFiles/Floorplan Logfiles with all RoomNodes Weight 1/Music Hall_Date_01-06-2024_Time_11-58-49/Floorplan_Specs.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets/LogFiles/Floorplan Logfiles with all RoomNodes Weight 1/Carver Hall_Date_01-06-2024_Time_11-14-24/Floorplan_Specs.txt" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/Imports/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
     <None Include="Assets/Imports/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />

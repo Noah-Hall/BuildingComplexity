@@ -3,27 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-*   ManagerScript manages given scene and objects        *
-*   Mainly, names all important objects within scene     *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/// <summary>
+/// Class <c>ManagerScript</c> manages given scene and objects.
+/// Mainly, names all important objects within scene.
+/// </summary>
 public class ManagerScript : MonoBehaviour
 {
-    public List<Stairwell> _stairwells = new List<Stairwell>();
     private int _stairwellNum = 0;
     // private int _floorNum = 0;
     [SerializeField] Camera cam;
     private float targetZoom;
-    public AgentSpawner spawner;
-    public bool spawnAgents;
     [SerializeField] private FileManager fileManager;
     [SerializeField] private const float agentSpeed = 1.24f;
+
+    /// <value>
+    /// Property <c>_stairwells</c> is a List of all <c>Stairwell</c> objects.
+    /// </value>
+    public List<Stairwell> _stairwells = new List<Stairwell>();
+
+    /// <value>
+    /// Property <c>simulationSpeed</c> is the speed at which the simulation runs.
+    /// </value>
     [SerializeField] public int simulationSpeed = 1;
 
-    // Sets camera
-    // names all important objects in scene for coherant LogFiles
-    // does some general initialization
+    /// <value>
+    /// Property <c>spawner</c> is object used to spawn agents.
+    /// </value>
+    public AgentSpawner spawner;
+
+    /// <value>
+    /// Property <c>spawnAgents</c> can be set to <c>False</c> to spawn agents manually.
+    /// </value>
+    public bool spawnAgents;
+
+    /// <summary>
+    /// Sets camera, names important objects in scene for coherant LogFiles, 
+    /// and does some general initialization.
+    /// </summary>
     public void StartRun()
     {
         Time.timeScale = simulationSpeed;
@@ -117,7 +133,13 @@ public class ManagerScript : MonoBehaviour
         gameObject.GetComponent<FileManager>().GenerateFloorplanData(floorAreaS, moduleNodes.Length + roomNodes.Length, doors.Length, exits.Length, _stairwellNum, navMeshes.Length);
     }
 
-    // gets Stairwell with given passed _num value
+    /// <summary>
+    /// Gets <c>Stairwell</c> with given passed <c>_num</c> value.
+    /// </summary>
+    /// <returns>
+    /// <c>Stairwell</c> matching <paramref name="num"/>
+    /// </returns>
+    /// <param name="num"><c>Stairwell</c> # to get</param>
     public Stairwell GetStairwell(int num)
     {
         foreach (Stairwell stairwell in _stairwells) {

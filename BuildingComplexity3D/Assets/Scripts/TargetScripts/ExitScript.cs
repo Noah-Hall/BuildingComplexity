@@ -2,35 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*   ExitScript is attached to all Exit target objects        *
-*   script calls necessary methods when an                   *
-*   Agent triggers an Exit                                   *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+/// <summary>
+/// Class <c>ExitScript</c> is attached to all <c>Exit</c> target <c>GameObjects</c>.
+/// Mainly deals with calling relevant methods within <c>AgentBrehaviorSmart</c> and <c>FileManager</c>.
+/// </summary>
 public class ExitScript : TargetScript
 {
-    // initializes manager GameObject
     public override void Awake()
     {
         manager = GameObject.Find("Manager");
     }
 
-    // calls relevant method when an agent triggers target
+    /// <summary>
+    /// Calls relevant methods when an agent triggers <c>Exit</c>
+    /// </summary>
+    /// <param name="col">The <c>Collider</c> of the agent.</param>
     public override void OnTriggerEnter(Collider col)
     {
         GameObject agent = col.gameObject;
         TargetReached(agent);
     }
 
-    // simply returns since agent should be destroyed after on OnTriggerEnter
+    /// <summary>
+    /// Calls relevant method if agent remains triggering <c>Exit</c> for too long
+    /// (this prevents agents from getting stuck at deadends).
+    /// </summary>
+    /// <param name="col">The <c>Collider</c> of the agent.</param>
     public override void OnTriggerStay(Collider col)
     {
         return;
     }
-
-    // calls method to log Target from FileManager
-    // Destroys agent, and checks if there are any more agents in scene
+    
+    /// <summary>
+    /// Calls methods to log <c>Exit</c> and agent interaction
+    /// </summary>
+    /// <param name="agent">The <c>GameObject</c> of the agent.</param>
     public override void TargetReached(GameObject agent)
     {
         agent.GetComponent<AgentBehaviorSmart>().FingerPrint(transform.position);
