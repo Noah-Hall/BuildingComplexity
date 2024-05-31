@@ -6,12 +6,19 @@ using System.IO;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class <c>FileDataHandler</c> handles logic for using floorplan files.
+/// </summary>
 public class FileDataHandler
 {
     private string pathSceneToLoad = Application.dataPath + "/Scene_Files/Floorplan_Stasher/Scene_To_Load.mngr";
     private string pathCurrentScene = Application.dataPath + "/Scene_Files/Floorplan_Stasher/Current_Scene.mngr";
     private string pathBuilds = Application.dataPath + "/Scene_Files/Floorplan_Builds/";
 
+    /// <summary>
+    /// Method handles logic for loading files to either <c>Floorplan_Runner</c> or <c>Floorplan_Editor</c> scene.
+    /// </summary>
+    /// <param name="filename">The file name <c>string</c></param>
     public void Load(string filename)
     {
         string fullpath = Path.Combine(pathBuilds, filename);
@@ -35,6 +42,12 @@ public class FileDataHandler
         }
     }
 
+    /// <summary>
+    /// Method gets <c>SceneData</c> from loaded file.
+    /// </summary>
+    /// <returns>
+    /// <c>SceneData</c>
+    /// </returns>
     public SceneData UnpackSceneToLoad()
     {
         string fullpath = pathSceneToLoad;
@@ -66,6 +79,10 @@ public class FileDataHandler
         return loadedData;
     }
 
+    /// <summary>
+    /// Method handles logic for saving files.
+    /// </summary>
+    /// <param name="sceneData">The <c>SceneData</c> to save in the file.</param>
     public void Save(SceneData sceneData)
     {
         string fullPath = Path.Combine(pathBuilds, sceneData.fileData._name);
@@ -89,6 +106,10 @@ public class FileDataHandler
         }
     }
 
+    /// <summary>
+    /// Method handles logic for creating files.
+    /// </summary>
+    /// <param name="filename">The file name <c>string</c></param>
     public void Create(string filename)
     {
         string fullpath = pathBuilds + filename;
@@ -101,12 +122,21 @@ public class FileDataHandler
         Load(filename);
     }
 
+    /// <summary>
+    /// Method handles logic for exiting without saving.
+    /// </summary>
     public void Exit()
     {
         File.WriteAllText(pathSceneToLoad, "");
         File.WriteAllText(pathCurrentScene, "");
     }
 
+    /// <summary>
+    /// Method gets current <c>SceneData</c>.
+    /// </summary>
+    /// <returns>
+    /// <c>SceneData</c>
+    /// </returns>
     public SceneData GetCurrentSceneData()
     {
         SceneData to_return = null;

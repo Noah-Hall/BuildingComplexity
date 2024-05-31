@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// Class <c>PlacementSystem</c> defines the system to handle user floorplan construction.
+/// </summary>
 public class PlacementSystem : MonoBehaviour
 {
     [SerializeField] 
@@ -43,11 +46,18 @@ public class PlacementSystem : MonoBehaviour
         stairInfo.isExitFloor = true;
     }
 
+    /// <summary>
+    /// Method handles logic for when user selects the node tool.
+    /// </summary>
     public void StartNode()
     {
         StartPlacement(chooseNodeUI.GetComponent<Dropdown>().value + 6);
     }
 
+    /// <summary>
+    /// Method handles logic for when user selects a placement tool.
+    /// </summary>
+    /// <param name="ID">The ID of the object to start placement for.</param>
     public void StartPlacement(int ID)
     {
         StopPlacement();
@@ -60,6 +70,9 @@ public class PlacementSystem : MonoBehaviour
         inputManager.OnExit += StopPlacement;
     }
 
+    /// <summary>
+    /// Method handles logic for when user selects the remove tool.
+    /// </summary>
     public void StartRemoving()
     {
         StopPlacement();
@@ -89,6 +102,9 @@ public class PlacementSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method handles logic for when user rotates a selected placement object.
+    /// </summary>
     public void RotateStructure()
     {
         if (!(buildingState is PlacementState)) { return; }
@@ -98,6 +114,9 @@ public class PlacementSystem : MonoBehaviour
         ((PlacementState)buildingState).OnRotate(gridPosition);
     }
 
+    /// <summary>
+    /// Method handles logic for when user scales a selected placement object.
+    /// </summary>
     public void ScaleStructure()
     {
         if (!(buildingState is PlacementState)) { return; }
@@ -115,6 +134,9 @@ public class PlacementSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method handles logic for when user selects the stair tool.
+    /// </summary>
     public void SetStairInfo() {
         if (!(buildingState is PlacementState)) { return; }
         stairInfo.floorNum = int.Parse(stairFloorNum.GetComponent<Text>().text);
@@ -186,6 +208,10 @@ public class PlacementSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method handles logic for loading an existing floorplan.
+    /// </summary>
+    /// /// <param name="data">The SceneData used to construct the existing floorplan.</param>
     public void LoadFromSceneData(SceneData data)
     {
         foreach(PlacerObject placerObject in data.objectsList)

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Class <c>InputManager</c> is responsible for handling user input within <c>PlacementSystem</c>.
+/// </summary>
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private Camera sceneCamera;
@@ -50,8 +53,16 @@ public class InputManager : MonoBehaviour
         Camera.main.orthographicSize -= changeZoom;
     }
 
+    /// <summary>
+    /// Method returns true if mouse is over UI within <c>Floorplan_Editor</c> scene.
+    /// </summary>
+    /// <returns><c>bool</c></returns>
     public bool IsPointerOverUI() => EventSystem.current.IsPointerOverGameObject();
 
+    /// <summary>
+    /// Method returns the grid square the user is hovering over in <c>Floorplan_Editor</c> scene.
+    /// </summary>
+    /// <returns><c>Vector3</c></returns>
     public Vector3 GetSelectedMapPosition()
     {
         Vector3 mousePos = Input.mousePosition;

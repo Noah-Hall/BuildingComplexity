@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>ObjectPlacer</c> handles the logic for placing and removing objects in <c>PlacementSystem</c>.
+/// </summary>
 public class ObjectPlacer : MonoBehaviour
 {
     private List<GameObject> placedObjects;
@@ -14,6 +17,13 @@ public class ObjectPlacer : MonoBehaviour
         placerObjects = new List<PlacerObject>();
     }
 
+    /// <summary>
+    /// Method handles the logic for placing objects in <c>PlacementSystem</c>.
+    /// </summary>
+    /// <returns>
+    /// Number of placed objects as <c>int</c>.
+    /// </returns>
+    /// <param name="placerObject">The object to be placed</param>
     public int PlaceObject(PlacerObject placerObject)
     {
         if (placerObject == null || placerObject.realObj == null) 
@@ -47,6 +57,10 @@ public class ObjectPlacer : MonoBehaviour
         return placedObjects.Count - 1;
     }
 
+    /// <summary>
+    /// Method handles the logic for removing objects in <c>PlacementSystem</c>.
+    /// </summary>
+    /// <param name="index">The index of the object to be removed</param>
     public void RemoveObjectAt(int index)
     {
         if (placedObjects.Count <= index || placedObjects[index] == null) { return; }
@@ -55,12 +69,19 @@ public class ObjectPlacer : MonoBehaviour
         placerObjects[index] = null;
     }
 
+    /// <summary>
+    /// Method gets every placed <c>PlacerObject</c>.
+    /// </summary>
+    /// <returns>
+    /// <c>List</c> of every placed <c>PlacerObject</c>.
+    /// </returns>
     public List<PlacerObject> GetPlacerObjects()
     {
-        for(int i = 0; i < placerObjects.Count; i++)
+        for(int i = placerObjects.Count - 1; i >= 0; i--)
         {
-            if (placerObjects[i] != null) { continue; }
-            placerObjects.RemoveAt(i);
+            if (placerObjects[i] == null) { 
+                placerObjects.RemoveAt(i);
+            }
         }
         return placerObjects;
     }

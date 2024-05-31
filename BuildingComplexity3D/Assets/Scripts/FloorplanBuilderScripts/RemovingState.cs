@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>RemovingState</c> implements IBuildingState for removing objects in PlacementSystem.
+/// </summary>
 public class RemovingState : IBuildingState
 {
     private int gameObjectIndex = -1;
@@ -23,11 +26,17 @@ public class RemovingState : IBuildingState
         previewSystem.StartShowingRemovePreview();
     }
 
+    /// <summary>
+    /// Method for transitioning out of <c>RemovingState</c>.
+    /// </summary>
     public void EndState()
     {
         previewSystem.StopShowingPreview();
     }
 
+    /// <summary>
+    /// Method for removing objects in <c>PlacementSystem</c>.
+    /// </summary>
     public void OnAction(Vector3Int gridPosition) 
     {
         GridData selectedData = GetData(gridPosition);
@@ -65,6 +74,9 @@ public class RemovingState : IBuildingState
         return true;
     }
 
+    /// <summary>
+    /// Method for updating <c>RemovingState</c>. Handles preview and removing validity.
+    /// </summary>
     public void UpdateState(Vector3Int gridPosition) 
     {
         previewSystem.UpdatePosition(grid.CellToWorld(gridPosition), IsCellEmpty(gridPosition));

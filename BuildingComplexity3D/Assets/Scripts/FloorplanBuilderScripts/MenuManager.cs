@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
+/// <summary>
+/// Class <c>MenuManager</c> is responsible for handling user navigation with UI.
+/// (Some methods are empty/contain commented out code and thus are depricated)
+/// </summary>
 public class MenuManager : MonoBehaviour
 {
     [SerializeField]
@@ -19,6 +23,10 @@ public class MenuManager : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Method sets file to be opened for <c>Run_Selector</c> and <c>Build_Selector</c> scenes.
+    /// </summary>
+    /// <param name="newFilename">Filename to be loaded.</param>
     public void SetFileName(string newFilename)
     {
         filenameString = newFilename;
@@ -33,11 +41,17 @@ public class MenuManager : MonoBehaviour
      *  Scene: Floorplan_Editor
      *  Panel: SettingsPanel
      */
+    /// <summary>
+    /// Method handles logic for showing settings panel when user clicks settings gear.
+    /// </summary>
     public void ShowSettingsPanel()
     {
         settingsPanel.SetActive(true);
     }
 
+    /// <summary>
+    /// Method handles logic for unshowing settings panel when user clicks "x" in settings panel.
+    /// </summary>
     public void CloseSettingsPanel()
     {
         settingsPanel.SetActive(false);   
@@ -48,11 +62,17 @@ public class MenuManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Method handles logic for returning to main menu.
+    /// </summary>
     public void QuitButton()
     {
         SceneManager.LoadScene("Main_Menu");
     }
 
+    /// <summary>
+    /// Method handles logic for saving and returning to main menu.
+    /// </summary>
     public void SaveAndQuitButton()
     {
         SceneManager.LoadScene("Main_Menu");
@@ -63,16 +83,25 @@ public class MenuManager : MonoBehaviour
      *  Scene: Main_Menu
      *  Panel: Background
      */
+    /// <summary>
+    /// Method handles logic for navigating to <c>Build_Selector</c> scene.
+    /// </summary>
     public void FloorplanEditorButton()
     {
         SceneManager.LoadScene("Build_Selector");
     }
 
+    /// <summary>
+    /// Method handles logic for navigating to <c>Run_Selector</c> scene.
+    /// </summary>
     public void RunFloorplanButton()
     {
         SceneManager.LoadScene("Run_Selector");
     }
 
+    /// <summary>
+    /// Method handles logic for closing EASE application.
+    /// </summary>
     public void CloseEaseButton()
     {
         Application.Quit();
