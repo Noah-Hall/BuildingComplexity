@@ -3,27 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*   AgentBehaviorSmart is attached to all Smart Agents   *
-*   This script handles all Smart Agent behavior         *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/// <summary>
+/// Class <c>AgentBehaviorSmart</c> handles all Smart Agent behavior.
+/// </summary>
 public class AgentBehaviorSmart : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
     [SerializeField] private float radius = 50;
     [SerializeField] private LayerMask targetMask, obstructionMask;
     private IDictionary<GameObject, int> visitedTargets = new Dictionary<GameObject, int>();
-    public bool targetBound, reachedCooldown;
-    public GameObject targetObject;
-    public int _currentFloor;
-    public ManagerScript manager;
     private Vector3 startPosition;
     private Vector3 prevPosition;
-    public int numVisitedTargets = 0;
-    public float lineToExit;
-    public float totalDistanceTraveled = 0;
-    public int weight;
     private bool initialized = false;
+
+    public bool targetBound, reachedCooldown;
+    public ManagerScript manager;
+
+    /// <value>
+    /// Property <c>targetObject</c> the target GameObject the agent is currently moving towards.
+    /// </value>
+    public GameObject targetObject;
+
+    /// <value>
+    /// Property <c>_currentFloor</c> what floor the agent is currently on.
+    /// </value>
+    public int _currentFloor;
+
+    /// <value>
+    /// Property <c>numVisitedTargets</c> how many targets the agent has visited.
+    /// </value>
+    public int numVisitedTargets = 0;
+
+    /// <value>
+    /// Property <c>lineToExit</c> the distance between agent start position and exit position (meters).
+    /// </value>
+    public float lineToExit;
+
+    /// <value>
+    /// Property <c>totalDistanceTraveled</c> the distance the agent has currently traveled (meters).
+    /// </value>
+    public float totalDistanceTraveled = 0;
+
+    /// <value>
+    /// Property <c>weight</c> how many "people" the agent represents.
+    /// </value>
+    public int weight;
 
 
     // general initialization
@@ -127,7 +151,10 @@ public class AgentBehaviorSmart : MonoBehaviour
         }
     }
 
-    // Method called by TargetScript when agent triggers object
+    /// <summary>
+    /// Method called by <c>TargetScript</c> when agent triggers target object.
+    /// </summary>
+    /// <param name="target">The <c>GameObject</c> of the triggered target.</param>
     public void TargetReached(GameObject target)
     {
         numVisitedTargets++;
@@ -174,7 +201,10 @@ public class AgentBehaviorSmart : MonoBehaviour
         }
     }
 
-    // Method called by StairScript when agent triggers stair object
+    /// <summary>
+    /// Method called by <c>StairScript</c> when agent triggers stair object.
+    /// </summary>
+    /// <param name="target">The <c>GameObject</c> of the triggered stair.</param>
     public GameObject StairReached(GameObject target)
     {
         numVisitedTargets++;
@@ -193,13 +223,22 @@ public class AgentBehaviorSmart : MonoBehaviour
         return loc;
     }
 
-    // Method called by ExitScript to calculate the agent's beginning and ending positions
+    /// <summary>
+    /// Method called by <c>ExitScript</c> to calculate the agent's beginning and ending positions.
+    /// </summary>
+    /// <param name="target">The <c>GameObject</c> of the triggered exit.</param>
     public void FingerPrint(Vector3 exitPosition)
     {
         lineToExit = Vector3.Distance(exitPosition, startPosition);
     }
 
-    // Helper method for FieldOfViewCheck that returns the enum value of a given target object
+    /// <summary>
+    /// Helper method for <c>FieldOfViewCheck</c>
+    /// </summary>
+    /// <returns>
+    /// The <c>TargetsEnum</c> value of a given target <c>GameObject</c>.
+    /// </returns>
+    /// <param name="target">The <c>GameObject</c> of the given target.</param>
     public TargetsEnum GetTargetsEnum(GameObject target)
     {
         switch(target.layer)

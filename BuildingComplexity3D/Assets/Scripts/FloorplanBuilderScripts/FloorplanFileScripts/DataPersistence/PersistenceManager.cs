@@ -7,6 +7,9 @@ using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class <c>PersistenceManager</c> handles logic for persistent floorplan data through files.
+/// </summary>
 public class PersistenceManager : MonoBehaviour
 {
     public static PersistenceManager instance { get; private set; }
@@ -42,11 +45,17 @@ public class PersistenceManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method handles logic for setting filename.
+    /// </summary>
     public void SetFileName(string filename)
     {
         currentFileName = filename;
     }
 
+    /// <summary>
+    /// Method handles logic for creating a new floorplan file.
+    /// </summary>
     public void NewFloorplan(string filename)
     {
         this.sceneData = new SceneData();
@@ -57,6 +66,9 @@ public class PersistenceManager : MonoBehaviour
         sceneData.SetFileData(newFileData);
     }
 
+    /// <summary>
+    /// Method handles logic for loading a floorplan.
+    /// </summary>
     public void LoadFloorplan()
     {
         Text filename = GameObject.Find("FilenameText").GetComponent<Text>();
@@ -163,6 +175,9 @@ public class PersistenceManager : MonoBehaviour
         return to_return;
     }
 
+    /// <summary>
+    /// Method handles logic for saving floorplan.
+    /// </summary>
     public void SaveFloorplan()
     {
         SceneData oldSceneData = dataHandler.GetCurrentSceneData();
@@ -183,6 +198,9 @@ public class PersistenceManager : MonoBehaviour
         dataHandler.Save(sceneData);
     }
 
+    /// <summary>
+    /// Method handles logic for creating a new floorplan.
+    /// </summary>
     public void CreateFloorplan()
     {
         dataHandler.Create(inputField.text);

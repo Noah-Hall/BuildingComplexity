@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class <c>ListItemController</c> handles logic for an item in <ListController>.
+/// </summary>
 public class ListItemController : MonoBehaviour
 {
     public Text _name, _date, _size;

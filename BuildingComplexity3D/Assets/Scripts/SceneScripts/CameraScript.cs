@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *   CameraScript was used for cinematics                    *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+/// <summary>
+/// Class <c>CameraScript</c> was used for cinematics.
+/// </summary>
 public class CameraScript : MonoBehaviour
 {
     public GameObject pivot;

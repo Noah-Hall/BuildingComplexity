@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>PreviewSystem</c> defines the system to handle visual preview system for floorplan construction.
+/// </summary>
 public class PreviewSystem : MonoBehaviour
 {
     [SerializeField]
@@ -23,6 +26,9 @@ public class PreviewSystem : MonoBehaviour
         cellIndicatorRenderer = cellIndicator.GetComponentInChildren<Renderer>();
     }
 
+    /// <summary>
+    /// Method handles logic for beginning preview on <c>PlacementState</c>.
+    /// </summary>
     public void StartShowingPreview(GameObject prefab, Vector2Int size)
     {
         previewObject = Instantiate(prefab);
@@ -31,6 +37,9 @@ public class PreviewSystem : MonoBehaviour
         cellIndicator.SetActive(true);
     }
 
+    /// <summary>
+    /// Method handles logic for beginning preview on <c>RemovingState</c>.
+    /// </summary>
     public void StartShowingRemovePreview()
     {
         cellIndicator.SetActive(true);
@@ -58,6 +67,9 @@ public class PreviewSystem : MonoBehaviour
         cellIndicatorRenderer.material.mainTextureScale = size;
     }
 
+    /// <summary>
+    /// Method handles logic for ending preview.
+    /// </summary>
     public void StopShowingPreview()
     {
         cellIndicator.SetActive(false);
@@ -65,18 +77,27 @@ public class PreviewSystem : MonoBehaviour
         Destroy(previewObject);
     }
 
+    /// <summary>
+    /// Helper method handles logic for updating preview object position.
+    /// </summary>
     public void UpdatePosition(Vector3 position, bool validity)
     {
         MoveCursor(position);
         ApplyFeedbackToCursor(validity);
     }
 
+    /// <summary>
+    /// Method handles logic for rotating preview object.
+    /// </summary>
     public void RotatePreview(Vector2Int cursorSize)
     {
         previewObject.transform.Rotate(0, 90, 0);
         PrepareCursor(cursorSize);
     }
 
+    /// <summary>
+    /// Method handles logic for scaling preview object.
+    /// </summary>
     public void ScalePreview(Vector2Int cursorSize, Vector2Int scale)
     {
         Vector3 newScale = previewObject.transform.localScale;
@@ -87,6 +108,9 @@ public class PreviewSystem : MonoBehaviour
         PrepareCursor(cursorSize);
     }
 
+    /// <summary>
+    /// Method handles logic for updating preview.
+    /// </summary>
     public void UpdatePreview(Vector3 objectPosition, Vector3 cursorPosition, bool validity, Color previewColor)
     {
         UpdatePosition(cursorPosition, validity);

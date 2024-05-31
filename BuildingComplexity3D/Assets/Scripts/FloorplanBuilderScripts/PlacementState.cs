@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>PlacementState</c> implements IBuildingState for placing objects in PlacementSystem.
+/// </summary>
 public class PlacementState : IBuildingState
 {
     private int selectedObjectIndex = -1;
-    public PlacementOrientation selectedOrientation { get; private set; } 
-    public int ID { get; private set; }
     private Grid grid;
     private PreviewSystem previewSystem;
     private GridData floorData, sideWallData, bottomWallData, centerData;
@@ -15,6 +16,16 @@ public class PlacementState : IBuildingState
     private ObjectsDatabaseSO database;
     private bool isRotated = false;
     private Vector2Int objectSize;
+
+    /// <value>
+    /// Property <c>selectedOrientation</c> holds the current orientation selected by user.
+    /// </value>
+    public PlacementOrientation selectedOrientation { get; private set; } 
+
+    /// <value>
+    /// Property <c>ID</c> holds the current object ID selected by user.
+    /// </value>
+    public int ID { get; private set; }
 
     public PlacementState(int ID, Grid grid, PreviewSystem previewSystem, GridData floorData, GridData sideWallData, GridData bottomWallData, GridData centerData, ObjectPlacer objectPlacer, ObjectsDatabaseSO database)
     {
@@ -40,11 +51,17 @@ public class PlacementState : IBuildingState
         }
     }
 
+    /// <summary>
+    /// Method for transitioning out of <c>PlacementState</c>.
+    /// </summary>
     public void EndState()
     {
         previewSystem.StopShowingPreview();
     }
 
+    /// <summary>
+    /// Method for placing most objects in <c>PlacementSystem</c>.
+    /// </summary>
     public void OnAction(Vector3Int gridPosition)
     {
         bool placementValidity = CheckPlacementValidity(gridPosition);
@@ -70,6 +87,9 @@ public class PlacementState : IBuildingState
         previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), false, database.objectsData[selectedObjectIndex].color);
     }
 
+    /// <summary>
+    /// Method for placing stair objects in <c>PlacementSystem</c>.
+    /// </summary>
     public void OnAction(Vector3Int gridPosition, StairInfo stairInfo)
     {
         bool placementValidity = CheckPlacementValidity(gridPosition);
@@ -96,6 +116,9 @@ public class PlacementState : IBuildingState
         previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), false, database.objectsData[selectedObjectIndex].color);
     }
 
+    /// <summary>
+    /// Method for placing room node objects in <c>PlacementSystem</c>.
+    /// </summary>
     public void OnAction(Vector3Int gridPosition, int weight) 
     {
         bool placementValidity = CheckPlacementValidity(gridPosition);
@@ -122,6 +145,9 @@ public class PlacementState : IBuildingState
         previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), false, database.objectsData[selectedObjectIndex].color);
     }
 
+    /// <summary>
+    /// Method for rotating objects in <c>PlacementSystem</c>.
+    /// </summary>
     public void OnRotate(Vector3Int gridPosition)
     {
         if (selectedOrientation == PlacementOrientation.NONE) { return; }
@@ -138,6 +164,9 @@ public class PlacementState : IBuildingState
         }
     }
 
+    /// <summary>
+    /// Method for scaling floor objects in <c>PlacementSystem</c>.
+    /// </summary>
     public void OnScaleXY(int x, int y, Vector3Int gridPosition)
     {
         objectSize.x = x < 1 ? objectSize.x : x;
@@ -148,6 +177,9 @@ public class PlacementState : IBuildingState
         previewSystem.UpdatePreview(GetNewPlacementPosition(gridPosition), grid.CellToWorld(gridPosition), placementValidity, database.objectsData[selectedObjectIndex].color);
     }
 
+    /// <summary>
+    /// Method for scaling most objects in <c>PlacementSystem</c>.
+    /// </summary>
     public void OnScale(int y, Vector3Int gridPosition)
     {
         objectSize.y = y < 1 ? objectSize.y : y;
@@ -204,6 +236,9 @@ public class PlacementState : IBuildingState
         return returnVal;
     }
     
+    /// <summary>
+    /// Method for updating <c>PlacementState</c>. Handles preview and placement validity.
+    /// </summary>
     public void UpdateState(Vector3Int gridPosition)
     {
         bool placementValidity = CheckPlacementValidity(gridPosition);

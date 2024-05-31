@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class <c>FileData</c> holds the basic data about a file.
+/// </summary>
 [System.Serializable]
 public class FileData
 {

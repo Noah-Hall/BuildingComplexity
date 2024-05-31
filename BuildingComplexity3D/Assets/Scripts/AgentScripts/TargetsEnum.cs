@@ -1,6 +1,6 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *  TargetsEnum used for comparing weights of target objects   *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/// <summary>
+/// enum <c>TargetsEnum</c> is used for comparing priority of target objects.
+/// </summary>
 public enum TargetsEnum
 {
     EXIT,

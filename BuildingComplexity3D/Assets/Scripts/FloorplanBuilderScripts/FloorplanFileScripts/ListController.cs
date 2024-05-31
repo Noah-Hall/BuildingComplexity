@@ -4,10 +4,20 @@ using UnityEngine;
 using System.IO;
 using Unity.VisualScripting;
 
+/// <summary>
+/// Class <c>ListController</c> handles logic for displaying the list of floorplan files.
+/// </summary>
 public class ListController : MonoBehaviour
 {
     // public Sprite [] AnimalImages;
+	/// <value>
+    /// Property <c>ContentPanel</c> holds the <c>GameObject</c> panel which files need to be added to.
+    /// </value>
 	public GameObject ContentPanel;
+
+	/// <value>
+    /// Property <c>ListItemPrefab</c> holds the <c>GameObject</c> prefab which represents a file.
+    /// </value>
 	public GameObject ListItemPrefab;
 
 	ArrayList FileDatas;
